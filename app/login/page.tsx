@@ -4,6 +4,7 @@ import React from 'react';
 import { LoginForm } from './LoginForm';
 import { SocialLogin } from './SocialLogin';
 import phone from '/public/phone.png';
+import logo from '/public/logo.svg';
 
 type Props = {};
 
@@ -15,7 +16,10 @@ function LoginPage(props: Props) {
       </div>
       <div className="flex-1">
         <div className="border mb-4 p-10">
-          <h1 className="text-3xl font-bold">Fittering</h1>
+          {/* <h1 className="text-3xl font-bold">Fittering</h1> */}
+          <h1 className="text-3xl font-bold">
+            <Image className="w-1/3 block m-auto" src={logo} alt="Google" />
+          </h1>
           <LoginForm />
           <div className="flex my-8">
             <div className="bg-[#e5e7eb] grow shrink h-[1px] relative top-2"></div>
