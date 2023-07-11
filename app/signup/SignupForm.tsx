@@ -1,26 +1,108 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const SignupForm = () => {
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [gender, setGender] = useState('-');
+  const [date, setDate] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [isSignupFormValid, setIsSignupFormValid] = useState(false);
+
+  const emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const passwordRegExp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const year = parseInt(date.substring(0, 4));
+  const month = parseInt(date.substring(4, 6));
+  const day = parseInt(date.substring(6, 8));
+  const birthDate = new Date(year + '-' + month + '-' + day);
+  const fourteenYearsAgo = new Date();
+  fourteenYearsAgo.setFullYear(fourteenYearsAgo.getFullYear() - 14);
+
+  const isEmailValid = emailRegExp.test(email);
+  const isUsernameValid = username.length > 0;
+  const isGenderValid = gender === 'F' || gender === 'M';
+  const isAgeValid = year >= 1950 && birthDate <= fourteenYearsAgo;
+  const isDateValid = !isNaN(birthDate.getTime());
+  const isPasswordValid = passwordRegExp.test(password);
+  const isPasswordConfirmValid =
+    passwordConfirm.length > 0 && password === passwordConfirm;
+
+  const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const onUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
   const onGenderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGender(e.target.value);
   };
+
+  const onBirthDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDate(e.target.value);
+  };
+
+  const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const onPasswordConfirmChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswordConfirm(e.target.value);
+  };
+
+  useEffect(() => {
+    if (
+      isEmailValid &&
+      isUsernameValid &&
+      isGenderValid &&
+      isAgeValid &&
+      isDateValid &&
+      isPasswordValid &&
+      isPasswordConfirmValid
+    ) {
+      setIsSignupFormValid(true);
+    } else {
+      setIsSignupFormValid(false);
+    }
+  }, [
+    isEmailValid,
+    isUsernameValid,
+    isGenderValid,
+    isAgeValid,
+    isDateValid,
+    isPasswordValid,
+    isPasswordConfirmValid,
+  ]);
+
   return (
     <form className="mt-12">
       <input
-        className="block border w-full p-2 rounded-lg my-2"
+        className={
+          (isEmailValid
+            ? 'border-[1.5px] border-[#87AB4E] '
+            : email.length > 0
+            ? 'border-[1.5px] border-red-500 '
+            : '') + 'block border w-full p-2 rounded-lg my-2'
+        }
         type="email"
         placeholder="이메일"
         maxLength={64}
+        onChange={onEmailChange}
         required
       />
       <input
-        className="block border w-full p-2 rounded-lg my-2"
+        className={
+          (isUsernameValid ? 'border-[1.5px] border-[#87AB4E] ' : '') +
+          'block border w-full p-2 rounded-lg my-2'
+        }
         type="text"
         placeholder="닉네임"
         maxLength={10}
+        onChange={onUsernameChange}
         required
       />
       <div className="w-full my-2">
@@ -73,35 +155,61 @@ export const SignupForm = () => {
         </ul>
       </div>
       <input
-        className="block border w-full p-2 rounded-lg my-2"
+        className={
+          (isAgeValid && isDateValid
+            ? 'border-[1.5px] border-[#87AB4E] '
+            : date.length > 0
+            ? 'border-[1.5px] border-red-500 '
+            : '') + 'block border w-full p-2 rounded-lg my-2'
+        }
         type="text"
         placeholder="생년월일(8자리 입력)"
         minLength={8}
         maxLength={8}
+        onChange={onBirthDateChange}
         required
       />
       <input
-        className="block border w-full p-2 rounded-lg my-2"
+        className={
+          (isPasswordValid
+            ? 'border-[1.5px] border-[#87AB4E] '
+            : password.length > 0
+            ? 'border-[1.5px] border-red-500 '
+            : '') + 'block border w-full p-2 rounded-lg my-2'
+        }
         type="password"
         placeholder="비밀번호"
         minLength={8}
         maxLength={15}
+        onChange={onPasswordChange}
         required
       />
       <input
-        className="block border w-full p-2 rounded-lg my-2"
+        className={
+          (isPasswordConfirmValid
+            ? 'border-[1.5px] border-[#87AB4E] '
+            : passwordConfirm.length > 0
+            ? 'border-[1.5px] border-red-500 '
+            : '') + 'block border w-full p-2 rounded-lg my-2'
+        }
         type="password"
         placeholder="비밀번호 확인"
         minLength={8}
         maxLength={15}
+        onChange={onPasswordConfirmChange}
         required
       />
       <button
         className="bg-[#87AB4E] w-full text-white p-2 rounded-lg font-bold my-2 disabled:opacity-75"
-        disabled
+        disabled={isSignupFormValid ? false : true}
       >
         회원가입
       </button>
+      {!isPasswordValid && password.length > 0 ? (
+        <p className="mt-4 text-red-500 text-xs">
+          비밀번호: 8~15자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.
+        </p>
+      ) : null}
     </form>
   );
 };

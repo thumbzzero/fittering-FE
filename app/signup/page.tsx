@@ -8,7 +8,7 @@ type Props = {};
 
 function SignUpPage(props: Props) {
   return (
-    <div className="flex flex-col text-center mt-8 justify-center w-[27%] ml-auto mr-auto">
+    <div className="flex flex-col text-center mt-8 justify-center w-[29%] ml-auto mr-auto">
       <div className="mb-4 p-10 border">
         {/* <h1 className="text-3xl font-bold">Fittering</h1> */}
         <h1 className="text-3xl font-bold">
