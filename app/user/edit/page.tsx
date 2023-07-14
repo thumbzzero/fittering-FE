@@ -1,9 +1,15 @@
 import React from 'react';
+import { UserEditForm } from './UserEditForm';
 
 type Props = {};
 
 function UserEditPage(props: Props) {
-  return <div>회원정보 수정</div>;
+  return (
+    <div>
+      <h1 className='text-2xl font-bold'>회원 정보 수정</h1>
+      <UserEditForm />
+    </div>
+  );
 }
 
 export default UserEditPage;
