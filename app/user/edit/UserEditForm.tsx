@@ -176,7 +176,7 @@ export const UserEditForm = () => {
         </button>
         {isEditMode ? null : (
           <Link href="/user/edit/password">
-            <button className="text-xs md:text-base absolute right-0 align-right rounded-3xl px-2 py-2 bg-custom-gray-200 border-none">
+            <button className="text-xs md:text-base absolute right-0 align-right rounded-3xl px-2 py-2 bg-custom-gray-100 border-none">
               비밀번호 수정
             </button>
           </Link>
