@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const divStyle = 'w-full my-4';
 const infoTypeLabelStyle = 'block text-lg my-2';
@@ -57,7 +58,6 @@ export const UserEditForm = () => {
           placeholder={username}
           minLength={1}
           maxLength={20}
-          value={username}
           onChange={handleUsernameChange}
           disabled={!isEditMode}
         />
@@ -167,13 +167,20 @@ export const UserEditForm = () => {
           </div>
         </div>
       </div>
-      <div className="mt-16 w-full md:w-1/2">
+      <div className="relative mt-16 w-full md:w-1/2">
         <button
-          className="block mx-auto border rounded-3xl px-6 py-2"
+          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-[#87AB4E] text-[white] font-bold border-none"
           onClick={handleIsEditMode}
         >
           {isEditMode ? '저장' : '수정'}
         </button>
+        {isEditMode ? null : (
+          <Link href="/user/edit/password">
+            <button className="text-xs md:text-base absolute right-0 align-right rounded-3xl px-2 py-2 bg-[#efefef] border-none">
+              비밀번호 수정
+            </button>
+          </Link>
+        )}
       </div>
     </form>
   );
