@@ -6,7 +6,20 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'main-color': '#8fb357',
+        'bean-color': '#c5d778',
+        'bean-head-color': '#e6ecbc',
+        'custom-gray': {
+          '200': '#efefef',
+          '300': '#e5e7eb',
+          '500': '#adadad',
+          '700': '#9ca3af',
+          
+        }
+      },
+    },
   },
   plugins: [],
 };

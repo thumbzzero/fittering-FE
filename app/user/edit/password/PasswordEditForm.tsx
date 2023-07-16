@@ -6,8 +6,6 @@ import { useState } from 'react';
 const divStyle = 'w-full my-4';
 const infoTypeLabelStyle = 'block text-lg my-2';
 const inputStyle = 'w-full md:w-1/2 border rounded-lg p-2';
-const birthDateInputStyle =
-  'w-2/3 lg:w-4/5 lg: border rounded-lg p-2 text-center md:text-right';
 
 export const PasswordEditForm = () => {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -86,7 +84,7 @@ export const PasswordEditForm = () => {
       </div>
       <div className="relative mt-16 w-full md:w-1/2">
         <button
-          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-[#87AB4E] text-[white] font-bold border-none"
+          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none"
           onClick={handleSaveButtonClick}
         >
           저장

@@ -18,7 +18,7 @@ function SignUpPage(props: Props) {
       </div>
       <div className="border p-6">
         계정이 있으신가요?{' '}
-        <Link className="text-[#87AB4E] font-bold" href="/login">
+        <Link className="text-main-color font-bold" href="/login">
           로그인
         </Link>
       </div>

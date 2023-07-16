@@ -22,18 +22,18 @@ function LoginPage(props: Props) {
           </h1>
           <LoginForm />
           <div className="flex my-8">
-            <div className="bg-[#e5e7eb] grow shrink h-[1px] relative top-2"></div>
-            <div className="mx-4 text-[#adadad] text-sm">또는</div>
-            <div className="bg-[#e5e7eb] grow shrink h-[1px]  relative top-2"></div>
+            <div className="bg-custom-gray-300 grow shrink h-[1px] relative top-2"></div>
+            <div className="mx-4 text-custom-gray-500 text-sm">또는</div>
+            <div className="bg-custom-gray-300 grow shrink h-[1px]  relative top-2"></div>
           </div>
           <SocialLogin />
-          <Link className="text-[#adadad] text-sm" href="">
+          <Link className="text-custom-gray-500 text-sm" href="">
             비밀번호를 잊으셨나요?
           </Link>
         </div>
         <div className="border p-6">
           계정이 없으신가요?{' '}
-          <Link className="text-[#87AB4E] font-bold" href="/signup">
+          <Link className="text-main-color font-bold" href="/signup">
             가입하기
           </Link>
         </div>

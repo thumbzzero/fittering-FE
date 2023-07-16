@@ -83,7 +83,7 @@ export const SignupForm = () => {
       <input
         className={
           (isEmailValid
-            ? 'border-[1.5px] border-[#87AB4E] '
+            ? 'border-[1.5px] border-main-color '
             : email.length > 0
             ? 'border-[1.5px] border-red-500 '
             : '') + 'block border w-full p-2 rounded-lg my-2'
@@ -96,7 +96,7 @@ export const SignupForm = () => {
       />
       <input
         className={
-          (isUsernameValid ? 'border-[1.5px] border-[#87AB4E] ' : '') +
+          (isUsernameValid ? 'border-[1.5px] border-main-color ' : '') +
           'block border w-full p-2 rounded-lg my-2'
         }
         type="text"
@@ -120,10 +120,10 @@ export const SignupForm = () => {
             <label
               className={
                 (gender === 'M'
-                  ? 'text-[#87AB4E] font-bold border-[1.5px] border-[#87AB4E]'
+                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
                   : gender === 'F'
-                  ? 'text-[#9ca3af] border border-r-0'
-                  : 'text-[#9ca3af] border') +
+                  ? 'text-custom-gray-700 border border-r-0'
+                  : 'text-custom-gray-700 border') +
                 ' block relative box-border w-full p-2 rounded-l-lg'
               }
               htmlFor="M"
@@ -143,8 +143,8 @@ export const SignupForm = () => {
             <label
               className={
                 (gender === 'F'
-                  ? 'text-[#87AB4E] font-bold border-[1.5px] border-[#87AB4E]'
-                  : 'text-[#9ca3af] border border-l-0') +
+                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
+                  : 'text-custom-gray-700 border border-l-0') +
                 ' block relative box-border w-full p-2 rounded-r-lg'
               }
               htmlFor="F"
@@ -157,7 +157,7 @@ export const SignupForm = () => {
       <input
         className={
           (isAgeValid && isDateValid
-            ? 'border-[1.5px] border-[#87AB4E] '
+            ? 'border-[1.5px] border-main-color '
             : date.length > 0
             ? 'border-[1.5px] border-red-500 '
             : '') + 'block border w-full p-2 rounded-lg my-2'
@@ -172,7 +172,7 @@ export const SignupForm = () => {
       <input
         className={
           (isPasswordValid
-            ? 'border-[1.5px] border-[#87AB4E] '
+            ? 'border-[1.5px] border-main-color '
             : password.length > 0
             ? 'border-[1.5px] border-red-500 '
             : '') + 'block border w-full p-2 rounded-lg my-2'
@@ -187,7 +187,7 @@ export const SignupForm = () => {
       <input
         className={
           (isPasswordConfirmValid
-            ? 'border-[1.5px] border-[#87AB4E] '
+            ? 'border-[1.5px] border-main-color '
             : passwordConfirm.length > 0
             ? 'border-[1.5px] border-red-500 '
             : '') + 'block border w-full p-2 rounded-lg my-2'
@@ -200,7 +200,7 @@ export const SignupForm = () => {
         required
       />
       <button
-        className="bg-[#87AB4E] w-full text-white p-2 rounded-lg font-bold my-2 disabled:opacity-75"
+        className="bg-main-color w-full text-white p-2 rounded-lg font-bold my-2 disabled:opacity-75"
         disabled={isSignupFormValid ? false : true}
       >
         회원가입

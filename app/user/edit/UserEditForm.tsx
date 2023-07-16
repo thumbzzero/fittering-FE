@@ -78,10 +78,10 @@ export const UserEditForm = () => {
             <label
               className={
                 (gender === 'M'
-                  ? 'text-[#87AB4E] font-bold border-[1.5px] border-[#87AB4E]'
+                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
                   : gender === 'F'
-                  ? 'text-[#9ca3af] border border-r-0'
-                  : 'text-[#9ca3af] border') +
+                  ? 'text-custom-gray-700 border border-r-0'
+                  : 'text-custom-gray-700 border') +
                 ' block relative box-border w-full p-2 rounded-l-lg text-center'
               }
               htmlFor="M"
@@ -102,8 +102,8 @@ export const UserEditForm = () => {
             <label
               className={
                 (gender === 'F'
-                  ? 'text-[#87AB4E] font-bold border-[1.5px] border-[#87AB4E]'
-                  : 'text-[#9ca3af] border border-l-0') +
+                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
+                  : 'text-custom-gray-700 border border-l-0') +
                 ' block relative box-border w-full p-2 rounded-r-lg text-center'
               }
               htmlFor="F"
@@ -169,14 +169,14 @@ export const UserEditForm = () => {
       </div>
       <div className="relative mt-16 w-full md:w-1/2">
         <button
-          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-[#87AB4E] text-[white] font-bold border-none"
+          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none"
           onClick={handleIsEditMode}
         >
           {isEditMode ? '저장' : '수정'}
         </button>
         {isEditMode ? null : (
           <Link href="/user/edit/password">
-            <button className="text-xs md:text-base absolute right-0 align-right rounded-3xl px-2 py-2 bg-[#efefef] border-none">
+            <button className="text-xs md:text-base absolute right-0 align-right rounded-3xl px-2 py-2 bg-custom-gray-200 border-none">
               비밀번호 수정
             </button>
           </Link>

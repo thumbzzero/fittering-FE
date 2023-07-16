@@ -25,7 +25,7 @@ export const LoginForm = () => {
     <form className="mt-12">
       <input
         className={
-          (email.length > 0 ? 'border-[1.5px] border-[#87AB4E] ' : '') +
+          (email.length > 0 ? 'border-[1.5px] border-bean-head-color ' : '') +
           'block border w-full p-2 rounded-lg'
         }
         id="emailInput"
@@ -36,7 +36,7 @@ export const LoginForm = () => {
       />
       <input
         className={
-          (password.length > 0 ? 'border-[1.5px] border-[#87AB4E] ' : '') +
+          (password.length > 0 ? 'border-[1.5px] border-main-color ' : '') +
           'block border w-full p-2 rounded-lg my-2'
         }
         type="password"
@@ -45,7 +45,7 @@ export const LoginForm = () => {
         required
       />
       <button
-        className="bg-[#87AB4E] w-full text-white p-2 rounded-lg font-bold my-4 disabled:opacity-70"
+        className="bg-main-color w-full text-white p-2 rounded-lg font-bold my-4 disabled:opacity-70"
         disabled={isLoginFormValid ? false : true}
       >
         로그인
