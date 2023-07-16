@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +26,7 @@ export const LoginForm = () => {
     <form className="mt-12">
       <input
         className={
-          (email.length > 0 ? 'border-[1.5px] border-bean-head-color ' : '') +
+          (email.length > 0 ? 'border-[1.5px] border-main-color ' : '') +
           'block border w-full p-2 rounded-lg'
         }
         id="emailInput"

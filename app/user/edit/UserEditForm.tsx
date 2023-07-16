@@ -17,6 +17,10 @@ export const UserEditForm = () => {
   const [day, setDay] = useState(14);
   const [isEditMode, setIsEditMode] = useState(false);
 
+  const genderTextColor = isEditMode ? 'text-main-color' : 'text-custom-gray-700';
+  const selectedGenderBorderColor = isEditMode ? 'border-main-color' : 'border';
+  const genderBackgroundColor = isEditMode ? 'bg-transparent' : 'bg-neutral-50'
+
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
@@ -78,7 +82,7 @@ export const UserEditForm = () => {
             <label
               className={
                 (gender === 'M'
-                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
+                  ? `${genderTextColor} font-bold border-[1.5px] ${selectedGenderBorderColor} ${genderBackgroundColor}`
                   : gender === 'F'
                   ? 'text-custom-gray-700 border border-r-0'
                   : 'text-custom-gray-700 border') +
@@ -102,7 +106,7 @@ export const UserEditForm = () => {
             <label
               className={
                 (gender === 'F'
-                  ? 'text-main-color font-bold border-[1.5px] border-main-color'
+                  ? `${genderTextColor} font-bold border-[1.5px] ${selectedGenderBorderColor} ${genderBackgroundColor}`
                   : 'text-custom-gray-700 border border-l-0') +
                 ' block relative box-border w-full p-2 rounded-r-lg text-center'
               }
