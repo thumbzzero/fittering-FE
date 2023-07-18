@@ -145,7 +145,7 @@ export const UserEditForm = () => {
                 id="month"
                 placeholder={isNaN(month) ? '' : month.toString()}
                 onChange={handleMonthChange}
-                minLength={2}
+                minLength={1}
                 maxLength={2}
                 disabled={!isEditMode}
               />
@@ -160,7 +160,7 @@ export const UserEditForm = () => {
                 id="day"
                 placeholder={isNaN(day) ? '' : day.toString()}
                 onChange={handleDayChange}
-                minLength={2}
+                minLength={1}
                 maxLength={2}
                 disabled={!isEditMode}
               />

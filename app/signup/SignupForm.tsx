@@ -101,7 +101,8 @@ export const SignupForm = () => {
         }
         type="text"
         placeholder="닉네임"
-        maxLength={10}
+        minLength={1}
+        maxLength={20}
         onChange={onUsernameChange}
         required
       />
