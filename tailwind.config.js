@@ -12,11 +12,11 @@ module.exports = {
         'bean-color': '#c5d778',
         'bean-head-color': '#e6ecbc',
         'custom-gray': {
+          '50': '#f7f7f7',
           '100': '#efefef',
           '500': '#adadad',
           '700': '#9ca3af',
-          
-        }
+        },
       },
     },
   },
