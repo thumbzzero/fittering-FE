@@ -37,7 +37,7 @@ export default function Header() {
       </div>
       <div className="hidden w-0 md:inline-block md:relative md:w-[40%]">
         <WebNavbar />
-        <button className="absolute top-[50%] translate-y-[-50%] right-4 bg-main-color text-white rounded w-20 h-8 text-xs">
+        <button className="absolute top-[50%] translate-y-[-50%] right-0 bg-main-color text-white rounded w-20 h-8 text-xs">
           로그아웃
         </button>
       </div>
