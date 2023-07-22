@@ -16,8 +16,10 @@ module.exports = {
           100: '#efefef',
           500: '#adadad',
           700: '#9ca3af',
+          800: '#666666'
         },
-        'nav-black': '#0f0f0f',
+        'nav-black': '#111111',
+        'button-black': '#333333',
       },
     },
   },
