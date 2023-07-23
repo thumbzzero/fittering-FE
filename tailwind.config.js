@@ -14,9 +14,10 @@ module.exports = {
         'custom-gray': {
           50: '#f7f7f7',
           100: '#efefef',
+          400: '#B2B2B2',
           500: '#adadad',
           700: '#9ca3af',
-          800: '#666666'
+          800: '#666666',
         },
         'nav-black': '#111111',
         'button-black': '#333333',
