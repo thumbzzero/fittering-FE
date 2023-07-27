@@ -1,5 +1,5 @@
 import React from 'react';
-import { PasswordEditForm } from './PasswordEditForm';
+import { PasswordEditForm } from '../../../../components/Form/PasswordEditForm';
 
 type Props = {};
 

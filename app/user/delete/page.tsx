@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserDeleteForm } from './UserDeleteForm';
+import { UserDeleteForm } from '../../../components/Form/UserDeleteForm';
 
 type Props = {};
 

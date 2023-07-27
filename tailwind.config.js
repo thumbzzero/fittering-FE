@@ -22,6 +22,9 @@ module.exports = {
         'nav-black': '#111111',
         'button-black': '#333333',
       },
+      screens: {
+        'xs': '350px',
+      }
     },
   },
   plugins: [],

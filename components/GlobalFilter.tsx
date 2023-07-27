@@ -1,19 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { detectMobileDevice } from '../utils/detectMobileDevice';
 
 const buttonStyle = ' w-8 h-8 text-xs md:w-12 md:h-12 md:text-sm font-semibold';
 
 export default function GlobalFilter() {
   const [selectedFilter, setSelectedFilter] = useState('A');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(detectMobileDevice(window.navigator.userAgent));
+  }, []);
 
   const onGlobalFilterChange = (e: React.MouseEvent<HTMLButtonElement>) => {
     const selectedButton = e.target as HTMLButtonElement;
     setSelectedFilter(selectedButton.id);
-    localStorage.setItem('globalFilter', selectedButton.id);
+    localStorage.setItem('GLOBAL_FILTER', selectedButton.id);
   };
 
   return (
-    <div className="fixed right-4 bottom-80 md:right-10 lg:right-48 flex flex-col border rounded-lg">
+    <div
+      className={
+        'fixed right-4 lg:right-[calc((100%-1024px)/2)] flex flex-col border rounded-lg bottom-[264px] ' +
+        (isMobile ? 'landscape:bottom-[82px]' : '')
+      }
+    >
       <button
         className={
           (selectedFilter === 'A'

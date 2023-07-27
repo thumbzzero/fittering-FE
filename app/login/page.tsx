@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { LoginForm } from './LoginForm';
-import { SocialLogin } from './SocialLogin';
+import { LoginForm } from '../../components/Form/LoginForm';
+import { SocialLogin } from '../../components/Form/SocialLogin';
 import phone from '/public/iPhone 14 Pro - Space Black - Portrait.png';
 import logo from '/public/Fittering_logo.png';
 
@@ -16,7 +16,6 @@ function LoginPage(props: Props) {
       </div>
       <div className="flex-1">
         <div className="border mb-4 p-10">
-          {/* <h1 className="text-3xl font-bold">Fittering</h1> */}
           <h1 className="text-3xl font-bold mt-6">
             <Image className="w-1/3 block m-auto" src={logo} alt="Google" />
           </h1>

@@ -22,7 +22,7 @@ export default function MobileNavbar() {
   }
 
   return (
-    <nav className="fixed bottom-0 flex w-full bg-nav-black py-4 md:hidden">
+    <nav className="fixed left-0 bottom-0 flex w-full bg-nav-black py-4 md:hidden">
       <Link className={menuStyle} href="/">
         <Image className={iconStyle} src={home} alt="" />
         <span className={menuName}>홈</span>
