@@ -19,6 +19,7 @@ module.exports = {
           700: '#9ca3af',
           800: '#666666',
         },
+        'border-gray': '#dddddd',
         'nav-black': '#111111',
         'button-black': '#333333',
       },
