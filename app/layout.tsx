@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={inter.className}>
-      <body className="flex flex-col w-full px-4 lg:px-0 max-w-screen-lg mx-auto">
+      <body className="flex flex-col w-full px-4 lg:px-0 max-w-screen-lg mx-auto mb-[6rem] md:mb-0">
         <Header />
         <main className="grow">{children}</main>
         <MobileNavbar />

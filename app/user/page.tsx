@@ -11,7 +11,7 @@ function MyPage(props: Props) {
       <MyPageCommon />
       <MyPageSection sectionName="최근 본 상품" />
       <MyPageSection sectionName="좋아요한 상품" />
-      <div className="pt-6 border-t border-nav-black text-center md:text-right">
+      <div className="pt-6 border-t-[1.5px] border-nav-black text-center md:text-right">
         <Link
           className="md:text-right text-custom-gray-800 font-bold underline decoration-custom-gray-800"
           href="/user/delete"

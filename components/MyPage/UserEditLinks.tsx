@@ -13,7 +13,7 @@ export default function UserEditLinks() {
         <Image className="inline-block w-4 h-4 mr-3" src={pencil} alt="" />
         회원정보 수정
       </Link>
-      <Link className={`${linkStyle} bg-button-black`} href="/user/mysize/edit">
+      <Link className={`${linkStyle} bg-button-black`} href="/user/mysize">
         <Image className="inline-block w-4 h-4 mr-3" src={ruler} alt="" /> 내
         맞춤 정보 설정
       </Link>

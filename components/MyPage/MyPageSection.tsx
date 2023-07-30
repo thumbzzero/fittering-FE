@@ -4,8 +4,8 @@ type Props = {
 
 export default function MyPageSection({ sectionName }: Props) {
   return (
-    <div className="my-8 pb-2 border-b border-nav-black">
-      <span className="font-bold">{sectionName}</span>
+    <div className="my-8 pb-2 border-b-[1.5px] border-nav-black">
+      <span className="font-bold text-lg">{sectionName}</span>
     </div>
   );
 }

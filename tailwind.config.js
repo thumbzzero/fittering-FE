@@ -24,8 +24,9 @@ module.exports = {
         'button-black': '#333333',
       },
       screens: {
-        'xs': '350px',
-      }
+        xs: '350px',
+        md: '769px',
+      },
     },
   },
   plugins: [],
