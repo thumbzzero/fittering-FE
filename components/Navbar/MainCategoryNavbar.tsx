@@ -1,11 +1,11 @@
 'use client';
 
-import { category, outer, top, dress, bottom } from '@/types/categories';
+import { category, outer, top, bottom, dress } from '@/types/categories';
 import { usePathname } from 'next/navigation';
 import MainCategoryLink from './MainCategoryLink';
 
 export default function MainCategoryNavbar() {
-  const categories: category[] = [outer, top, dress, bottom];
+  const categories: category[] = [outer, top, bottom, dress];
   const pathname = usePathname();
 
   return (
