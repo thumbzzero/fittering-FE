@@ -1,4 +1,5 @@
 import MainCategoryNavbar from '@/components/Navbar/MainCategoryNavbar';
+import SubCategoryNavbar from '@/components/Navbar/SubCategoryNavbar';
 
 export default function CategoryLayout({
   children,
@@ -8,6 +9,7 @@ export default function CategoryLayout({
   return (
     <>
       <MainCategoryNavbar />
+      <SubCategoryNavbar />
       {children}
     </>
   );
