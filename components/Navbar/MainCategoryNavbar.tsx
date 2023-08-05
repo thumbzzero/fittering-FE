@@ -11,7 +11,6 @@ export default function MainCategoryNavbar() {
   return (
     <div className="w-full mt-4 md:mt-8 text-sm md:text-base flex items-center justify-center">
       <MainCategoryLink
-        key={-1}
         href="/categories"
         isSelected={pathname === '/categories'}
         name="전체"
