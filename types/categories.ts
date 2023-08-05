@@ -1,9 +1,19 @@
-export type category = typeof outer | typeof top | typeof dress | typeof bottom;
+export type Category = {
+  index: number;
+  name: string;
+  url: string;
+  sub:
+    | {
+        index: number;
+        name: string;
+        url: string;
+      }[];
+};
 
-export const outer = {
+export const outer: Category = {
   index: 0,
   name: '아우터',
-  url: '/categories/outer' as const,
+  url: '/categories/outer',
   sub: [
     {
       index: 0,
@@ -38,10 +48,10 @@ export const outer = {
   ],
 };
 
-export const top = {
+export const top: Category = {
   index: 1,
   name: '상의',
-  url: '/categories/top' as const,
+  url: '/categories/top',
   sub: [
     {
       index: 6,
@@ -66,16 +76,17 @@ export const top = {
   ],
 };
 
-export const dress = {
-  index: 3,
+export const dress: Category = {
+  index: 2,
   name: '원피스',
-  url: '/categories/dress' as const,
+  url: '/categories/dress',
+  sub: [],
 };
 
-export const bottom = {
+export const bottom: Category = {
   index: 3,
   name: '하의',
-  url: '/categories/bottom' as const,
+  url: '/categories/bottom',
   sub: [
     {
       index: 10,
