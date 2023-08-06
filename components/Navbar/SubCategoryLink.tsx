@@ -7,6 +7,9 @@ type Props = {
 };
 
 export default function SubCategoryLink({ href, isSelected, name }: Props) {
+  const gender = localStorage.getItem('GLOBAL_FILTER');
+  if (gender === 'M' && href.includes('/skirt')) return null;
+
   return (
     <Link
       href={href}

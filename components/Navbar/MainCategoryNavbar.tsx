@@ -5,7 +5,9 @@ import { usePathname } from 'next/navigation';
 import MainCategoryLink from './MainCategoryLink';
 
 export default function MainCategoryNavbar() {
-  const categories: Category[] = [outer, top, bottom, dress];
+  const gender = localStorage.getItem('GLOBAL_FILTER');
+  const categories: Category[] =
+    gender === 'M' ? [outer, top, bottom] : [outer, top, bottom, dress];
   const pathname = usePathname();
 
   return (
