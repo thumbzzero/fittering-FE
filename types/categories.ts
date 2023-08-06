@@ -16,32 +16,32 @@ export const outer: Category = {
   url: '/categories/outer',
   sub: [
     {
-      index: 0,
+      index: 1,
       name: '후드 집업',
       url: '/categories/outer/hood',
     },
     {
-      index: 1,
+      index: 2,
       name: '코트',
       url: '/categories/outer/coat',
     },
     {
-      index: 2,
+      index: 3,
       name: '가디건',
       url: '/categories/outer/cardigan',
     },
     {
-      index: 3,
+      index: 4,
       name: '패딩',
       url: '/categories/outer/padded_jacket',
     },
     {
-      index: 4,
+      index: 5,
       name: '자켓',
       url: '/categories/outer/jacket',
     },
     {
-      index: 5,
+      index: 6,
       name: '기타',
       url: '/categories/outer/others',
     },
@@ -54,22 +54,22 @@ export const top: Category = {
   url: '/categories/top',
   sub: [
     {
-      index: 6,
+      index: 7,
       name: '셔츠/블라우스',
       url: '/categories/top/shirt',
     },
     {
-      index: 7,
+      index: 8,
       name: '니트',
       url: '/categories/top/knit',
     },
     {
-      index: 8,
+      index: 9,
       name: '티셔츠',
       url: '/categories/top/t-shirt',
     },
     {
-      index: 9,
+      index: 10,
       name: '맨투맨/후드티',
       url: '/categories/top/sweatshirt-hood',
     },
@@ -89,12 +89,12 @@ export const bottom: Category = {
   url: '/categories/bottom',
   sub: [
     {
-      index: 10,
+      index: 11,
       name: '바지',
       url: '/categories/bottom/pants',
     },
     {
-      index: 11,
+      index: 12,
       name: '치마',
       url: '/categories/bottom/skirt',
     },
