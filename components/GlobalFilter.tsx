@@ -1,11 +1,16 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import { detectMobileDevice } from '../utils/detectMobileDevice';
 
 const buttonStyle = ' w-8 h-8 text-xs md:w-12 md:h-12 md:text-sm font-semibold';
 
 export default function GlobalFilter() {
-  const [selectedFilter, setSelectedFilter] = useState('A');
+  const [selectedFilter, setSelectedFilter] = useState(
+    localStorage.getItem('GLOBAL_FILTER') === null
+      ? 'A'
+      : localStorage.getItem('GLOBAL_FILTER')
+  );
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
