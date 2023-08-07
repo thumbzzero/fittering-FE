@@ -36,3 +36,23 @@ export async function signup({
   });
   return response;
 }
+
+export async function login({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}): Promise<Response> {
+  const response = await fetch(`${BASE_URL}/login`, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  sessionStorage.setItem('TOKEN', await response.text());
+
+  return response;
+}

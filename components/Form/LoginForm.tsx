@@ -1,10 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { login } from '@/service/auth';
+
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoginFormValid, setIsLoginFormValid] = useState(false);
+
+  const router = useRouter();
 
   const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -22,8 +27,18 @@ export const LoginForm = () => {
     }
   }, [email, password]);
 
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await login({ email, password });
+    if (response.status === 200) {
+      router.replace('/');
+    } else {
+      window.alert('이메일 또는 비밀번호를 확인해주세요.');
+    }
+  };
+
   return (
-    <form className="mt-12">
+    <form onSubmit={handleLogin} className="mt-12">
       <input
         className={
           (email.length > 0 ? 'border-[1.5px] border-main-color ' : '') +
