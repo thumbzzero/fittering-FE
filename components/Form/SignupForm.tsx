@@ -1,6 +1,8 @@
 'use client';
 
+import { signup } from '@/service/auth';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export const SignupForm = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +12,8 @@ export const SignupForm = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [isSignupFormValid, setIsSignupFormValid] = useState(false);
+
+  const router = useRouter();
 
   const emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const passwordRegExp =
@@ -54,6 +58,25 @@ export const SignupForm = () => {
     setPasswordConfirm(e.target.value);
   };
 
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await signup({
+      email,
+      username,
+      gender,
+      year,
+      month,
+      day,
+      password,
+    });
+    if (response.status === 200) {
+      window.alert('회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.');
+      router.replace('/login');
+    } else {
+      window.alert('회원가입 실패');
+    }
+  };
+
   useEffect(() => {
     if (
       isEmailValid &&
@@ -79,7 +102,7 @@ export const SignupForm = () => {
   ]);
 
   return (
-    <form className="mt-12">
+    <form onSubmit={handleSignup} className="mt-12">
       <input
         className={
           (isEmailValid
