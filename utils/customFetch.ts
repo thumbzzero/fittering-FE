@@ -1,4 +1,5 @@
 import { BASE_URL } from '@/constants/apis';
+import { login } from '@/service/auth';
 
 const accessToken =
   typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
@@ -17,6 +18,11 @@ export async function customFetch(
   const mergedOptions = { ...options, headers };
 
   const response = await fetch(mergedURL, mergedOptions);
+
+  if (response.status === 401) {
+    localStorage.removeItem('TOKEN');
+    window.location.replace('/login');
+  }
 
   return response;
 }
