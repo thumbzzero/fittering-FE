@@ -17,7 +17,11 @@ function LoginPage(props: Props) {
       <div className="flex-1 max-w-[400px]">
         <div className="border mb-4 p-10 [@media(max-width:400px)]:border-none">
           <h1 className="text-3xl font-bold mt-6">
-            <Image className="w-1/2 xs:w-1/3 block m-auto" src={logo} alt="Fittering" />
+            <Image
+              className="w-1/2 xs:w-1/3 block m-auto"
+              src={logo}
+              alt="Fittering"
+            />
           </h1>
           <LoginForm />
           <div className="flex my-8">
