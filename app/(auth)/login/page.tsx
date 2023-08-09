@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { LoginForm } from '../../components/Form/LoginForm';
-import { SocialLogin } from '../../components/Form/SocialLogin';
+import { LoginForm } from '@/components/Form/LoginForm';
+import { SocialLogin } from '@/components/Form/SocialLogin';
 import phone from '/public/iPhone 14 Pro - Space Black - Portrait.png';
 import logo from '/public/Fittering_logo.png';
 

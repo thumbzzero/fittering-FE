@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserEditForm } from '../../../components/Form/UserEditForm';
+import { UserEditForm } from '../../../../components/Form/UserEditForm';
 
 type Props = {};
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { SignupForm } from '../../components/Form/SignupForm';
+import { SignupForm } from '@/components/Form/SignupForm';
 import logo from '/public/Fittering_logo.png';
 import Image from 'next/image';
 

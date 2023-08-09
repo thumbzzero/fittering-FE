@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import MyPageCommon from '../../components/MyPage/MyPageCommon';
-import MyPageSection from '../../components/MyPage/MyPageSection';
+import MyPageCommon from '../../../components/MyPage/MyPageCommon';
+import MyPageSection from '../../../components/MyPage/MyPageSection';
 
 type Props = {};
 

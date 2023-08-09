@@ -1,7 +1,7 @@
 import GlobalFilter from '@/components/GlobalFilter';
 import RankedMallPreview from '@/components/Malls/RankedMallPreview';
 import Section from '@/components/Section';
-import GlobalMenu from '../components/GlobalMenu';
+import GlobalMenu from '@/components/GlobalMenu';
 
 export default function Home() {
   return (

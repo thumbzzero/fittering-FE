@@ -2,8 +2,8 @@ import MobileSection from '@/components/MobileSection';
 import Guideline from '@/components/MyPage/MySize/Guideline';
 import SmartAnalysisPhotoSubmitForm from '@/components/MyPage/MySize/SmartAnalysisPhotoSubmitForm';
 import React from 'react';
-import MyPageSection from '../../../../components/MyPage/MyPageSection';
-import Section from '../../../../components/Section';
+import MyPageSection from '../../../../../components/MyPage/MyPageSection';
+import Section from '../../../../../components/Section';
 
 type Props = {};
 
