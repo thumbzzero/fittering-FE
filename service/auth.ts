@@ -52,7 +52,7 @@ export async function login({
     body: JSON.stringify({ email, password }),
   });
 
-  sessionStorage.setItem('TOKEN', await response.text());
+  localStorage.setItem('TOKEN', await response.text());
 
   return response;
 }

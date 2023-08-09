@@ -1,7 +1,7 @@
 import { BASE_URL } from '@/constants/apis';
 
 const accessToken =
-  typeof window !== 'undefined' ? sessionStorage.getItem('TOKEN') : null;
+  typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
 
 const defaultHeaders = {
   'Content-Type': 'application/json',
