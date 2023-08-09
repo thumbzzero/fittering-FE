@@ -8,14 +8,18 @@ type Props = {};
 
 function SignUpPage(props: Props) {
   return (
-    <div className="flex flex-col text-center mt-8 justify-center w-[29%] ml-auto mr-auto">
-      <div className="mb-4 p-10 border">
+    <div className="flex flex-grow flex-col text-center justify-center min-h-[calc(100vh-1rem)] max-w-[400px] ml-auto mr-auto">
+      <div className="mb-4 p-4 xs:p-10 border [@media(max-width:400px)]:border-none">
         <h1 className="text-3xl font-bold">
-          <Image className="w-1/3 block m-auto mt-6" src={logo} alt="Google" />
+          <Image
+            className="w-1/3 block m-auto mt-6"
+            src={logo}
+            alt="Fittering"
+          />
         </h1>
         <SignupForm />
       </div>
-      <div className="border p-6">
+      <div className="border p-6 [@media(max-width:400px)]:border-none">
         계정이 있으신가요?{' '}
         <Link className="text-main-color font-bold" href="/login">
           로그인
