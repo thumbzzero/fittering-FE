@@ -4,14 +4,14 @@ import GlobalMenu from '@/components/GlobalMenu';
 
 type Props = {};
 
-function SearchPage(props: Props) {
+function MallPage(props: Props) {
   return (
     <div>
-      검색 결과 페이지
+      쇼핑몰 상세 조회
       <GlobalFilter />
       <GlobalMenu />
     </div>
   );
 }
 
-export default SearchPage;
+export default MallPage;

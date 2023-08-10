@@ -1,3 +1,5 @@
+import GlobalFilter from '@/components/GlobalFilter';
+import GlobalMenu from '@/components/GlobalMenu';
 import React from 'react';
 
 type Props = {
@@ -13,6 +15,8 @@ function CategoryPage({ params: { categoryName } }: Props) {
         ? '전체 '
         : categoryName.map((category) => `${category} `)}
       카테고리 조회
+      <GlobalFilter />
+      <GlobalMenu />
     </div>
   );
 }
