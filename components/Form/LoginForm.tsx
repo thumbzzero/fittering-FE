@@ -30,7 +30,7 @@ export const LoginForm = () => {
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await login({ email, password });
-    if (response.status === 200) {
+    if (response.ok) {
       router.replace('/');
     } else {
       window.alert('이메일 또는 비밀번호를 확인해주세요.');

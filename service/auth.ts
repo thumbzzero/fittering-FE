@@ -52,7 +52,9 @@ export async function login({
     body: JSON.stringify({ email, password }),
   });
 
-  localStorage.setItem('TOKEN', await response.text());
+  const token = await response.text();
+
+  if (response.ok) localStorage.setItem('TOKEN', token);
 
   return response;
 }
