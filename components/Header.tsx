@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { WebNavbar } from './Navbar/WebNavbar';
 import Link from 'next/link';
 import search from '/public/icon/search_green.svg';
+import { logout } from '../utils/logout';
 
 const hideURL = ['/login', '/signup'];
 
@@ -42,7 +43,10 @@ export default function Header() {
       </div>
       <div className="hidden w-0 md:inline-block md:relative md:w-[33%]">
         <WebNavbar />
-        <button className="absolute top-[50%] translate-y-[-50%] right-0 bg-main-color text-white rounded w-20 h-8 text-xs">
+        <button
+          onClick={logout}
+          className="absolute top-[50%] translate-y-[-50%] right-0 bg-main-color text-white rounded w-20 h-8 text-xs"
+        >
           로그아웃
         </button>
       </div>
