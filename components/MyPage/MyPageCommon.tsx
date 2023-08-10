@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import back from 'public/icon/left_black.svg';
 import UserEditLinks from './UserEditLinks';
+import MobileLogout from './MobileLogout';
 
 export default function MyPageCommon() {
   return (
@@ -25,9 +26,7 @@ export default function MyPageCommon() {
             열졍콩님, <br className="md:hidden" />
             안녕하세요
           </span>
-          <span className="absolute right-0 text-custom-gray-800 font-bold underline decoration-custom-gray-800 md:hidden">
-            로그아웃
-          </span>
+          <MobileLogout />
         </div>
         <UserEditLinks />
       </div>
