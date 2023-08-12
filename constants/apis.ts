@@ -1,1 +1,1 @@
-export const BASE_URL = "https://fit-tering.com/api/v1";
+export const BASE_URL = "https://sub.fit-tering.com/api/v1";
