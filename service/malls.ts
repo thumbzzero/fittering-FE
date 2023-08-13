@@ -1,5 +1,4 @@
-import { readFile } from 'fs/promises';
-import path from 'path';
+import { customFetch } from '@/utils/customFetch';
 
 export type MallPreview = {
   mallId: number;
@@ -17,7 +16,6 @@ export type Mall = {
 };
 
 export async function getRankedMallPreview(): Promise<MallPreview[]> {
-  // 더미 데이터 읽어옴
-  const filePath = path.join(process.cwd(), 'data', 'malls.json');
-  return readFile(filePath, 'utf-8').then<MallPreview[]>(JSON.parse);
+  const response = await customFetch('/malls/rank/preview');
+  return response.json();
 }
