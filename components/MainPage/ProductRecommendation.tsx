@@ -3,7 +3,7 @@
 import Section from '@/components/Section';
 import { getProductPreview, ProductPreview } from '@/service/product';
 import { useEffect, useState } from 'react';
-import ProductSlide from '@/components/Products/ProductSlide';
+import ProductSlider from '@/components/Products/ProductSlider';
 import ProductsGrid from '@/components/Products/ProductsGrid';
 import ProductNotFound from '@/components//Products/ProductNotFound';
 
@@ -40,7 +40,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
         <>
           <Section sectionName={sectionName} />
           {isMobile ? (
-            <ProductSlide products={products} />
+            <ProductSlider products={products} />
           ) : (
             <ProductsGrid products={products} />
           )}

@@ -8,7 +8,7 @@ type Props = {
   products: ProductPreview[];
 };
 
-export default function ProductSlide({ products }: Props) {
+export default function ProductSlider({ products }: Props) {
   const settings = {
     arrows: false,
     dots: true,
