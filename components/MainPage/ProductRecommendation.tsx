@@ -13,6 +13,7 @@ type Props = {
 
 export default function ProductRecommendation({ recommendationType }: Props) {
   const [products, setProducts] = useState<ProductPreview[]>([]);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const sectionName =
     recommendationType === 1
@@ -28,6 +29,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
       setProducts(data);
     }
     fetchProduct();
+    setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640)
   }, [recommendationType]);
 
   return (
@@ -37,7 +39,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
       ) : (
         <>
           <Section sectionName={sectionName} />
-          {typeof window !== 'undefined' && window.innerWidth < 640 ? (
+          {isMobile ? (
             <ProductSlide products={products} />
           ) : (
             <ProductsGrid products={products} />
