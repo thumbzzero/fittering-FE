@@ -11,7 +11,7 @@ export type Category = {
 };
 
 export const outer: Category = {
-  index: 0,
+  index: 1,
   name: '아우터',
   url: '/categories/outer',
   sub: [
@@ -49,7 +49,7 @@ export const outer: Category = {
 };
 
 export const top: Category = {
-  index: 1,
+  index: 2,
   name: '상의',
   url: '/categories/top',
   sub: [
@@ -77,24 +77,24 @@ export const top: Category = {
 };
 
 export const dress: Category = {
-  index: 2,
+  index: 3,
   name: '원피스',
   url: '/categories/dress',
   sub: [],
 };
 
 export const bottom: Category = {
-  index: 3,
+  index: 4,
   name: '하의',
   url: '/categories/bottom',
   sub: [
     {
-      index: 11,
+      index: 12,
       name: '바지',
       url: '/categories/bottom/pants',
     },
     {
-      index: 12,
+      index: 13,
       name: '치마',
       url: '/categories/bottom/skirt',
     },
