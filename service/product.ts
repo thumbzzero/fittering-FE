@@ -17,6 +17,13 @@ export async function getProductPreview(
   url: string
 ): Promise<ProductPreview[]> {
   const response = await customFetch(url);
+  return await response.json();
+}
+
+export async function getProductPreviewPaging(
+  url: string
+): Promise<ProductPreview[]> {
+  const response = await customFetch(url);
   const data: ProductPreviewResponse = await response.json();
   return data.content;
 }
