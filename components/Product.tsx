@@ -24,13 +24,18 @@ export default function Product({
           />
         </Link>
       </div>
-      <Link className="block font-semibold text-sm" href={`/malls/${mallName}`}>
-        {mallName}
-      </Link>
-      <Link className="block text-xs" href={`products/${productId}`}>
-        {productName}
-      </Link>
-      <span className="font-semibold text-xs">{price.toLocaleString()}</span>
+      <div className="flex flex-col gap-1 mt-3">
+        <Link
+          className="block font-semibold text-sm"
+          href={`/malls/${mallName}`}
+        >
+          {mallName}
+        </Link>
+        <Link className="block text-xs" href={`products/${productId}`}>
+          {productName}
+        </Link>
+        <span className="font-semibold text-xs">{price.toLocaleString()}</span>
+      </div>
     </>
   );
 }

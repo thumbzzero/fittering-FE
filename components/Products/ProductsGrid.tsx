@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProductsGrid({ products }: Props) {
   return (
-    <ul className="grid gap-4 mt-4 grid-cols-4 overflow-hidden items-center">
+    <ul className="grid gap-4 mt-4 grid-cols-2 sm:grid-cols-4 overflow-hidden items-center">
       {products.map((product) => (
         <li key={product.productId}>
           <Product product={product} />
