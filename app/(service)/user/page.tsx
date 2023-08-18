@@ -1,4 +1,4 @@
-import FavoriteProducts from '@/components/MyPage/FavoriteProducts';
+import FavoriteProducts from '@/components/FavoriteProducts';
 import RecentProducts from '@/components/MyPage/RecentProducts';
 import Link from 'next/link';
 import React from 'react';
@@ -11,7 +11,7 @@ function MyPage(props: Props) {
     <>
       <MyPageCommon />
       <RecentProducts />
-      <FavoriteProducts />
+      <FavoriteProducts isPreview={true} />
       <div className="mt-8 pt-6 border-t-[1.5px] border-nav-black text-center md:text-right">
         <Link
           className="md:text-right text-custom-gray-800 font-bold underline decoration-custom-gray-800"
