@@ -1,13 +1,13 @@
 import { customFetch } from '@/utils/customFetch';
 
 export type MallPreview = {
-  mallId: number;
+  id: number;
   name: string;
   image: string;
 };
 
 export type Mall = {
-  mallId: number;
+  id: number;
   name: string;
   url: string;
   description: string;

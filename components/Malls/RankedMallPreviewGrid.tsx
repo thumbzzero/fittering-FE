@@ -8,7 +8,7 @@ export default function RankedMallPreviewGrid({ malls }: Props) {
     <ul className="grid gap-4 h-full md:h-48 grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 overflow-hidden items-center">
       {malls.length &&
         malls?.map((mall) => (
-          <li key={mall.mallId}>
+          <li key={mall.id}>
             <MallPreviewCard mall={mall} />
           </li>
         ))}
