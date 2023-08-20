@@ -23,6 +23,7 @@ export default function GlobalFilter() {
     const selectedButton = e.target as HTMLButtonElement;
     setSelectedFilter(selectedButton.id);
     localStorage.setItem('GLOBAL_FILTER', selectedButton.id);
+    window.location.reload();
   };
 
   return (
