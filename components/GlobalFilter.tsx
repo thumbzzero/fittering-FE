@@ -6,13 +6,10 @@ import { detectMobileDevice } from '../utils/detectMobileDevice';
 const buttonStyle = ' w-8 h-8 text-xs md:w-12 md:h-12 md:text-sm font-semibold';
 
 export default function GlobalFilter() {
-  const gender =
-    typeof window !== 'undefined'
-      ? localStorage.getItem('GLOBAL_FILTER')
-      : null;
   const [selectedFilter, setSelectedFilter] = useState(
-    gender === null ? 'A' : gender
+    localStorage.getItem('GLOBAL_FILTER') ?? 'A'
   );
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -34,39 +31,33 @@ export default function GlobalFilter() {
       }
     >
       <button
-        className={
-          (selectedFilter === 'A'
+        className={`${
+          selectedFilter === 'A'
             ? 'bg-main-color text-white'
-            : 'bg-white text-custom-gray-400') +
-          buttonStyle +
-          ' rounded-t-lg'
-        }
+            : 'bg-white text-custom-gray-400'
+        } ${buttonStyle} rounded-t-lg`}
         id="A"
         onClick={onGlobalFilterChange}
       >
         전체
       </button>
       <button
-        className={
-          (selectedFilter === 'M'
+        className={`${
+          selectedFilter === 'M'
             ? 'bg-main-color text-white'
-            : 'bg-white text-custom-gray-400') +
-          buttonStyle +
-          ' border-y'
-        }
+            : 'bg-white text-custom-gray-400'
+        } ${buttonStyle} border-y`}
         id="M"
         onClick={onGlobalFilterChange}
       >
         남성
       </button>
       <button
-        className={
-          (selectedFilter === 'F'
+        className={`${
+          selectedFilter === 'F'
             ? 'bg-main-color text-white'
-            : 'bg-white text-custom-gray-400') +
-          buttonStyle +
-          ' rounded-b-lg'
-        }
+            : 'bg-white text-custom-gray-400'
+        } ${buttonStyle} rounded-b-lg`}
         id="F"
         onClick={onGlobalFilterChange}
       >
