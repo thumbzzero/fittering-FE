@@ -3,6 +3,7 @@ import Image from 'next/image';
 import apple from '/public/Logo - SIWA - Logo-only - White@3x.png';
 import google from '/public/google.svg';
 import kakao from '/public/kakao.svg';
+import { SERVER_DOMAIN } from '@/constants/apis';
 
 export const SocialLogin = () => {
   const LinkStyle = 'cursor-pointer w-8 rounded-full drop-shadow-lg';
@@ -11,13 +12,13 @@ export const SocialLogin = () => {
       <>
         <Link
           className={`${LinkStyle} border-[0.5px] border-custom-gray-100`}
-          href="https://www.google.com"
+          href={`${SERVER_DOMAIN}/login/oauth/google`}
         >
           <Image className="p-[4px] " src={google} alt="Google" />
         </Link>
       </>
       <>
-        <Link className={LinkStyle} href="https://www.kakaocorp.com">
+        <Link className={LinkStyle} href={`${SERVER_DOMAIN}/login/oauth/kakao`}>
           <Image src={kakao} alt="Kakao" />
         </Link>
       </>
