@@ -25,7 +25,7 @@ export const SocialLogin = () => {
       <>
         <Link
           className={`${LinkStyle} overflow-hidden`}
-          href="https://www.apple.com"
+          href={`${SERVER_DOMAIN}/login/oauth/apple`}
         >
           <Image
             className="scale-[1.3] translate-y-[0.9px]"
