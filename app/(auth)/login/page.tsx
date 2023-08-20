@@ -5,6 +5,7 @@ import { LoginForm } from '@/components/Form/LoginForm';
 import { SocialLogin } from '@/components/Form/SocialLogin';
 import phone from '/public/iPhone 14 Pro - Space Black - Portrait.png';
 import logo from '/public/Fittering_logo.png';
+import SocialLoginRedirect from '@/components/Redirect/SocialLoginRedirect';
 
 type Props = {};
 
@@ -41,6 +42,7 @@ function LoginPage(props: Props) {
           </Link>
         </div>
       </div>
+      <SocialLoginRedirect />
     </div>
   );
 }
