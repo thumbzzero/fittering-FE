@@ -3,7 +3,6 @@
 import { ProductPreview } from '@/service/product';
 import Image from 'next/image';
 import Link from 'next/link';
-import temp from '/public/Fittering_logo.png';
 
 type Props = {
   product: ProductPreview;
@@ -18,7 +17,7 @@ export default function RecentProduct({
         <Link href={`/products/${productId}`}>
           <Image
             className="w-full h-full p-2 rounded-lg object-contain mx-auto border border-custom-gray-100 absolute top-0 left-0"
-            src={temp}
+            src={productImage}
             alt={`${productName} 상품 이미지`}
             width={150}
             height={150}
