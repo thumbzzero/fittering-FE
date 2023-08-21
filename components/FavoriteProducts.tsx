@@ -29,7 +29,7 @@ export default function FavoriteProducts({ isPreview }: Props) {
     }
     fetchProducts();
     setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640);
-  }, []);
+  }, [isPreview]);
   return (
     <>
       {isPreview ? (
