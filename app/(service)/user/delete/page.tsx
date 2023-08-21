@@ -1,12 +1,13 @@
 import React from 'react';
 import { UserDeleteForm } from '../../../../components/Form/UserDeleteForm';
+import MyPageSection from '@/components/MyPage/MyPageSection';
 
 type Props = {};
 
 function UserDeletePage(props: Props) {
   return (
     <div>
-      <h1 className="text-2xl font-bold">회원 탈퇴</h1>
+      <MyPageSection sectionName='회원 탈퇴' displayStyle='' />
       <UserDeleteForm />
     </div>
   );

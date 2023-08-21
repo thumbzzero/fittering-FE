@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 
-const divStyle = 'w-full my-4';
-const infoTypeLabelStyle = 'block text-lg my-2';
-const inputStyle = 'w-full md:w-1/2 border rounded-lg p-2';
+const divStyle = 'my-4 inline-block w-full md:w-3/5';
+const infoTypeLabelStyle = 'block my-2';
+const inputStyle = 'w-full border rounded-lg px-2 py-2.5 block mx-auto';
 
 export const UserDeleteForm = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ export const UserDeleteForm = () => {
   ) => {};
 
   return (
-    <form className="w-11/12 md:w-3/4 mx-auto md:ml-0">
+    <form className="w-full flex flex-col items-center justify-center md:mt-6">
       <div className={divStyle}>
         <label className={infoTypeLabelStyle} htmlFor="email">
           이메일
