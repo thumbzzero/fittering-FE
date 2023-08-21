@@ -1,3 +1,5 @@
+import MyPageSection from '@/components/MyPage/MyPageSection';
+import Section from '@/components/Section';
 import React from 'react';
 import { PasswordEditForm } from '../../../../../components/Form/PasswordEditForm';
 
@@ -6,7 +8,7 @@ type Props = {};
 function PasswordEditPage(props: Props) {
   return (
     <div>
-      <h1 className='text-2xl font-bold'>비밀번호 수정</h1>
+      <MyPageSection sectionName='비밀번호 변경' displayStyle='' />
       <PasswordEditForm />
     </div>
   );
