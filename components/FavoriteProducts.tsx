@@ -20,10 +20,10 @@ export default function FavoriteProducts({ isPreview }: Props) {
   useEffect(() => {
     async function fetchProducts() {
       if (isPreview) {
-        const data = await getProductPreview('/user/favorite_goods/preview');
+        const data = await getProductPreview('/users/favorite_goods/preview');
         setProducts(data);
       } else {
-        const data = await getProductPreviewPaging('/user/favorite_goods');
+        const data = await getProductPreviewPaging('/users/favorite_goods');
         setProducts(data);
       }
     }

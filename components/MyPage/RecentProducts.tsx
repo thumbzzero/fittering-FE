@@ -12,7 +12,7 @@ export default function RecentProducts() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const data = await getProductPreview('/user/recent/preview');
+      const data = await getProductPreview('/users/recent/preview');
       setProducts(data);
     }
     fetchProducts();

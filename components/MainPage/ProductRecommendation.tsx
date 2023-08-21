@@ -24,7 +24,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
     const blankOrPick = recommendationType === 2 ? '/pick' : '';
     async function fetchProduct() {
       const data = await getProductPreview(
-        `/user/recommendation${blankOrPick}/preview`
+        `/users/recommendation${blankOrPick}/preview`
       );
       setProducts(data);
     }

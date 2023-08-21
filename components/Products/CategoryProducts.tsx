@@ -16,7 +16,7 @@ export default function CategoryProducts({ categoryName }: Props) {
     categoryName.length === 0 ? 0 : categoryNameToIndex(categoryName);
   const gender = localStorage.getItem('GLOBAL_FILTER');
   const url =
-    '/category' +
+    '/categories' +
     (categoryName.length === 2 ? '/sub' : '') +
     `/${categoryId}/${gender}/${filterId}`;
 
