@@ -3,6 +3,7 @@
 import { getProductPreviewPaging, ProductPreview } from '@/service/product';
 import { categoryNameToIndex } from '@/utils/categoryNameToIndex';
 import { useState, useEffect } from 'react';
+import FilterIdDropdown from '../FilterIdDropdown';
 import ProductsGrid from './ProductsGrid';
 
 type Props = {
@@ -28,5 +29,10 @@ export default function CategoryProducts({ categoryName }: Props) {
 
     fetchProducts();
   }, [url]);
-  return <ProductsGrid products={products} />;
+  return (
+    <>
+      <FilterIdDropdown setFilterId={setFilterId} />
+      <ProductsGrid products={products} />
+    </>
+  );
 }

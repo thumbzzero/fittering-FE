@@ -6,6 +6,7 @@ import GlobalMenu from '@/components/GlobalMenu';
 import { useSearchParams } from 'next/navigation';
 import { ProductPreview, getProductPreviewPaging } from '@/service/product';
 import ProductsGrid from '@/components/Products/ProductsGrid';
+import FilterIdDropdown from '@/components/FilterIdDropdown';
 
 type Props = {};
 
@@ -33,6 +34,7 @@ function SearchPage(props: Props) {
         <span className="text-base sm:text-xl text-main-color">{`'${keyword}'`}</span>
         에 대한 검색 결과
       </h1>
+      <FilterIdDropdown setFilterId={setFilterId} />
       {products.length !== 0 ? (
         <ProductsGrid products={products} />
       ) : (
