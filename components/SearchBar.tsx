@@ -3,10 +3,15 @@
 import Image from 'next/image';
 import search from '/public/icon/search_green.svg';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 export default function SearchBar() {
-  const [keyword, setKeyword] = useState('');
+  const pathname = usePathname();
+  const searchParam = useSearchParams();
+
+  const [keyword, setKeyword] = useState(
+    pathname === '/search' ? searchParam.get('keyword') ?? '' : ''
+  );
   const router = useRouter();
 
   const handleKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
