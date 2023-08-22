@@ -5,8 +5,8 @@ import logo from '/public/Fittering_logo.png';
 import { usePathname } from 'next/navigation';
 import { WebNavbar } from './Navbar/WebNavbar';
 import Link from 'next/link';
-import search from '/public/icon/search_green.svg';
 import { logout } from '../utils/logout';
+import SearchBar from './SearchBar';
 
 const hideURL = ['/login', '/signup'];
 
@@ -29,18 +29,7 @@ export default function Header() {
           />
         </Link>
       </div>
-      <div className="relative w-[78%] xs:w-[80%] md:w-[50%]">
-        <input
-          className="border-[0.5px] bg-custom-gray-50 rounded right-0 w-11/12 md:w-full h-9 md:h-10 pl-4 text-xs absolute top-[50%] translate-y-[-50%]"
-          type="text"
-          placeholder="검색어를 입력하세요."
-        />
-        <Image
-          className="absolute right-0 md:right-1 top-[50%] translate-y-[-50%] md:r-1/12"
-          src={search}
-          alt=""
-        />
-      </div>
+      <SearchBar />
       <div className="hidden w-0 md:inline-block md:relative md:w-[33%]">
         <WebNavbar />
         <button
