@@ -30,11 +30,9 @@ export default function SearchBar() {
         onChange={handleKeywordChange}
         value={keyword}
       />
-      <Image
-        className="absolute right-0 md:right-1 top-[50%] translate-y-[-50%] md:r-1/12"
-        src={search}
-        alt=""
-      />
+      <button className="absolute right-0 md:right-1 top-[50%] translate-y-[-50%] md:r-1/12">
+        <Image src={search} alt="" />
+      </button>
     </form>
   );
 }
