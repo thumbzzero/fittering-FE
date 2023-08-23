@@ -1,5 +1,4 @@
-import { BASE_URL } from '@/constants/apis';
-import { login } from '@/service/auth';
+import { AUTH_URL } from '@/constants/apis';
 
 const accessToken =
   typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
@@ -14,7 +13,7 @@ export async function customFetch(
   options?: RequestInit
 ): Promise<Response> {
   const headers = { ...defaultHeaders, ...options?.headers };
-  const mergedURL = BASE_URL + url;
+  const mergedURL = AUTH_URL + url;
   const mergedOptions = { ...options, headers };
 
   const response = await fetch(mergedURL, mergedOptions);
