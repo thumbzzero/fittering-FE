@@ -17,6 +17,9 @@ export async function getProductPreview(
   url: string
 ): Promise<ProductPreview[]> {
   const response = await customFetch(url);
+  if (!response.ok) {
+    return [];
+  }
   return await response.json();
 }
 
@@ -24,6 +27,9 @@ export async function getProductPreviewPaging(
   url: string
 ): Promise<ProductPreview[]> {
   const response = await customFetch(url);
+  if (!response.ok) {
+    return [];
+  }
   const data: ProductPreviewResponse = await response.json();
   return data.content;
 }

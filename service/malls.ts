@@ -17,5 +17,8 @@ export type Mall = {
 
 export async function getRankedMallPreview(): Promise<MallPreview[]> {
   const response = await customFetch('/malls/rank/preview');
+  if (!response.ok) {
+    return [];
+  }
   return response.json();
 }
