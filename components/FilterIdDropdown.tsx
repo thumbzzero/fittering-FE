@@ -1,3 +1,5 @@
+'use client';
+
 import { FILTER_ID } from '@/constants/filterId';
 
 type Props = {

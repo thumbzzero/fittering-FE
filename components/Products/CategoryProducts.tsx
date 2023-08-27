@@ -1,34 +1,59 @@
 'use client';
 
-import { getProductPreviewPaging, ProductPreview } from '@/service/product';
 import { categoryNameToIndex } from '@/utils/categoryNameToIndex';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FilterIdDropdown from '../FilterIdDropdown';
 import ProductsGrid from './ProductsGrid';
+import { CategoryProductsData } from '@/types/categoryProducts';
 
 type Props = {
   categoryName: string[];
+  mainCategoriesProducts: CategoryProductsData[];
+  subCategoriesProducts: CategoryProductsData[];
 };
 
-export default function CategoryProducts({ categoryName }: Props) {
-  const [products, setProducts] = useState<ProductPreview[]>([]);
+function setProducts(
+  { categoryName, mainCategoriesProducts, subCategoriesProducts }: Props,
+  gender: string,
+  filterId: number
+) {
+  if (categoryName.length === 0)
+    return mainCategoriesProducts.filter(
+      (products) =>
+        products.categoryId === 0 &&
+        products.gender === gender &&
+        products.filterId === filterId
+    )[0].contents;
+
+  if (categoryName.length === 1)
+    return mainCategoriesProducts.filter(
+      (products) =>
+        products.categoryId === categoryNameToIndex(categoryName) &&
+        products.gender === gender &&
+        products.filterId === filterId
+    )[0].contents;
+
+  return subCategoriesProducts.filter(
+    (products) =>
+      products.categoryId === categoryNameToIndex(categoryName) &&
+      products.gender === gender &&
+      products.filterId === filterId
+  )[0].contents;
+}
+
+export default function CategoryProducts({
+  categoryName,
+  mainCategoriesProducts,
+  subCategoriesProducts,
+}: Props) {
+  const gender = localStorage.getItem('GLOBAL_FILTER') ?? 'A';
   const [filterId, setFilterId] = useState(0);
-  const categoryId =
-    categoryName.length === 0 ? 0 : categoryNameToIndex(categoryName);
-  const gender = localStorage.getItem('GLOBAL_FILTER');
-  const url =
-    '/categories' +
-    (categoryName.length === 2 ? '/sub' : '') +
-    `/${categoryId}/${gender}/${filterId}`;
+  const products = setProducts(
+    { categoryName, mainCategoriesProducts, subCategoriesProducts },
+    gender,
+    filterId
+  );
 
-  useEffect(() => {
-    async function fetchProducts() {
-      const data = await getProductPreviewPaging(url);
-      setProducts(data);
-    }
-
-    fetchProducts();
-  }, [url]);
   return (
     <>
       <FilterIdDropdown setFilterId={setFilterId} />
