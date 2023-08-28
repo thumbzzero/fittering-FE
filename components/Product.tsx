@@ -6,14 +6,17 @@ import Link from 'next/link';
 
 type Props = {
   product: ProductPreview;
+  children?: React.ReactNode;
 };
 
 export default function Product({
   product: { productId, productImage, productName, price, mallName },
+  children,
 }: Props) {
   return (
     <>
-      <div className="w-[calc((100vw-3rem)/2)] h-[calc((100vw-3rem)/2)] sm:w-[calc((100vw-5rem)/4)] sm:h-[calc((100vw-5rem)/4)] lg:w-[calc((1024px-3rem)/4)] lg:h-[calc((1024px-3rem)/4)] mb-2 mx-auto">
+      <div className="relative w-[calc((100vw-3rem)/2)] h-[calc((100vw-3rem)/2)] sm:w-[calc((100vw-5rem)/4)] sm:h-[calc((100vw-5rem)/4)] lg:w-[calc((1024px-3rem)/4)] lg:h-[calc((1024px-3rem)/4)] mb-2 mx-auto">
+        {children}
         <Link href={`/products/${productId}`}>
           <Image
             className="w-full h-full rounded-lg object-contain mx-auto border border-custom-gray-100"

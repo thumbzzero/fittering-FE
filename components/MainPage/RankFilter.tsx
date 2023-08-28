@@ -30,5 +30,5 @@ export default function RankFilter({
     femaleProducts,
   });
 
-  return <ProductsGrid products={products} />;
+  return <ProductsGrid products={products} isRank={true} />;
 }
