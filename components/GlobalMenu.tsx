@@ -5,6 +5,8 @@ import Link from 'next/link';
 import eye from 'public/icon/eye.svg';
 import up from 'public/icon/up.svg';
 import down from 'public/icon/down.svg';
+import disabledUp from 'public/icon/disabled_up.svg';
+import disabledDown from 'public/icon/disabled_down.svg';
 import { detectMobileDevice } from '../utils/detectMobileDevice';
 import { useState, useEffect } from 'react';
 
@@ -13,9 +15,13 @@ const buttonStyle =
 
 export default function GlobalMenu() {
   const [isMobile, setIsMobile] = useState(false);
-  
+  const [isUpActive, setIsUpActive] = useState(false);
+  const [isDownActive, setIsDownActive] = useState(
+    document.documentElement.scrollHeight > window.innerHeight
+  );
+
   useEffect(() => {
-    setIsMobile(detectMobileDevice(window.navigator.userAgent))
+    setIsMobile(detectMobileDevice(window.navigator.userAgent));
   }, []);
 
   const MoveToTop = () => {
@@ -29,6 +35,18 @@ export default function GlobalMenu() {
     });
   };
 
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      setIsUpActive(true);
+    } else setIsUpActive(false);
+    if (
+      window.scrollY + window.innerHeight <
+      document.documentElement.scrollHeight
+    ) {
+      setIsDownActive(true);
+    } else setIsDownActive(false);
+  });
+
   return (
     <div
       className={
@@ -39,11 +57,27 @@ export default function GlobalMenu() {
       <Link className={buttonStyle + ' rounded-t-lg'} href="">
         <Image className="mx-auto h-full" src={eye} alt="최근 본 상품" />
       </Link>
-      <button className={`${buttonStyle} border-y`} onClick={MoveToTop}>
-        <Image className="mx-auto h-full" src={up} alt="˄" />
+      <button
+        className={`${buttonStyle} border-y`}
+        onClick={MoveToTop}
+        disabled={!isUpActive}
+      >
+        <Image
+          className="mx-auto h-full"
+          src={isUpActive ? up : disabledUp}
+          alt="˄"
+        />
       </button>
-      <button className={`${buttonStyle} rounded-b-lg`} onClick={MoveToDown}>
-        <Image className="mx-auto h-full" src={down} alt="⌄" />
+      <button
+        className={`${buttonStyle} rounded-b-lg`}
+        onClick={MoveToDown}
+        disabled={!isDownActive}
+      >
+        <Image
+          className="mx-auto h-full"
+          src={isDownActive ? down : disabledDown}
+          alt="⌄"
+        />
       </button>
     </div>
   );
