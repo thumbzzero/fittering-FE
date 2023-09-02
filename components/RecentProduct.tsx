@@ -16,7 +16,7 @@ export default function RecentProduct({
       <div className="flex-[0.4] mx-auto w-full relative after:block after:pb-[100%] ">
         <Link href={`/products/${productId}`}>
           <Image
-            className="w-full h-full p-2 rounded-lg object-contain mx-auto border border-custom-gray-100 absolute top-0 left-0"
+            className="w-full h-full rounded-lg object-contain mx-auto border border-custom-gray-100 absolute top-0 left-0"
             src={productImage}
             alt={`${productName} 상품 이미지`}
             width={150}
