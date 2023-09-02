@@ -10,7 +10,7 @@ function MyPage(props: Props) {
   return (
     <>
       <MyPageCommon />
-      <RecentProducts />
+      <RecentProducts isPreview={true} />
       <FavoriteProducts isPreview={true} />
       <div className="mt-8 pt-6 border-t-[1.5px] border-nav-black text-center md:text-right">
         <Link

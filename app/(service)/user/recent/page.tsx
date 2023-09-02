@@ -1,9 +1,16 @@
+import Section from '@/components/Section';
 import React from 'react';
+import RecentProducts from '@/components/MyPage/RecentProducts';
 
 type Props = {};
 
 function RecentProductPage(props: Props) {
-  return <div>최근 본 상품 전체 보기</div>;
+  return (
+    <div>
+      <Section sectionName="최근 본 상품" />
+      <RecentProducts isPreview={false} />
+    </div>
+  );
 }
 
 export default RecentProductPage;
