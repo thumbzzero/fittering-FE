@@ -1,9 +1,14 @@
+import MallPreviewFilter from '@/components/Malls/MallPreviewFilter';
 import React from 'react';
 
 type Props = {};
 
 function FavoriteMallPage(props: Props) {
-  return <div>즐겨찾기 쇼핑몰</div>;
+  return (
+    <div>
+      <MallPreviewFilter isRanking={false} />
+    </div>
+  );
 }
 
 export default FavoriteMallPage;
