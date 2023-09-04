@@ -12,6 +12,7 @@ export type MallPreview = {
   image: string;
   description: string;
   view: number;
+  isFavorite: boolean;
   products: {
     productId: number;
     productImage: string;
@@ -24,6 +25,7 @@ export type Mall = {
   url: string;
   image: string;
   description: string;
+  isFavorite: boolean;
 };
 
 export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
