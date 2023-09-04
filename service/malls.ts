@@ -33,3 +33,13 @@ export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
   }
   return response.json();
 }
+
+export async function getMalls(
+  filter: 'rank' | 'favorite_malls'
+): Promise<MallPreview[]> {
+  const response = await customFetch(`/malls/${filter}`);
+  if (!response.ok) {
+    return [];
+  }
+  return response.json();
+}

@@ -1,31 +1,46 @@
 'use client';
 
 import { MallPreview } from '@/service/malls';
-import Image from 'next/image';
-import Link from 'next/link';
+import MallPreviewImage from './MallPreviewImage';
+import MallPreviewLogo from './MallPreviewLogo';
+import MallPreviewDescription from './MallPreviewDescription';
+import MallPreviewName from './MallPreviewName';
+import StarButton from './StarButton';
 
-type Props = { mall: MallPreview };
+type Props = {
+  malls: MallPreview[];
+};
 
-export default function MallPreview({ mall: { name, image } }: Props) {
+export default function MallPreviewCard({ malls }: Props) {
   return (
-    <div className="text-center">
-      <div className="w-24 h-24 md:w-44 md:h-36 mx-auto mb-2">
-        <Link href={`/malls/${name.split(' ').join('').toLowerCase()}`}>
-          <Image
-            className="w-full h-full p-2 md:p-4 rounded-lg object-contain mx-auto border border-custom-gray-100"
-            src={image}
-            alt={name}
-            width={200}
-            height={200}
-          />
-        </Link>
-      </div>
-      <Link
-        className="font-semibold text-sm"
-        href={`/malls/${name.split(' ').join('').toLowerCase()}`}
-      >
-        {name}
-      </Link>
+    <div className="flex flex-col gap-4">
+      {malls.map((mall, index) => (
+        <div
+          key={mall.id}
+          className="flex flex-col gap-4 rounded border px-2 py-3 md:px-4"
+        >
+          <div className="flex gap-4 md:gap-6 items-center relative">
+            <span className="md:text-lg font-semibold">{index + 1}</span>
+            <MallPreviewLogo name={mall.name} image={mall.image} />
+
+            <div className="flex flex-col gap-1 max-w-[55%] xs:max-w-[65%] md:max-w-[75%]">
+              <MallPreviewName name={mall.name} />
+              <MallPreviewDescription description={mall.description} />
+            </div>
+
+            <StarButton />
+          </div>
+
+          <div className="grid grid-cols-5 gap-2 md:gap-4">
+            {mall.products.map((product) => (
+              <MallPreviewImage
+                key={product.productId}
+                productImage={product.productImage}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
