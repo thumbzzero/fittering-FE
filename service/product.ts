@@ -13,6 +13,31 @@ export type ProductPreviewResponse = {
   content: ProductPreview[];
 };
 
+export type Product = {
+  favoriteCount: number;
+  productImage: string;
+  productName: string;
+  productGender: string;
+  price: number;
+  mallName: string;
+  mallUrl: string;
+  mallImage: string;
+  origin: string;
+  category: string;
+  view: number;
+  popularGender: string;
+  popularAgeRange: number;
+  sizes: {
+    name: string;
+    full: number;
+    waist: number;
+    thigh: number;
+    rise: number;
+    bottomWidth: number;
+    hipWidth: number;
+  }[];
+}
+
 export async function getProductPreview(
   url: string
 ): Promise<ProductPreview[]> {
