@@ -28,7 +28,7 @@ export default function MallPreviewCard({ malls }: Props) {
               <MallPreviewDescription description={mall.description} />
             </div>
 
-            <StarButton />
+            <StarButton mallId={mall.id} initialFavorite={mall.isFavorite} />
           </div>
 
           <div className="grid grid-cols-5 gap-2 md:gap-4">

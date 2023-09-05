@@ -45,3 +45,17 @@ export async function getMalls(
   }
   return response.json();
 }
+
+export async function addFavorites(mallId: number): Promise<Response> {
+  const response = await customFetch(`/favorites/${mallId}`, {
+    method: 'POST',
+  });
+  return response;
+}
+
+export async function deleteFavorites(mallId: number): Promise<Response> {
+  const response = await customFetch(`/favorites/${mallId}`, {
+    method: 'DELETE',
+  });
+  return response;
+}
