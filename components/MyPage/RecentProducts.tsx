@@ -1,6 +1,6 @@
 'use client';
 
-import MyPageSection from '@/components/MyPage/MyPageSection';
+import LineSection from '@/components/LineSection';
 import {
   getProductPreview,
   ProductPreview,
@@ -37,7 +37,7 @@ export default function RecentProducts({ isPreview }: Props) {
     return (
       <>
         {isPreview ? (
-          <MyPageSection sectionName="최근 본 상품" displayStyle="" />
+          <LineSection sectionName="최근 본 상품" displayStyle="" />
         ) : null}
         <div className="mt-8 text-center text-custom-gray-800">
           최근 본 상품이 존재하지 않습니다.
@@ -53,7 +53,7 @@ export default function RecentProducts({ isPreview }: Props) {
   return (
     <>
       {isPreview ? (
-        <MyPageSection sectionName="최근 본 상품" displayStyle="" />
+        <LineSection sectionName="최근 본 상품" displayStyle="" />
       ) : null}
       {isMobile && isPreview ? (
         <ProductSlider products={products} />

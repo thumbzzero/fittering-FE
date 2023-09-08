@@ -1,6 +1,6 @@
 'use client';
 
-import MyPageSection from '@/components/MyPage/MyPageSection';
+import LineSection from '@/components/LineSection';
 import { useState, useEffect } from 'react';
 import {
   getProductPreview,
@@ -33,7 +33,7 @@ export default function FavoriteProducts({ isPreview }: Props) {
   return (
     <>
       {isPreview ? (
-        <MyPageSection sectionName="좋아요한 상품" displayStyle="" />
+        <LineSection sectionName="좋아요한 상품" displayStyle="" />
       ) : null}
       <ProductsGrid
         products={isPreview && isMobile ? products.slice(2) : products}

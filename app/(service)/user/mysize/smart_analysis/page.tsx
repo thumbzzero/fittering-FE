@@ -2,7 +2,7 @@ import MobileSection from '@/components/MobileSection';
 import Guideline from '@/components/MyPage/MySize/Guideline';
 import SmartAnalysisPhotoSubmitForm from '@/components/MyPage/MySize/SmartAnalysisPhotoSubmitForm';
 import React from 'react';
-import MyPageSection from '../../../../../components/MyPage/MyPageSection';
+import LineSection from '../../../../../components/LineSection';
 import Section from '../../../../../components/Section';
 
 type Props = {};
@@ -10,7 +10,7 @@ type Props = {};
 function SmartAnalysisPage(props: Props) {
   return (
     <>
-      <MyPageSection
+      <LineSection
         sectionName="내 맞춤 정보 설정"
         displayStyle="hidden md:block"
       />

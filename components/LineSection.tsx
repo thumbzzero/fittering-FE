@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
 type Props = {
-  sectionName: '최근 본 상품' | '좋아요한 상품' | '내 맞춤 정보 설정' | '회원 정보 수정' | '비밀번호 변경' | '회원 탈퇴';
+  sectionName: string;
   displayStyle: string;
 };
 
-export default function MyPageSection({ sectionName, displayStyle }: Props) {
+export default function LineSection({ sectionName, displayStyle }: Props) {
   const href =
     sectionName === '최근 본 상품' ? '/user/recent' : '/favorite_goods';
   return (

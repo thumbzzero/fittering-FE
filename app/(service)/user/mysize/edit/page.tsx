@@ -1,5 +1,5 @@
 import MobileSection from '@/components/MobileSection';
-import MyPageSection from '@/components/MyPage/MyPageSection';
+import LineSection from '@/components/LineSection';
 import EditForm from '@/components/MyPage/MySize/EditForm';
 import GuidelinePic from '@/components/MyPage/MySize/GuidelinePic';
 import { getMySize } from '@/service/mysize';
@@ -12,7 +12,7 @@ async function MySizeEditPage(props: Props) {
   const mySize = await getMySize();
   return (
     <>
-      <MyPageSection
+      <LineSection
         sectionName="내 맞춤 정보 설정"
         displayStyle="hidden md:block"
       />
