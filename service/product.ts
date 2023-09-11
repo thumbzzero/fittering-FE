@@ -73,3 +73,11 @@ export async function getProductPreviewPagingWithoutToken(
   const data: ProductPreviewResponse = await response.json();
   return data.content;
 }
+
+export async function getProduct(productId: number): Promise<Product> {
+  const response = await customFetch(`/products/${productId}`);
+  if (!response.ok) {
+    return {} as Product;
+  }
+  return await response.json();
+}
