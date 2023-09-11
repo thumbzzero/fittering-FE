@@ -1,5 +1,7 @@
 'use client';
 
+import MobileSection from '@/components/MobileSection';
+import Section from '@/components/Section';
 import { getProduct, Product } from '@/service/product';
 import React, { useEffect, useState } from 'react';
 
@@ -20,7 +22,14 @@ function ProductPage({ params: { productId } }: Props) {
     fetchProduct();
   }, [productId]);
 
-  return <div></div>;
+  return (
+    <div>
+      <div className="hidden md:block">
+        <Section sectionName={product.productName} />
+      </div>
+      <MobileSection sectionName={product.productName} />
+    </div>
+  );
 }
 
 export default ProductPage;
