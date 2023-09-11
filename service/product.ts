@@ -1,3 +1,4 @@
+import { BottomSize, DressSize, TopSize } from '@/types/sizes';
 import { customFetch, serverFetch } from '@/utils/customFetch';
 
 export type ProductPreview = {
@@ -27,16 +28,9 @@ export type Product = {
   view: number;
   popularGender: string;
   popularAgeRange: number;
-  sizes: {
-    name: string;
-    full: number;
-    waist: number;
-    thigh: number;
-    rise: number;
-    bottomWidth: number;
-    hipWidth: number;
-  }[];
-}
+  sizes: TopSize[] | BottomSize[] | DressSize[];
+  isFavorite: boolean;
+};
 
 export async function getProductPreview(
   url: string
