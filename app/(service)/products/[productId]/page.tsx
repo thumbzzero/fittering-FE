@@ -2,6 +2,7 @@
 
 import MobileSection from '@/components/MobileSection';
 import ProductSummary from '@/components/ProductDetail/ProductSummary';
+import SizeInfo from '@/components/ProductDetail/SizeInfo';
 import Section from '@/components/Section';
 import { getProduct, Product } from '@/service/product';
 import React, { useEffect, useState } from 'react';
@@ -30,6 +31,7 @@ function ProductPage({ params: { productId } }: Props) {
       </div>
       <MobileSection sectionName={product.productName} />
       <ProductSummary product={product} />
+      <SizeInfo category={product.category} sizes={product.sizes} />
     </div>
   );
 }
