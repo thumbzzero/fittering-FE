@@ -25,11 +25,15 @@ export type Product = {
   mallImage: string;
   origin: string;
   category: string;
+  subCategory: string;
   view: number;
   popularGender: string;
   popularAgeRange: number;
-  sizes: TopSize[] | BottomSize[] | DressSize[];
   isFavorite: boolean;
+  sizes: TopSize[] | BottomSize[] | DressSize[];
+  descriptions: { url: string }[];
+  popularAgeRangePercents: number[];
+  popularGenderPercents: number[];
 };
 
 export async function getProductPreview(
