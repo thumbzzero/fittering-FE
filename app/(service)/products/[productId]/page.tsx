@@ -1,6 +1,7 @@
 'use client';
 
 import MobileSection from '@/components/MobileSection';
+import ProductSummary from '@/components/ProductDetail/ProductSummary';
 import Section from '@/components/Section';
 import { getProduct, Product } from '@/service/product';
 import React, { useEffect, useState } from 'react';
@@ -28,6 +29,7 @@ function ProductPage({ params: { productId } }: Props) {
         <Section sectionName={product.productName} />
       </div>
       <MobileSection sectionName={product.productName} />
+      <ProductSummary product={product} />
     </div>
   );
 }
