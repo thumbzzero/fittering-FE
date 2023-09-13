@@ -1,5 +1,9 @@
+'use client';
+
 import { getGenderData } from '../../utils/getGenderData';
 import { getAgeRange } from '@/utils/getAgeRange';
+import LikesButton from './LikesButton';
+import OriginLink from './OriginLink';
 
 type Props = {
   description: {
@@ -37,8 +41,13 @@ export default function ProductDescription({
     { label: '인기 연령대', data: getAgeRange(popularAgeRange) },
     { label: '가격', data: `${price?.toLocaleString()}원` },
   ];
+
   return (
     <div>
+      <div className="flex gap-1 justify-end items-center sm:block sm:relative">
+        <LikesButton isFavorite={isFavorite} />
+        <OriginLink origin={origin} />
+      </div>
       <table>
         <tbody>
           {descriptions.map((info, index) => (

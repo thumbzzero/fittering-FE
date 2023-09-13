@@ -85,3 +85,17 @@ export async function getProduct(productId: number): Promise<Product> {
   }
   return await response.json();
 }
+
+export async function addFavorites(productId: number): Promise<Response> {
+  const response = await customFetch(`/users/favorite_goods/${productId}`, {
+    method: 'POST',
+  });
+  return response;
+}
+
+export async function deleteFavorites(productId: number): Promise<Response> {
+  const response = await customFetch(`/users/favorite_goods/${productId}`, {
+    method: 'DELETE',
+  });
+  return response;
+}
