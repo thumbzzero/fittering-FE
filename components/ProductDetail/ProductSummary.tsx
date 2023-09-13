@@ -1,6 +1,9 @@
+'use client';
+
 import { Product } from '@/service/product';
 import Image from 'next/image';
 import ProductDescription from './ProductDescription';
+import ProductGraphs from './ProductGraphs';
 
 type Props = {
   product: Product;
@@ -19,6 +22,8 @@ export default function ProductSummary({ product }: Props) {
     origin,
     popularGender,
     popularAgeRange,
+    popularAgeRangePercents,
+    popularGenderPercents,
   } = product;
 
   const description = {
@@ -43,6 +48,12 @@ export default function ProductSummary({ product }: Props) {
       />
       <div className="flex-[0.65] flex flex-col gap-4">
         <ProductDescription description={description} />
+        <ProductGraphs
+          popularGender={popularGender}
+          popularAgeRange={popularAgeRange}
+          popularAgeRangePercents={popularAgeRangePercents}
+          popularGenderPercents={popularGenderPercents}
+        />
       </div>
     </div>
   );
