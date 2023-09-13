@@ -1,4 +1,5 @@
 import { getGenderData } from '../../utils/getGenderData';
+import { getAgeRange } from '@/utils/getAgeRange';
 
 type Props = {
   description: {
@@ -31,9 +32,9 @@ export default function ProductDescription({
     { label: '쇼핑몰', data: mallName },
     { label: '상품명', data: productName },
     { label: '성별', data: getGenderData(productGender) },
-    { label: '좋아요', data: favoriteCount },
+    { label: '좋아요', data: `${favoriteCount}개` },
     { label: '조회수', data: view },
-    { label: '인기 연령대', data: popularAgeRange ?? '-' },
+    { label: '인기 연령대', data: getAgeRange(popularAgeRange) },
     { label: '가격', data: `${price?.toLocaleString()}원` },
   ];
   return (
