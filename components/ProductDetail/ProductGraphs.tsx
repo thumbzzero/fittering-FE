@@ -1,5 +1,7 @@
 import { getAgeRange } from '@/utils/getAgeRange';
+import PopularAgeRangeGraph from './PopularAgeRangeGraph';
 import PopularInformation from './PopularInformation';
+import PopularGenderGraph from './PopularGenderGraph';
 
 type Props = {
   popularGender: string;
@@ -15,11 +17,15 @@ export default function ProductGraphs({
   popularGenderPercents,
 }: Props) {
   return (
-    <>
+    <div>
       <PopularInformation
         popularGender={popularGender}
         popularAgeRange={getAgeRange(popularAgeRange)}
       />
-    </>
+      <PopularAgeRangeGraph
+        popularAgeRange={popularAgeRange}
+        popularAgeRangePercents={popularAgeRangePercents}
+      />
+    </div>
   );
 }
