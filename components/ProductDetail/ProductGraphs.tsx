@@ -26,6 +26,7 @@ export default function ProductGraphs({
         popularAgeRange={popularAgeRange}
         popularAgeRangePercents={popularAgeRangePercents}
       />
+      <PopularGenderGraph popularGenderPercents={popularGenderPercents} />
     </div>
   );
 }

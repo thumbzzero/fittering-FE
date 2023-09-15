@@ -22,6 +22,8 @@ module.exports = {
         'border-gray': '#dddddd',
         'nav-black': '#111111',
         'button-black': '#333333',
+        'male-color': '#49B286',
+        'female-color': '#EC6868',
       },
       screens: {
         xs: '356px',
