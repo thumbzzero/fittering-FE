@@ -47,9 +47,9 @@ export default function PopularAgeRangeGraph({
   };
 
   return (
-    <div className="">
+    <div className="flex-1 w-full md:w-2/3 mt-2">
       <GraphLabel label="연령" />
-      <div className="md:flex-[0.7] mt-2 mx-auto">
+      <div className="w-full sm:w-4/5 md:w-full mt-2 mx-auto">
         <Bar data={data} options={options} />
       </div>
     </div>

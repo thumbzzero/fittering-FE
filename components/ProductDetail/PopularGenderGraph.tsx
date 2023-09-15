@@ -39,7 +39,7 @@ export default function PopularGenderGraph({ popularGenderPercents }: Props) {
   };
 
   return (
-    <div>
+    <div className="w-full md:w-1/3">
       <GraphLabel label="성별" />
       <div className="w-1/2 md:w-full mt-2 mx-auto">
         <Doughnut data={data} options={options} />

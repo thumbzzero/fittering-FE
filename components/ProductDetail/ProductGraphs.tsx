@@ -22,11 +22,13 @@ export default function ProductGraphs({
         popularGender={popularGender}
         popularAgeRange={getAgeRange(popularAgeRange)}
       />
-      <PopularAgeRangeGraph
-        popularAgeRange={popularAgeRange}
-        popularAgeRangePercents={popularAgeRangePercents}
-      />
-      <PopularGenderGraph popularGenderPercents={popularGenderPercents} />
+      <div className='flex flex-col md:flex-row gap-4'>
+        <PopularAgeRangeGraph
+          popularAgeRange={popularAgeRange}
+          popularAgeRangePercents={popularAgeRangePercents}
+        />
+        <PopularGenderGraph popularGenderPercents={popularGenderPercents} />
+      </div>
     </div>
   );
 }
