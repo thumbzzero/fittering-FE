@@ -35,6 +35,7 @@ export default function MallPreviewCard({ malls }: Props) {
             {mall.products.map((product) => (
               <MallPreviewImage
                 key={product.productId}
+                productId={product.productId}
                 productImage={product.productImage}
               />
             ))}
