@@ -1,6 +1,7 @@
 'use client';
 
 import MobileSection from '@/components/MobileSection';
+import DetailInfo from '@/components/ProductDetail/DetailInfo';
 import ProductSummary from '@/components/ProductDetail/ProductSummary';
 import SizeInfo from '@/components/ProductDetail/SizeInfo';
 import Section from '@/components/Section';
@@ -32,6 +33,7 @@ function ProductPage({ params: { productId } }: Props) {
       <MobileSection sectionName={product.productName} />
       <ProductSummary product={product} />
       <SizeInfo category={product.category} sizes={product.sizes} />
+      <DetailInfo descriptions={product.descriptions} />
     </div>
   );
 }
