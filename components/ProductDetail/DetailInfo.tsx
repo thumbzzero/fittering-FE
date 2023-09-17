@@ -8,10 +8,10 @@ type Props = {
 
 export default function DetailInfo({ descriptions }: Props) {
   const details = descriptions?.map((description, index) => {
-    if (description.url.includes('image')) {
-      return <DetailImage key={index} src={description.url} />;
+    if (description.url.includes('txt')) {
+      return <DetailText key={index} url={description.url} />;
     }
-    return <DetailText key={index} url={description.url} />;
+    return <DetailImage key={index} src={description.url} />;
   });
 
   return (
