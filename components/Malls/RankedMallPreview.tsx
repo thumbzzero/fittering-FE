@@ -1,12 +1,12 @@
 'use client';
 
-import { getRankedMallPreview, MallPreview } from '@/service/malls';
+import { getRankedMallPreview, MallRankingPreview } from '@/service/malls';
 import RankedMallPreviewGrid from './RankedMallPreviewGrid';
 import { useEffect, useState } from 'react';
 import LinkButton from '../LinkButton';
 
 export default function RankedMallPreview() {
-  const [malls, setMalls] = useState<MallPreview[]>([]);
+  const [malls, setMalls] = useState<MallRankingPreview[]>([]);
   useEffect(() => {
     async function fetchMall() {
       const data = await getRankedMallPreview();

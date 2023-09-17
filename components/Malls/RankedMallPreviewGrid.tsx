@@ -1,7 +1,7 @@
-import { MallPreview } from '@/service/malls';
-import MallPreviewCard from './MallPreviewCard';
+import { MallRankingPreview } from '@/service/malls';
+import RankedMallPreviewCard from './RankedMallPreviewCard';
 
-type Props = { malls: MallPreview[] };
+type Props = { malls: MallRankingPreview[] };
 
 export default function RankedMallPreviewGrid({ malls }: Props) {
   return (
@@ -9,7 +9,7 @@ export default function RankedMallPreviewGrid({ malls }: Props) {
       {malls.length &&
         malls?.map((mall) => (
           <li key={mall.id}>
-            <MallPreviewCard mall={mall} />
+            <RankedMallPreviewCard mall={mall} />
           </li>
         ))}
     </ul>
