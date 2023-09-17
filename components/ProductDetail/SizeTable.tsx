@@ -19,7 +19,7 @@ export default function SizeTable({ sizeData }: Props) {
           {sizeData.map((size, index) => {
             if (index === 0) {
               return size.map((info, index) => {
-                if (info.data !== undefined) {
+                if (info.data !== null && info.data !== undefined) {
                   return (
                     <th
                       key={index}
@@ -38,7 +38,7 @@ export default function SizeTable({ sizeData }: Props) {
         {sizeData?.map((size, index) => (
           <tr key={index}>
             {size.map((info, index) => {
-              if (info.data !== undefined) {
+              if (info.data !== null && info.data !== undefined) {
                 return (
                   <td
                     key={index}
