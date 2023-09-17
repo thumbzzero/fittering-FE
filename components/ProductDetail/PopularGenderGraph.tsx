@@ -23,7 +23,7 @@ export default function PopularGenderGraph({ popularGenderPercents }: Props) {
     ],
   };
 
-  const options: ChartOptions = {
+  const options: ChartOptions<'doughnut'> = {
     plugins: {
       legend: {
         display: true,
