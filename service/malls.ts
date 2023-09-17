@@ -4,6 +4,7 @@ export type MallRankingPreview = {
   id: number;
   name: string;
   image: string;
+  isFavorite: boolean;
 };
 
 export type MallPreview = {
