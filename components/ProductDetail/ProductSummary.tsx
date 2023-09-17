@@ -2,6 +2,7 @@
 
 import { Product } from '@/service/product';
 import Image from 'next/image';
+import DividingLine from '../DividingLine';
 import ProductDescription from './ProductDescription';
 import ProductGraphs from './ProductGraphs';
 
@@ -39,9 +40,9 @@ export default function ProductSummary({ product }: Props) {
   };
   return (
     <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-      <div className='flex-1 mx-auto md:w-[40%]'>
+      <div className="flex-1 mx-auto md:w-[40%]">
         <Image
-          className='w-full'
+          className="w-full"
           src={productImage}
           alt={`${productName} 이미지`}
           width={300}
@@ -50,6 +51,7 @@ export default function ProductSummary({ product }: Props) {
       </div>
       <div className="flex-1 flex flex-col gap-4 md:w-[60%]">
         <ProductDescription description={description} />
+        <DividingLine />
         <ProductGraphs
           popularGender={popularGender}
           popularAgeRange={popularAgeRange}
