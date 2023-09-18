@@ -60,3 +60,11 @@ export async function deleteFavorites(mallId: number): Promise<Response> {
   });
   return response;
 }
+
+export async function getMall(mallId: number): Promise<Mall> {
+  const response = await customFetch(`/auth/malls/${mallId}`);
+  if (!response.ok) {
+    return {} as Mall;
+  }
+  return response.json();
+}
