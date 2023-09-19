@@ -1,4 +1,4 @@
-import { customFetch } from '@/utils/customFetch';
+import { customFetch, serverFetch } from '@/utils/customFetch';
 
 export type MallRankingPreview = {
   id: number;
@@ -65,6 +65,19 @@ export async function getMall(mallId: number): Promise<Mall> {
   const response = await customFetch(`/malls/${mallId}`);
   if (!response.ok) {
     return {} as Mall;
+  }
+  return response.json();
+}
+
+export async function getMallsList(): Promise<
+  {
+    id: number;
+    name: string;
+  }[]
+> {
+  const response = await serverFetch('/malls/list');
+  if (!response.ok) {
+    return [];
   }
   return response.json();
 }
