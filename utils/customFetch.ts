@@ -10,9 +10,12 @@ const defaultHeaders = {
 
 export async function customFetch(
   url: string,
-  options?: RequestInit
+  options?: RequestInit,
+  isFileUpload?: boolean
 ): Promise<Response> {
-  const headers = { ...defaultHeaders, ...options?.headers };
+  const headers = isFileUpload
+    ? { Authorization: `${accessToken}`, ...options?.headers }
+    : { ...defaultHeaders, ...options?.headers };
   const mergedURL = AUTH_URL + url;
   const mergedOptions = { ...options, headers };
 
@@ -33,7 +36,7 @@ export async function serverFetch(
   const headers = { 'Content-Type': 'application/json', ...options?.headers };
   const mergedURL = BASE_URL + url;
   const mergedOptions = { ...options, headers };
-  
+
   const response = await fetch(mergedURL, mergedOptions);
 
   return response;
