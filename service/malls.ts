@@ -75,7 +75,9 @@ export async function getMallsList(): Promise<
     name: string;
   }[]
 > {
-  const response = await serverFetch('/malls/list');
+  const response = await serverFetch('/malls/list', {
+    next: { revalidate: 3600 },
+  });
   if (!response.ok) {
     return [];
   }
