@@ -3,6 +3,8 @@ import GlobalFilter from '@/components/GlobalFilter';
 import GlobalMenu from '@/components/GlobalMenu';
 import { mallNameToMallId } from '@/utils/mallNameToMallId';
 import MallIntroduction from '@/components/Mall/MallIntroduction';
+import MainCategoryNavbar from '@/components/Navbar/MainCategoryNavbar';
+import SubCategoryNavbar from '@/components/Navbar/SubCategoryNavbar';
 
 type Props = {
   params: {
@@ -15,6 +17,8 @@ function MallPage({ params: { mallName } }: Props) {
   return (
     <div>
       <MallIntroduction mallId={mallId} />
+      <MainCategoryNavbar mallName={decodeURI(mallName)} />
+      <SubCategoryNavbar mallName={decodeURI(mallName)} />
       <GlobalFilter />
       <GlobalMenu />
     </div>
