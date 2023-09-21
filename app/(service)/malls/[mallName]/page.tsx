@@ -1,13 +1,20 @@
 import React from 'react';
 import GlobalFilter from '@/components/GlobalFilter';
 import GlobalMenu from '@/components/GlobalMenu';
+import { mallNameToMallId } from '@/utils/mallNameToMallId';
+import MallIntroduction from '@/components/Mall/MallIntroduction';
 
-type Props = {};
+type Props = {
+  params: {
+    mallName: string;
+  };
+};
 
-function MallPage(props: Props) {
+function MallPage({ params: { mallName } }: Props) {
+  const mallId = mallNameToMallId(decodeURI(mallName));
   return (
     <div>
-      쇼핑몰 상세 조회
+      <MallIntroduction mallId={mallId} />
       <GlobalFilter />
       <GlobalMenu />
     </div>
