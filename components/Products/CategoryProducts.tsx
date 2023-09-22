@@ -5,15 +5,18 @@ import { useState } from 'react';
 import FilterIdDropdown from '../FilterIdDropdown';
 import ProductsGrid from './ProductsGrid';
 import { CategoryProductsData } from '@/types/categoryProducts';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
-  categoryName: string[];
+  categoryName?: string[];
   mainCategoriesProducts: CategoryProductsData[];
   subCategoriesProducts: CategoryProductsData[];
 };
 
 function setProducts(
-  { categoryName, mainCategoriesProducts, subCategoriesProducts }: Props,
+  categoryName: string[],
+  mainCategoriesProducts: CategoryProductsData[],
+  subCategoriesProducts: CategoryProductsData[],
   gender: string,
   filterId: number
 ) {
@@ -46,10 +49,20 @@ export default function CategoryProducts({
   mainCategoriesProducts,
   subCategoriesProducts,
 }: Props) {
+  const searchParams = useSearchParams();
+  const mallMainCategory = searchParams.get('category');
+  const mallSubCategory = searchParams.get('subCategory');
+  let mallCategoryName: string[] = [];
+  if (mallMainCategory) mallCategoryName.push(mallMainCategory);
+  if (mallSubCategory) mallCategoryName.push(mallSubCategory);
+
+  const categoryNameParam = categoryName ?? mallCategoryName;
   const gender = localStorage.getItem('GLOBAL_FILTER') ?? 'A';
   const [filterId, setFilterId] = useState(0);
   const products = setProducts(
-    { categoryName, mainCategoriesProducts, subCategoriesProducts },
+    categoryNameParam,
+    mainCategoriesProducts,
+    subCategoriesProducts,
     gender,
     filterId
   );
