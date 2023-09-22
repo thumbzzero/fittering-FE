@@ -3,9 +3,9 @@
 import { MallPreview } from '@/service/malls';
 import MallPreviewImage from './MallPreviewImage';
 import MallPreviewLogo from './MallPreviewLogo';
-import MallPreviewDescription from './MallPreviewDescription';
-import MallPreviewName from './MallPreviewName';
-import StarButton from './StarButton';
+import MallDescription from '../MallCommon/MallDescription';
+import MallName from '../MallCommon/MallName';
+import StarButton from '../MallCommon/StarButton';
 
 type Props = {
   malls: MallPreview[];
@@ -24,8 +24,8 @@ export default function MallPreviewCard({ malls }: Props) {
             <MallPreviewLogo name={mall.name} image={mall.image} />
 
             <div className="flex flex-col gap-1 max-w-[55%] xs:max-w-[65%] md:max-w-[75%]">
-              <MallPreviewName name={mall.name} />
-              <MallPreviewDescription description={mall.description} />
+              <MallName name={mall.name} />
+              <MallDescription description={mall.description} />
             </div>
 
             <StarButton mallId={mall.id} initialFavorite={mall.isFavorite} />

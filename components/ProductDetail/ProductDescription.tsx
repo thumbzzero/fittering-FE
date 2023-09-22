@@ -3,7 +3,7 @@
 import { getGenderData } from '../../utils/getGenderData';
 import { getAgeRange } from '@/utils/getAgeRange';
 import LikesButton from './LikesButton';
-import OriginLink from './OriginLink';
+import OriginLink from '../OriginLink';
 
 type Props = {
   description: {
