@@ -63,7 +63,7 @@ export default function SubCategoryNavbar({ mallName }: Props) {
           }
           isSelected={
             mallName
-              ? sub.url.includes(mallSubCategory ?? 'noSubCategory')
+              ? mallSubCategory === sub.url.split('/')[3] 
               : pathname === sub.url
           }
           name={sub.name}
