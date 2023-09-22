@@ -7,11 +7,16 @@ import { useState } from 'react';
 import { addFavorites, deleteFavorites } from '@/service/malls';
 
 type Props = {
-  mallId: number;
+  mallId: number | Promise<number>;
   initialFavorite: boolean;
+  isMallPage?: boolean;
 };
 
-export default function StarButton({ mallId, initialFavorite }: Props) {
+export default function StarButton({
+  mallId,
+  initialFavorite,
+  isMallPage,
+}: Props) {
   const [isFavorites, setIsFavorites] = useState<boolean>(initialFavorite);
 
   const handleFavorites = async () => {
@@ -27,7 +32,11 @@ export default function StarButton({ mallId, initialFavorite }: Props) {
   return (
     <button onClick={handleFavorites}>
       <Image
-        className="absolute w-[20px] md:w-[30px] right-0 top-0 translate-y-[50%]"
+        className={`${
+          isMallPage
+            ? 'inline-block w-5 h-5 sm:w-7 sm:h-7 right-9'
+            : 'absolute w-[20px] md:w-[30px] right-0 translate-y-[50%]'
+        } top-0`}
         src={isFavorites ? filledStar : blankStar}
         alt=""
         width={20}
