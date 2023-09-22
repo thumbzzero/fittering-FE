@@ -26,7 +26,7 @@ function setProducts(
         products.categoryId === 0 &&
         products.gender === gender &&
         products.filterId === filterId
-    )[0].contents;
+    )[0]?.contents;
 
   if (categoryName.length === 1)
     return mainCategoriesProducts.filter(
@@ -34,14 +34,14 @@ function setProducts(
         products.categoryId === categoryNameToIndex(categoryName) &&
         products.gender === gender &&
         products.filterId === filterId
-    )[0].contents;
+    )[0]?.contents;
 
   return subCategoriesProducts.filter(
     (products) =>
       products.categoryId === categoryNameToIndex(categoryName) &&
       products.gender === gender &&
       products.filterId === filterId
-  )[0].contents;
+  )[0]?.contents;
 }
 
 export default function CategoryProducts({
