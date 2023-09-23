@@ -1,6 +1,8 @@
 'use client';
 
+import { deleteUser } from '@/service/user';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const divStyle = 'my-4 inline-block w-full md:w-3/5';
 const infoTypeLabelStyle = 'block my-2';
@@ -10,6 +12,8 @@ export const UserDeleteForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const router = useRouter();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -25,12 +29,27 @@ export const UserDeleteForm = () => {
     setPasswordConfirm(e.target.value);
   };
 
-  const handleDeleteButtonClick = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ) => {};
+  const handleUserDelete = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (password !== passwordConfirm) {
+      window.alert('이메일 또는 비밀번호를 확인해주세요.');
+      return;
+    }
+    const response = await deleteUser({ email, password });
+    if (response.ok) {
+      window.alert('회원탈퇴가 완료되었습니다.');
+      localStorage.removeItem('TOKEN');
+      router.replace('/login');
+    } else {
+      window.alert('이메일 또는 비밀번호를 확인해주세요.');
+    }
+  };
 
   return (
-    <form className="w-full flex flex-col items-center justify-center md:mt-6">
+    <form
+      onSubmit={handleUserDelete}
+      className="w-full flex flex-col items-center justify-center md:mt-6"
+    >
       <div className={divStyle}>
         <label className={infoTypeLabelStyle} htmlFor="email">
           이메일
@@ -69,10 +88,7 @@ export const UserDeleteForm = () => {
         />
       </div>
       <div className="relative mt-16 w-full md:w-1/2">
-        <button
-          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none"
-          onClick={handleDeleteButtonClick}
-        >
+        <button className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none">
           탈퇴
         </button>
       </div>
