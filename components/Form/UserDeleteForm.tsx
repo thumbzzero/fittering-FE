@@ -99,7 +99,7 @@ export const UserDeleteForm = () => {
           className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none disabled:opacity-70"
           disabled={!isDeleteFormValid}
         >
-          탈퇴
+          탈퇴하기
         </button>
       </div>
     </form>
