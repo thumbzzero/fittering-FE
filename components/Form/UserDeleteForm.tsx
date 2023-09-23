@@ -1,7 +1,7 @@
 'use client';
 
 import { deleteUser } from '@/service/user';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const divStyle = 'my-4 inline-block w-full md:w-3/5';
@@ -12,6 +12,7 @@ export const UserDeleteForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [isDeleteFormValid, setIsDeleteFormValid] = useState(false);
 
   const router = useRouter();
 
@@ -28,6 +29,12 @@ export const UserDeleteForm = () => {
   ) => {
     setPasswordConfirm(e.target.value);
   };
+
+  useEffect(() => {
+    setIsDeleteFormValid(
+      email.length > 0 && password.length > 0 && passwordConfirm.length > 0
+    );
+  }, [email, password, passwordConfirm]);
 
   const handleUserDelete = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,7 +95,10 @@ export const UserDeleteForm = () => {
         />
       </div>
       <div className="relative mt-16 w-full md:w-1/2">
-        <button className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none">
+        <button
+          className="text-xs md:text-base absolute left-[50%] translate-x-[-50%] rounded-3xl px-4 py-2 bg-main-color text-[white] font-bold border-none disabled:opacity-70"
+          disabled={!isDeleteFormValid}
+        >
           탈퇴
         </button>
       </div>
