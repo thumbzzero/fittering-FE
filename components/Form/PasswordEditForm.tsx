@@ -84,7 +84,7 @@ export const PasswordEditForm = () => {
             className={
               isPasswordValid || newPassword.length === 0
                 ? 'hidden'
-                : 'ml-4 text-red-500 text-xs'
+                : 'ml-4 text-red-500 text-xs hidden md:inline'
             }
           >
             ※ 비밀번호: 8~15자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.
@@ -99,6 +99,15 @@ export const PasswordEditForm = () => {
           value={newPassword}
           onChange={handleNewPasswordChange}
         />
+        <span
+          className={
+            isPasswordValid || newPassword.length === 0
+              ? 'hidden'
+              : 'my-1 text-red-500 text-xs md:hidden'
+          }
+        >
+          ※ 비밀번호: 8~15자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.
+        </span>
       </div>
       <div className={divStyle}>
         <label className={infoTypeLabelStyle} htmlFor="passwordConfirm">
@@ -107,7 +116,7 @@ export const PasswordEditForm = () => {
             className={
               newPassword === passwordConfirm || passwordConfirm.length === 0
                 ? 'hidden'
-                : 'ml-4 text-red-500 text-xs'
+                : 'ml-4 text-red-500 text-xs hidden md:inline'
             }
           >
             ※ 비밀번호를 확인해주세요.
@@ -122,6 +131,15 @@ export const PasswordEditForm = () => {
           value={passwordConfirm}
           onChange={handlePasswordConfirmChange}
         />
+        <span
+          className={
+            newPassword === passwordConfirm || passwordConfirm.length === 0
+              ? 'hidden'
+              : 'my-1 text-red-500 text-xs md:hidden'
+          }
+        >
+          ※ 비밀번호를 확인해주세요.
+        </span>
       </div>
       <div className="relative mt-16 w-full md:w-1/2">
         <button
