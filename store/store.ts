@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import myPage from './myPageSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    myPage,
+  },
 });
 
 export default store;
