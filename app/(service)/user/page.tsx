@@ -1,15 +1,26 @@
+'use client';
+
 import FavoriteProducts from '@/components/FavoriteProducts';
 import RecentProducts from '@/components/MyPage/RecentProducts';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { fetchMyPage } from '@/store/myPageAction';
+import { MyPage } from '@/types/user';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import MyPageCommon from '../../../components/MyPage/MyPageCommon';
 
 type Props = {};
-
 function MyPage(props: Props) {
+  const dispatch = useAppDispatch();
+  const myPage: MyPage = useAppSelector((state) => state.myPage);
+
+  useEffect(() => {
+    dispatch(fetchMyPage());
+  }, [dispatch]);
+
   return (
     <>
-      <MyPageCommon />
+      <MyPageCommon username={myPage.username ?? '- '} />
       <RecentProducts isPreview={true} />
       <FavoriteProducts isPreview={true} />
       <div className="mt-8 pt-6 border-t-[1.5px] border-nav-black text-center md:text-right">

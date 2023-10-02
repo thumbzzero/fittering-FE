@@ -1,9 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import back from 'public/icon/left_black.svg';
 import UserEditLinks from './UserEditLinks';
 import MobileLogout from './MobileLogout';
 
-export default function MyPageCommon() {
+type Props = {
+  username: string;
+};
+
+export default function MyPageCommon({ username }: Props) {
   return (
     <>
       <div
@@ -23,7 +29,7 @@ export default function MyPageCommon() {
         </div>
         <div className="relative top-2 md:top-8">
           <span className="font-bold text-xl md:text-2xl">
-            열졍콩님, <br className="md:hidden" />
+            {`${username}님`}, <br className="md:hidden" />
             안녕하세요
           </span>
           <MobileLogout />
