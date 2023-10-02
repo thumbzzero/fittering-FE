@@ -1,4 +1,13 @@
+import { MyPage } from '@/types/user';
 import { customFetch } from '@/utils/customFetch';
+
+export async function getMyPage(): Promise<MyPage> {
+  const response = await customFetch('/users/mypage');
+  if (!response.ok) {
+    return {} as MyPage;
+  }
+  return response.json();
+}
 
 export async function editPassword(password: string, newPassword: string) {
   const response = await customFetch(
