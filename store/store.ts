@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import myPage from './myPageSlice';
+import persistStore from 'redux-persist/lib/persistStore';
+import rootReducer from './rootReducer';
 
 export const store = configureStore({
-  reducer: {
-    myPage,
-  },
+  reducer: rootReducer
 });
 
 export default store;
+
+export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
