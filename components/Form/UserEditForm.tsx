@@ -2,16 +2,20 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useAppSelector } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { MyPage } from '@/types/user';
+import { editMyPage } from '@/service/user';
+import { myPageActions } from '@/store/myPageSlice';
 
 const divStyle = 'my-4 inline-block w-full md:w-3/5';
 const infoTypeLabelStyle = 'block my-2';
-const inputStyle = 'w-full border rounded-lg px-2 py-2.5 block mx-auto';
+const inputStyle =
+  'w-full border rounded-lg px-2 py-2.5 block mx-auto disabled:text-custom-gray-700';
 const birthDateInputStyle =
-  'w-2/3 lg:w-4/5 lg: border rounded-lg px-2 py-2.5 text-center md:text-right';
+  'w-2/3 lg:w-4/5 lg: border rounded-lg px-2 py-2.5 text-center md:text-right disabled:text-custom-gray-700';
 
 export const UserEditForm = () => {
+  const dispatch = useAppDispatch();
   const myPage: MyPage = useAppSelector((state) => state.myPage);
 
   const [username, setUsername] = useState(myPage.username ?? '-');
@@ -47,10 +51,25 @@ export const UserEditForm = () => {
     setDay(parseInt(e.target.value));
   };
 
-  const handleIsEditMode = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleIsEditMode = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    const updatedMyPage: MyPage = {
+      email: myPage.email,
+      username,
+      gender,
+      year,
+      month,
+      day,
+    };
     if (isEditMode) {
-      // 저장 코드
+      const response = await editMyPage(updatedMyPage);
+      if (response.ok) {
+        window.alert('회원 정보가 수정되었습니다.');
+        dispatch(myPageActions.setMyPage(updatedMyPage));
+        setIsEditMode(!isEditMode);
+      } else {
+        window.alert('회원 정보 수정에 실패하였습니다.');
+      }
     }
     setIsEditMode(!isEditMode);
   };
@@ -65,6 +84,7 @@ export const UserEditForm = () => {
           className={inputStyle}
           type="text"
           id="username"
+          value={username}
           placeholder={username}
           minLength={1}
           maxLength={20}
@@ -136,6 +156,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="year"
+                value={year}
                 placeholder={isNaN(year) ? '' : year.toString()}
                 onChange={handleYearChange}
                 minLength={4}
@@ -152,6 +173,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="month"
+                value={month}
                 placeholder={isNaN(month) ? '' : month.toString()}
                 onChange={handleMonthChange}
                 minLength={1}
@@ -168,6 +190,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="day"
+                value={day}
                 placeholder={isNaN(day) ? '' : day.toString()}
                 onChange={handleDayChange}
                 minLength={1}

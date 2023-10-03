@@ -9,6 +9,14 @@ export async function getMyPage(): Promise<MyPage> {
   return response.json();
 }
 
+export async function editMyPage(myPage: MyPage) {
+  const response = await customFetch('/users/mypage', {
+    method: 'POST',
+    body: JSON.stringify(myPage),
+  });
+  return response;
+}
+
 export async function editPassword(password: string, newPassword: string) {
   const response = await customFetch(
     `/users/password/check/${password}/${newPassword}`,
