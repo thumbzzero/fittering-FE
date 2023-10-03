@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useAppSelector } from '@/store/hooks';
+import { MyPage } from '@/types/user';
 
 const divStyle = 'my-4 inline-block w-full md:w-3/5';
 const infoTypeLabelStyle = 'block my-2';
@@ -10,11 +12,13 @@ const birthDateInputStyle =
   'w-2/3 lg:w-4/5 lg: border rounded-lg px-2 py-2.5 text-center md:text-right';
 
 export const UserEditForm = () => {
-  const [username, setUsername] = useState('열졍콩');
-  const [gender, setGender] = useState('F');
-  const [year, setYear] = useState(2023);
-  const [month, setMonth] = useState(7);
-  const [day, setDay] = useState(14);
+  const myPage: MyPage = useAppSelector((state) => state.myPage);
+
+  const [username, setUsername] = useState(myPage.username ?? '-');
+  const [gender, setGender] = useState(myPage.gender ?? '-');
+  const [year, setYear] = useState(myPage.year ?? 0);
+  const [month, setMonth] = useState(myPage.month ?? 0);
+  const [day, setDay] = useState(myPage.day ?? 0);
   const [isEditMode, setIsEditMode] = useState(false);
 
   const genderTextColor = isEditMode
