@@ -20,6 +20,14 @@ export async function getMySize(): Promise<MySize> {
   return response.json();
 }
 
+export async function editMySize(mySize: MySize) {
+  const response = await customFetch('/users/mysize', {
+    method: 'POST',
+    body: JSON.stringify(mySize),
+  });
+  return response;
+}
+
 export async function getSilhouetteImage(
   type: 'FRONT' | 'SIDE',
   formData: FormData

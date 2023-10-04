@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 type Props = {
   bodyType:
     | 'height'
@@ -10,6 +14,7 @@ type Props = {
     | 'thigh'
     | 'hip';
   size: number | null;
+  setSize: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 const bodyTypeEn2Ko = {
@@ -24,7 +29,14 @@ const bodyTypeEn2Ko = {
   hip: '엉덩이 둘레',
 };
 
-export default function EditFormInput({ bodyType, size }: Props) {
+export default function EditFormInput({ bodyType, size, setSize }: Props) {
+  const [value, setValue] = useState(size?.toString() ?? '');
+
+  const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSize(parseInt(e.target.value));
+    setValue(e.target.value);
+  };
+
   return (
     <div className="w-full relative h-8 md:h-16">
       <label>
@@ -34,10 +46,12 @@ export default function EditFormInput({ bodyType, size }: Props) {
         {bodyTypeEn2Ko[bodyType]}
       </label>
       <input
-        className="absolute right-8 w-[25%] md:w-[30%] lg:w-[40%] landscape:w-[35%] lg:landscape:w-[40%]  border bg-transparent text-right px-2"
+        className="absolute right-8 w-[25%] md:w-[30%] lg:w-[40%] landscape:w-[35%] lg:landscape:w-[40%] border bg-transparent text-right px-2"
         type="number"
         inputMode="numeric"
+        onChange={handleSizeChange}
         placeholder={size !== null ? size.toString() : ''}
+        value={value}
         min={0}
         max={300}
       />
