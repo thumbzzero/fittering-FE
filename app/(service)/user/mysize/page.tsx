@@ -17,7 +17,6 @@ function MySizePage(props: Props) {
       <MobileSection sectionName="내 맞춤 정보 설정" />
       <div className="flex flex-col gap-8 md:gap-12 w-full md:flex-row md:portrait:flex-col">
         <GuidelinePic /> 
-        {/* @ts-expect-error Server Component */}
         <MySizeInfo />
       </div>
       <EditButton />

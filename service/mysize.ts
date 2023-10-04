@@ -1,6 +1,4 @@
 import { customFetch } from '@/utils/customFetch';
-import { readFile } from 'fs/promises';
-import path from 'path';
 
 export type MySize = {
   height: number | null;
@@ -15,9 +13,11 @@ export type MySize = {
 };
 
 export async function getMySize(): Promise<MySize> {
-  // 더미 데이터 읽어옴
-  const filePath = path.join(process.cwd(), 'data', 'mysize.json');
-  return readFile(filePath, 'utf-8').then<MySize>(JSON.parse);
+  const response = await customFetch('/users/mysize');
+  if (!response.ok) {
+    return {} as MySize;
+  }
+  return response.json();
 }
 
 export async function getSilhouetteImage(
