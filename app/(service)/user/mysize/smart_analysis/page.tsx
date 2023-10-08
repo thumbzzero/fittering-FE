@@ -1,6 +1,6 @@
 import MobileSection from '@/components/MobileSection';
 import Guideline from '@/components/MyPage/MySize/Guideline';
-import SmartAnalysisPhotoSubmitForm from '@/components/MyPage/MySize/SmartAnalysisPhotoSubmitForm';
+import SmartAnalysisForm from '@/components/MyPage/MySize/SmartAnalysisForm';
 import React from 'react';
 import LineSection from '../../../../../components/LineSection';
 import Section from '../../../../../components/Section';
@@ -16,10 +16,7 @@ function SmartAnalysisPage(props: Props) {
       />
       <MobileSection sectionName="내 맞춤 정보 설정" />
       <Section sectionName="스마트 분석" />
-      <div className="flex flex-col md:flex-row gap-4 mt-2">
-        <SmartAnalysisPhotoSubmitForm photoType="FRONT" />
-        <SmartAnalysisPhotoSubmitForm photoType="SIDE" />
-      </div>
+      <SmartAnalysisForm />
       <Guideline />
     </>
   );

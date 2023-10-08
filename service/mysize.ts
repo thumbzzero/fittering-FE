@@ -12,6 +12,14 @@ export type MySize = {
   hip: number | null;
 };
 
+export type smartAnalysisRequestBody = {
+  front: string;
+  side: string;
+  height: number;
+  weight: number;
+  sex: string;
+};
+
 export async function getMySize(): Promise<MySize> {
   const response = await customFetch('/users/mysize');
   if (!response.ok) {
@@ -45,4 +53,12 @@ export async function getSilhouetteImage(
   }
   const data: { url: string } = await response.json();
   return data.url;
+}
+
+export async function smartAnalysis(body: smartAnalysisRequestBody) {
+  const response = await customFetch('/users/recommendation/measurement', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+  return response;
 }

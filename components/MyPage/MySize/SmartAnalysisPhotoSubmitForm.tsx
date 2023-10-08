@@ -3,15 +3,16 @@
 import { getSilhouetteImage } from '@/service/mysize';
 import Image from 'next/image';
 import plus from 'public/icon/plus_white.svg';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 type Props = {
   photoType: 'FRONT' | 'SIDE';
+  imageUrl : string | null;
+  setImageUrl : React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-export default function SmartAnalysisPhotoSubmitForm({ photoType }: Props) {
+export default function SmartAnalysisPhotoSubmitForm({ photoType, imageUrl, setImageUrl }: Props) {
   const imageInput = useRef<HTMLInputElement>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   const handleImageInputClick = () => {
     imageInput.current?.click();
