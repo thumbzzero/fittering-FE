@@ -19,6 +19,14 @@ export default function SmartAnalysisForm() {
   const router = useRouter();
 
   useEffect(() => {
+    if (mySize.height === null || mySize.weight === null) {
+      window.alert('스마트 분석 기능을 이용하려면 키와 몸무게를 입력해주세요.');
+      router.replace('/user/mysize/edit');
+      return;
+    }
+  }, [mySize.height, mySize.weight, router]);
+
+  useEffect(() => {
     setIsPrepared(frontImage !== null && sideImage !== null);
   }, [frontImage, sideImage]);
 
