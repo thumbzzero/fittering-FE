@@ -33,7 +33,7 @@ export default function EditFormInput({ bodyType, size, setSize }: Props) {
   const [value, setValue] = useState(size?.toString() ?? '');
 
   const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSize(parseInt(e.target.value));
+    setSize(Number(e.target.value));
     setValue(e.target.value);
   };
 
