@@ -26,7 +26,6 @@ export default function MallIntroduction({ mallId }: Props) {
 
   return (
     <div className="relative mt-4 mb-8">
-
       {/* mobile */}
       <div className="md:hidden">
         <MobileMallIntroduction
@@ -38,7 +37,7 @@ export default function MallIntroduction({ mallId }: Props) {
 
       {/* web */}
       <div className="hidden md:flex md:flex-row md:gap-4 md:items-center">
-        <MallLogo src={mall.image} />
+        <MallLogo src={mall.image} name={mall.name} />
         <div className="flex flex-col gap-2">
           <MallName name={mall.name} />
           <MallDescription description={mall.description} isMallPage={true} />
@@ -54,7 +53,6 @@ export default function MallIntroduction({ mallId }: Props) {
         />
         <OriginLink origin={mall.url} isMallPage={true} />
       </div>
-      
     </div>
   );
 }

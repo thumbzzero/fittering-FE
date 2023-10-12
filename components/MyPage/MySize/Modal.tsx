@@ -43,7 +43,7 @@ export default function Modal({ setIsModalOpen }: Props) {
           onClick={() => setIsModalOpen(false)}
           className="absolute top-3 right-3 cursor-pointer"
           src={x}
-          alt="x"
+          alt="모달창 닫기 버튼"
         />
         <div className="flex gap-2 xs:gap-4 items-center justify-center">
           <Link

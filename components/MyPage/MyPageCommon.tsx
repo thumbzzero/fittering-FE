@@ -21,7 +21,7 @@ export default function MyPageCommon({ username }: Props) {
           <Image
             className="absolute left-0 inline-block md:hidden"
             src={back}
-            alt="<"
+            alt="뒤로 가기 버튼"
           />
           <span className="inline-block md:text-left font-bold md:text-lg">
             My Page

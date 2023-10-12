@@ -14,7 +14,7 @@ function SignUpPage(props: Props) {
           <Image
             className="w-1/3 block m-auto mt-6"
             src={logo}
-            alt="Fittering"
+            alt="핏터링 로고"
           />
         </h1>
         <SignupForm />

@@ -21,13 +21,21 @@ export const WebNavbar = () => {
   return (
     <nav className="flex absolute top-[50%] translate-y-[-50%] right-28">
       <Link className={menuStyle} href="/categories">
-        <Image className={iconStyle} src={category} alt="카테고리" />
+        <Image
+          className={iconStyle}
+          src={category}
+          alt="카테고리별 상품 조회 버튼"
+        />
       </Link>
       <Link className={menuStyle} href="/favorite_goods">
-        <Image className={iconStyle} src={heart} alt="좋아요" />
+        <Image
+          className={iconStyle}
+          src={heart}
+          alt="좋아요한 상품 조회 버튼"
+        />
       </Link>
       <Link className={menuStyle} href="/user">
-        <Image className={iconStyle} src={my} alt="마이페이지" />
+        <Image className={iconStyle} src={my} alt="마이페이지 버튼" />
       </Link>
     </nav>
   );

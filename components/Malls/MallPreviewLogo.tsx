@@ -13,9 +13,9 @@ export default function MallPreviewLogo({ name, image }: Props) {
       href={`/malls/${name.split(' ').join('').toLowerCase()}`}
     >
       <Image
-        className="w-full h-full object-contain p-1 md:p-2"
+        className="w-full h-full rounded-full object-contain"
         src={image}
-        alt=""
+        alt={`${name.split(' ').join('').toLowerCase()} 쇼핑몰 로고`}
         width={100}
         height={100}
       />

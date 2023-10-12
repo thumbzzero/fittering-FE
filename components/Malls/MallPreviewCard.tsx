@@ -37,6 +37,7 @@ export default function MallPreviewCard({ malls }: Props) {
                 key={product.productId}
                 productId={product.productId}
                 productImage={product.productImage}
+                productName={product.productName}
               />
             ))}
           </div>

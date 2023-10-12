@@ -8,7 +8,11 @@ type Props = {
 export default function MobileSection({ sectionName }: Props) {
   return (
     <div className="relative py-6 text-center md:hidden">
-      <Image className="absolute left-0 inline-block" src={back} alt="<" />
+      <Image
+        className="absolute left-0 inline-block"
+        src={back}
+        alt="뒤로 가기 버튼"
+      />
       <span className="inline-block text-xs xs:text-base sm:text-lg font-bold">
         {sectionName}
       </span>

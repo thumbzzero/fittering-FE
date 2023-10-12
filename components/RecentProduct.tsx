@@ -18,7 +18,7 @@ export default function RecentProduct({
           <Image
             className="w-full h-full rounded-lg object-contain mx-auto border border-custom-gray-100 absolute top-0 left-0"
             src={productImage}
-            alt={`${productName} 상품 이미지`}
+            alt={`${productName} 상품`}
             width={150}
             height={150}
           />

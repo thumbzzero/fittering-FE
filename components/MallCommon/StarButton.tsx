@@ -38,7 +38,7 @@ export default function StarButton({
             : 'absolute w-[20px] md:w-[30px] right-0 translate-y-[50%]'
         } top-0`}
         src={isFavorites ? filledStar : blankStar}
-        alt=""
+        alt="쇼핑몰 즐겨찾기 버튼"
         width={20}
         height={20}
       />

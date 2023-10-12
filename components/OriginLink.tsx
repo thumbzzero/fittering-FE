@@ -16,7 +16,7 @@ export default function OriginLink({ origin, isMallPage }: Props) {
       href={origin ?? '/'}
       target="_blank"
     >
-      <Image src={linkIcon} alt="" />
+      <Image src={linkIcon} alt="상품 원본 링크 버튼" />
     </Link>
   );
 }

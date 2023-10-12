@@ -25,7 +25,7 @@ export default function Header() {
           <Image
             className="w-full h-auto xs:w-[auto] xs:h-[2.7rem] md:h-[3rem] absolute top-[50%] translate-y-[-50%]"
             src={logo}
-            alt="Fittering"
+            alt="핏터링 로고"
           />
         </Link>
       </div>

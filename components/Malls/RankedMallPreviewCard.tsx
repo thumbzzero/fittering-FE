@@ -14,7 +14,7 @@ export default function RankedMallPreviewCard({ mall: { name, image } }: Props) 
           <Image
             className="w-full h-full p-2 md:p-4 rounded-lg object-contain mx-auto border border-custom-gray-100"
             src={image}
-            alt={name}
+            alt={`${name} 쇼핑몰 로고`}
             width={200}
             height={200}
           />

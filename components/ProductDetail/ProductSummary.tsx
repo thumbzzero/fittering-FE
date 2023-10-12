@@ -44,7 +44,7 @@ export default function ProductSummary({ product }: Props) {
         <Image
           className="w-full"
           src={productImage}
-          alt={`${productName} 이미지`}
+          alt={`${productName}`}
           width={300}
           height={300}
         />

@@ -21,7 +21,7 @@ export default function Product({
           <Image
             className="w-full h-full rounded-lg object-contain mx-auto border border-custom-gray-100"
             src={productImage}
-            alt={`${productName} 상품 이미지`}
+            alt={`${productName} 상품`}
             width={250}
             height={250}
           />

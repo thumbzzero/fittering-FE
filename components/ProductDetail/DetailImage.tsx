@@ -9,7 +9,7 @@ export default function DetailImage({ src }: Props) {
     <Image
       className="mt-4 mx-auto w-full md:w-2/3"
       src={src}
-      alt=""
+      alt={`상품 상세`}
       width={200}
       height={200}
     />

@@ -55,7 +55,7 @@ export default function GlobalMenu() {
       }
     >
       <Link className={buttonStyle + ' rounded-t-lg'} href="/user/recent">
-        <Image className="mx-auto h-full" src={eye} alt="최근 본 상품" />
+        <Image className="mx-auto h-full" src={eye} alt="최근 본 상품 보러가기 버튼" />
       </Link>
       <button
         className={`${buttonStyle} border-y`}
@@ -65,7 +65,7 @@ export default function GlobalMenu() {
         <Image
           className="mx-auto h-full"
           src={isUpActive ? up : disabledUp}
-          alt="˄"
+          alt="맨 위로 가기 버튼"
         />
       </button>
       <button
@@ -76,7 +76,7 @@ export default function GlobalMenu() {
         <Image
           className="mx-auto h-full"
           src={isDownActive ? down : disabledDown}
-          alt="⌄"
+          alt="맨 아래로 가기 버튼"
         />
       </button>
     </div>
