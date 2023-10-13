@@ -14,6 +14,7 @@ export default function UserEditLinks() {
           className="inline-block w-4 h-4 mr-3"
           src={pencil}
           alt="회원정보 수정 버튼"
+          aria-hidden={true}
         />
         회원정보 수정
       </Link>
@@ -22,6 +23,7 @@ export default function UserEditLinks() {
           className="inline-block w-4 h-4 mr-3"
           src={ruler}
           alt="맞춤 정보 설정 버튼"
+          aria-hidden={true}
         />
         내 맞춤 정보 설정
       </Link>

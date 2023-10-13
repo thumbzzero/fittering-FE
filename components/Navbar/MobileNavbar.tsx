@@ -24,7 +24,12 @@ export default function MobileNavbar() {
   return (
     <nav className="fixed left-0 bottom-0 flex w-full bg-nav-black py-4 md:hidden">
       <Link className={menuStyle} href="/">
-        <Image className={iconStyle} src={home} alt="홈 버튼" />
+        <Image
+          className={iconStyle}
+          src={home}
+          alt="홈 버튼"
+          aria-hidden={true}
+        />
         <span className={menuName}>홈</span>
       </Link>
       <Link className={menuStyle} href="/categories">
@@ -32,6 +37,7 @@ export default function MobileNavbar() {
           className={iconStyle}
           src={category}
           alt="카테고리별 상품 조회 버튼"
+          aria-hidden={true}
         />
         <span className={menuName}>카테고리</span>
       </Link>
@@ -40,11 +46,17 @@ export default function MobileNavbar() {
           className={iconStyle}
           src={heart}
           alt="좋아요한 상품 조회 버튼"
+          aria-hidden={true}
         />
         <span className={menuName}>좋아요</span>
       </Link>
       <Link className={menuStyle} href="/user">
-        <Image className={iconStyle} src={my} alt="마이페이지 버튼" />
+        <Image
+          className={iconStyle}
+          src={my}
+          alt="마이페이지 버튼"
+          aria-hidden={true}
+        />
         <span className={menuName}>마이페이지</span>
       </Link>
     </nav>

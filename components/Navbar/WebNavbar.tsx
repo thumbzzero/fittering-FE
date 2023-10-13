@@ -25,6 +25,7 @@ export const WebNavbar = () => {
           className={iconStyle}
           src={category}
           alt="카테고리별 상품 조회 버튼"
+          aria-hidden={true}
         />
       </Link>
       <Link className={menuStyle} href="/favorite_goods">
@@ -32,10 +33,16 @@ export const WebNavbar = () => {
           className={iconStyle}
           src={heart}
           alt="좋아요한 상품 조회 버튼"
+          aria-hidden={true}
         />
       </Link>
       <Link className={menuStyle} href="/user">
-        <Image className={iconStyle} src={my} alt="마이페이지 버튼" />
+        <Image
+          className={iconStyle}
+          src={my}
+          alt="마이페이지 버튼"
+          aria-hidden={true}
+        />
       </Link>
     </nav>
   );

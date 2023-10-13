@@ -41,6 +41,7 @@ export default function StarButton({
         alt="쇼핑몰 즐겨찾기 버튼"
         width={20}
         height={20}
+        aria-hidden={true}
       />
     </button>
   );

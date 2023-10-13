@@ -7,11 +7,15 @@ import { useRef } from 'react';
 
 type Props = {
   photoType: 'FRONT' | 'SIDE';
-  imageUrl : string | null;
-  setImageUrl : React.Dispatch<React.SetStateAction<string | null>>;
+  imageUrl: string | null;
+  setImageUrl: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-export default function SmartAnalysisPhotoSubmitForm({ photoType, imageUrl, setImageUrl }: Props) {
+export default function SmartAnalysisPhotoSubmitForm({
+  photoType,
+  imageUrl,
+  setImageUrl,
+}: Props) {
   const imageInput = useRef<HTMLInputElement>(null);
 
   const handleImageInputClick = () => {
@@ -46,7 +50,7 @@ export default function SmartAnalysisPhotoSubmitForm({ photoType, imageUrl, setI
             />
           </form>
           <button className="bg-main-color text-white text-[3rem] rounded-full w-16 h-16">
-            <Image className="mx-auto" src={plus} alt="+" />
+            <Image className="mx-auto" src={plus} alt="+" aria-hidden={true} />
           </button>
           <span className="text-main-color">
             {photoType === 'FRONT' ? '정면' : '측면'} 사진 등록
@@ -56,7 +60,7 @@ export default function SmartAnalysisPhotoSubmitForm({ photoType, imageUrl, setI
         <Image
           className="w-full h-full p-4 rounded-sm object-contain"
           src={imageUrl}
-          alt="실루엣 사진"
+          alt={photoType === 'FRONT' ? '정면 사진 실루엣' : '측면 사진 실루엣'}
           width={200}
           height={200}
         />

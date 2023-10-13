@@ -53,7 +53,12 @@ export default function Modal({ setIsModalOpen }: Props) {
             }
             href="/user/mysize/edit"
           >
-            <Image className="mx-auto w-5/12 mb-3" src={pencil} alt="" />
+            <Image
+              className="mx-auto w-5/12 mb-3"
+              src={pencil}
+              alt=""
+              aria-hidden={true}
+            />
             직접 입력하기
           </Link>
           <Link
@@ -63,7 +68,12 @@ export default function Modal({ setIsModalOpen }: Props) {
             }
             href="/user/mysize/smart_analysis"
           >
-            <Image className="mx-auto w-5/12 mb-3" src={bulb} alt="" />
+            <Image
+              className="mx-auto w-5/12 mb-3"
+              src={bulb}
+              alt=""
+              aria-hidden={true}
+            />
             스마트 분석
           </Link>
         </div>

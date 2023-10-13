@@ -14,12 +14,17 @@ export const SocialLogin = () => {
           className={`${LinkStyle} border-[0.5px] border-custom-gray-100`}
           href={`${SERVER_DOMAIN}/login/oauth/google`}
         >
-          <Image className="p-[4px] " src={google} alt="Google 로고" />
+          <Image
+            className="p-[4px] "
+            src={google}
+            alt="Google 로고"
+            aria-hidden={true}
+          />
         </Link>
       </>
       <>
         <Link className={LinkStyle} href={`${SERVER_DOMAIN}/login/oauth/kakao`}>
-          <Image src={kakao} alt="Kakao 로고" />
+          <Image src={kakao} alt="Kakao 로고" aria-hidden={true} />
         </Link>
       </>
       <>
@@ -31,6 +36,7 @@ export const SocialLogin = () => {
             className="scale-[1.3] translate-y-[0.9px]"
             src={apple}
             alt="Apple 로고"
+            aria-hidden={true}
           />
         </Link>
       </>

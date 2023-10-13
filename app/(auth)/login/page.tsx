@@ -12,8 +12,8 @@ type Props = {};
 function LoginPage(props: Props) {
   return (
     <div className="flex flex-grow gap-12 text-center justify-center items-center min-h-[calc(100vh-1rem)] ml-auto mr-auto">
-      <div className="max-w-[330px] [@media(max-width:900px)]:hidden flex-1">
-        <Image className="" src={phone} alt="phone" />
+      <div className="max-w-[330px] [@media(max-width:900px)]:hidden flex-1" aria-hidden={true}>
+        <Image className="" src={phone} alt="" />
       </div>
       <div className="flex-1 max-w-[400px]">
         <div className="border mb-4 p-10 [@media(max-width:400px)]:border-none">
@@ -21,7 +21,7 @@ function LoginPage(props: Props) {
             <Image
               className="w-1/2 xs:w-1/3 block m-auto"
               src={logo}
-              alt="Fittering"
+              alt="핏터링 로고"
             />
           </h1>
           <LoginForm />

@@ -29,6 +29,7 @@ export default function LikesButton({ isFavorite }: Props) {
       <Image
         src={isFavorite ? greenHeart : grayHeart}
         alt={isFavorite ? '좋아요하기 버튼' : '좋아요 취소하기 버튼'}
+        aria-hidden={true}
       />
     </button>
   );
