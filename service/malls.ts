@@ -17,6 +17,7 @@ export type MallPreview = {
   products: {
     productId: number;
     productImage: string;
+    productName: string;
   }[];
 };
 
