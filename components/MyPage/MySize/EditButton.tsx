@@ -14,6 +14,7 @@ export default function EditButton() {
       <button
         className="w-full md:w-[10rem] mt-8 md:mt-12 py-2 block mx-auto bg-main-color text-white rounded-lg"
         onClick={handleClick}
+        type="button"
       >
         수정
       </button>

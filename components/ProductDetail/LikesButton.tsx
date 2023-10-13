@@ -25,6 +25,7 @@ export default function LikesButton({ isFavorite }: Props) {
     <button
       className="w-7 h-7 sm:w-8 sm:h-8 sm:absolute sm:right-9"
       onClick={handleFavorites}
+      type="button"
     >
       <Image
         src={isFavorite ? greenHeart : grayHeart}

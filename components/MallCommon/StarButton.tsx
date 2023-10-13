@@ -30,7 +30,7 @@ export default function StarButton({
   };
 
   return (
-    <button onClick={handleFavorites}>
+    <button onClick={handleFavorites} type="button">
       <Image
         className={`${
           isMallPage

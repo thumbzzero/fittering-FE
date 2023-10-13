@@ -38,6 +38,7 @@ export default function GlobalFilter() {
         } ${buttonStyle} rounded-t-lg`}
         id="A"
         onClick={onGlobalFilterChange}
+        type="button"
       >
         전체
       </button>
@@ -49,6 +50,7 @@ export default function GlobalFilter() {
         } ${buttonStyle} border-y`}
         id="M"
         onClick={onGlobalFilterChange}
+        type="button"
       >
         남성
       </button>
@@ -60,6 +62,7 @@ export default function GlobalFilter() {
         } ${buttonStyle} rounded-b-lg`}
         id="F"
         onClick={onGlobalFilterChange}
+        type="button"
       >
         여성
       </button>

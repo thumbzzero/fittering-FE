@@ -66,6 +66,7 @@ export default function GlobalMenu() {
         className={`${buttonStyle} border-y`}
         onClick={MoveToTop}
         disabled={!isUpActive}
+        type="button"
       >
         <Image
           className="mx-auto h-full"
@@ -78,6 +79,7 @@ export default function GlobalMenu() {
         className={`${buttonStyle} rounded-b-lg`}
         onClick={MoveToDown}
         disabled={!isDownActive}
+        type="button"
       >
         <Image
           className="mx-auto h-full"
