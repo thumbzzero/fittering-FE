@@ -7,10 +7,17 @@ type Props = {
   productName: string;
 };
 
-export default function MallPreviewImage({ productId, productImage, productName }: Props) {
+export default function MallPreviewImage({
+  productId,
+  productImage,
+  productName,
+}: Props) {
   return (
     <div className="relative after:block after:pb-[100%]">
-      <Link href={`/products/${productId}`}>
+      <Link
+        href={`/products/${productId}`}
+        aria-label={`${productName} 상세 보기로 이동`}
+      >
         <Image
           className="w-full h-full border rounded object-contain absolute top-0 left-0"
           src={productImage}

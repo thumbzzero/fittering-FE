@@ -12,7 +12,10 @@ type Props = {};
 function LoginPage(props: Props) {
   return (
     <div className="flex flex-grow gap-12 text-center justify-center items-center min-h-[calc(100vh-1rem)] ml-auto mr-auto">
-      <div className="max-w-[330px] [@media(max-width:900px)]:hidden flex-1" aria-hidden={true}>
+      <div
+        className="max-w-[330px] [@media(max-width:900px)]:hidden flex-1"
+        aria-hidden={true}
+      >
         <Image className="" src={phone} alt="" />
       </div>
       <div className="flex-1 max-w-[400px]">
@@ -31,13 +34,21 @@ function LoginPage(props: Props) {
             <div className="bg-gray-200 grow shrink h-[1px]  relative top-2"></div>
           </div>
           <SocialLogin />
-          <Link className="text-custom-gray-500 text-sm" href="">
+          <Link
+            className="text-custom-gray-500 text-sm"
+            href=""
+            aria-label="비밀번호 찾기로 이동"
+          >
             비밀번호를 잊으셨나요?
           </Link>
         </div>
         <div className="border p-6 [@media(max-width:400px)]:border-none">
           계정이 없으신가요?{' '}
-          <Link className="text-main-color font-bold" href="/signup">
+          <Link
+            className="text-main-color font-bold"
+            href="/signup"
+            aria-label="회원가입으로 이동"
+          >
             가입하기
           </Link>
         </div>

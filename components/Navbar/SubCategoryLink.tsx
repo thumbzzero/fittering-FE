@@ -16,6 +16,7 @@ export default function SubCategoryLink({ href, isSelected, name }: Props) {
       className={
         isSelected ? 'font-semibold text-main-color' : 'text-custom-gray-800'
       }
+      aria-label={`${name} 카테고리로 이동`}
     >
       {name}
     </Link>

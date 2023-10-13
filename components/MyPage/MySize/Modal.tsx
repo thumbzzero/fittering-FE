@@ -52,6 +52,7 @@ export default function Modal({ setIsModalOpen }: Props) {
               (isMobile ? 'landscape:w-[56vh] landscape:h-[56vh]' : '')
             }
             href="/user/mysize/edit"
+            aria-label="체형 정보 직접 입력으로 이동"
           >
             <Image
               className="mx-auto w-5/12 mb-3"
@@ -67,6 +68,7 @@ export default function Modal({ setIsModalOpen }: Props) {
               (isMobile ? 'landscape:w-[56vh] landscape:h-[56vh]' : '')
             }
             href="/user/mysize/smart_analysis"
+            aria-label="스마트 분석으로 이동"
           >
             <Image
               className="mx-auto w-5/12 mb-3"

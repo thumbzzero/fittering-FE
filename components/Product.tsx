@@ -17,7 +17,10 @@ export default function Product({
     <>
       <div className="relative w-[calc((100vw-3rem)/2)] h-[calc((100vw-3rem)/2)] sm:w-[calc((100vw-5rem)/4)] sm:h-[calc((100vw-5rem)/4)] lg:w-[calc((1024px-3rem)/4)] lg:h-[calc((1024px-3rem)/4)] mb-2 mx-auto">
         {children}
-        <Link href={`/products/${productId}`}>
+        <Link
+          href={`/products/${productId}`}
+          aria-label={`${productName} 상세 보기로 이동`}
+        >
           <Image
             className="w-full h-full rounded-lg object-contain mx-auto border border-custom-gray-100"
             src={productImage}
@@ -31,10 +34,15 @@ export default function Product({
         <Link
           className="block font-semibold text-sm"
           href={`/malls/${mallName}`}
+          aria-label={`${mallName} 쇼핑몰로 이동`}
         >
           {mallName}
         </Link>
-        <Link className="block text-xs" href={`products/${productId}`}>
+        <Link
+          className="block text-xs"
+          href={`products/${productId}`}
+          aria-label={`${productName} 상세 보기로 이동`}
+        >
           {productName}
         </Link>
         <span className="font-semibold text-xs">{price.toLocaleString()}</span>

@@ -27,6 +27,7 @@ function MyPage(props: Props) {
         <Link
           className="md:text-right text-custom-gray-800 font-bold underline decoration-custom-gray-800"
           href="/user/delete"
+          aria-label='회원 탈퇴 페이지로 이동'
         >
           회원 탈퇴하기
         </Link>

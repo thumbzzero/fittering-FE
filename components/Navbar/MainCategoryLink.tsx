@@ -6,11 +6,7 @@ type Props = {
   name: string;
 };
 
-export default function MainCategoryLink({
-  href,
-  isSelected,
-  name,
-}: Props) {
+export default function MainCategoryLink({ href, isSelected, name }: Props) {
   return (
     <Link
       href={href}
@@ -20,6 +16,7 @@ export default function MainCategoryLink({
           ? 'border-main-color border-b-[2px] text-black'
           : 'text-custom-gray-800')
       }
+      aria-label={`${name} 카테고리로 이동`}
     >
       {name}
     </Link>

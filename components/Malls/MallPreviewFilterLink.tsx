@@ -17,6 +17,7 @@ export default function MallPreviewFilterLink({
           : 'border-b'
       } `}
       href={`/malls${!isRanking ? '/favorite_malls' : ''}`}
+      aria-label={`${isRanking ? '자주 방문한 쇼핑몰' : '즐겨찾기한 쇼핑몰'} 보기로 이동`}
     >
       {isRanking ? '자주 방문한 쇼핑몰' : '즐겨찾기한 쇼핑몰'}
     </Link>

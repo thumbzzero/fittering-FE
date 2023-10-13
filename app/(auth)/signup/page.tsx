@@ -21,7 +21,11 @@ function SignUpPage(props: Props) {
       </div>
       <div className="border p-6 [@media(max-width:400px)]:border-none">
         계정이 있으신가요?{' '}
-        <Link className="text-main-color font-bold" href="/login">
+        <Link
+          className="text-main-color font-bold"
+          href="/login"
+          aria-label="로그인 페이지로 이동"
+        >
           로그인
         </Link>
       </div>

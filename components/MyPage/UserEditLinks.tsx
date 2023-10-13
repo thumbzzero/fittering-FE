@@ -9,7 +9,11 @@ const linkStyle =
 export default function UserEditLinks() {
   return (
     <div className="relative flex flex-col gap-4 md:justify-end md:items-end mt-10 md:mt-6 md:flex-row md:bottom-4">
-      <Link className={`${linkStyle} bg-main-color`} href="/user/edit">
+      <Link
+        className={`${linkStyle} bg-main-color`}
+        href="/user/edit"
+        aria-label="회원정보 수정으로 이동"
+      >
         <Image
           className="inline-block w-4 h-4 mr-3"
           src={pencil}
@@ -18,7 +22,11 @@ export default function UserEditLinks() {
         />
         회원정보 수정
       </Link>
-      <Link className={`${linkStyle} bg-button-black`} href="/user/mysize">
+      <Link
+        className={`${linkStyle} bg-button-black`}
+        href="/user/mysize"
+        aria-label="내 맞춤 정보 설정으로 이동"
+      >
         <Image
           className="inline-block w-4 h-4 mr-3"
           src={ruler}

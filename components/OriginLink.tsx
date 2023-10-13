@@ -15,6 +15,7 @@ export default function OriginLink({ origin, isMallPage }: Props) {
       } sm:right-0`}
       href={origin ?? '/'}
       target="_blank"
+      aria-label="상품 원본 링크로 이동"
     >
       <Image src={linkIcon} alt="상품 원본 링크 버튼" aria-hidden={true} />
     </Link>

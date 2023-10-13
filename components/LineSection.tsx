@@ -17,6 +17,7 @@ export default function LineSection({ sectionName, displayStyle }: Props) {
         <Link
           className="absolute right-0 bottom-[0.5rem] text-xs text-custom-gray-400"
           href={`${href}`}
+          aria-label={`${sectionName} 전체 보기로 이동`}
         >
           {'전체 >'}
         </Link>

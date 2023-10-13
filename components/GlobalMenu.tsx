@@ -54,7 +54,11 @@ export default function GlobalMenu() {
         (isMobile ? 'landscape:hidden' : '')
       }
     >
-      <Link className={buttonStyle + ' rounded-t-lg'} href="/user/recent">
+      <Link
+        className={buttonStyle + ' rounded-t-lg'}
+        href="/user/recent"
+        aria-label="최근 본 상품으로 이동"
+      >
         <Image
           className="mx-auto h-full"
           src={eye}

@@ -10,6 +10,7 @@ export default function MallName({ name, isMallPage }: Props) {
     <Link
       className={`inline ${isMallPage ? 'text-sm xs:text-base md:text-lg' : 'text-xl md:text-2xl'} font-semibold truncate pr-1`}
       href={`/malls/${name?.split(' ').join('').toLowerCase()}`}
+      aria-label={`${name} 쇼핑몰 페이지로 이동`}
     >
       {name}
     </Link>
