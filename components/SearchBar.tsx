@@ -34,7 +34,10 @@ export default function SearchBar() {
           onChange={handleKeywordChange}
           value={keyword}
         />
-        <button className="absolute right-0 md:right-1 top-[50%] translate-y-[-50%] md:r-1/12">
+        <button
+          className="absolute right-0 md:right-1 top-[50%] translate-y-[-50%] md:r-1/12"
+          aria-label="검색하기"
+        >
           <Image src={search} alt="검색 버튼" aria-hidden={true} />
         </button>
       </form>

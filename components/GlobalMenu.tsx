@@ -71,6 +71,7 @@ export default function GlobalMenu() {
         onClick={MoveToTop}
         disabled={!isUpActive}
         type="button"
+        aria-label='맨 위로 가기'
       >
         <Image
           className="mx-auto h-full"
@@ -84,6 +85,7 @@ export default function GlobalMenu() {
         onClick={MoveToDown}
         disabled={!isDownActive}
         type="button"
+        aria-label='맨 아래로 가기'
       >
         <Image
           className="mx-auto h-full"

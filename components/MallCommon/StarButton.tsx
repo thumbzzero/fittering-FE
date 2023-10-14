@@ -30,7 +30,11 @@ export default function StarButton({
   };
 
   return (
-    <button onClick={handleFavorites} type="button">
+    <button
+      onClick={handleFavorites}
+      type="button"
+      aria-label={isFavorites ? '쇼핑몰 즐겨찾기 삭제' : '쇼핑몰 즐겨찾기 추가'}
+    >
       <Image
         className={`${
           isMallPage

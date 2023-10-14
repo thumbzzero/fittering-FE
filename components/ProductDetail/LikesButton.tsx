@@ -26,6 +26,7 @@ export default function LikesButton({ isFavorite }: Props) {
       className="w-7 h-7 sm:w-8 sm:h-8 sm:absolute sm:right-9"
       onClick={handleFavorites}
       type="button"
+      aria-label={isFavorite ? '좋아요하기' : '좋아요 취소하기'}
     >
       <Image
         src={isFavorite ? greenHeart : grayHeart}

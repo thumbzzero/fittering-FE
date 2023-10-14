@@ -49,7 +49,10 @@ export default function SmartAnalysisPhotoSubmitForm({
               onChange={handleFileUpload}
             />
           </form>
-          <button className="bg-main-color text-white text-[3rem] rounded-full w-16 h-16">
+          <button
+            className="bg-main-color text-white text-[3rem] rounded-full w-16 h-16"
+            aria-label={`${photoType === 'FRONT' ? '정면' : '측면'} 사진 등록`}
+          >
             <Image className="mx-auto" src={plus} alt="+" aria-hidden={true} />
           </button>
           <span className="text-main-color">
