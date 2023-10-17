@@ -4,7 +4,6 @@ import Image from 'next/image';
 import search from '/public/icon/search_green.svg';
 import { useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
-import SearchKeywords from './SearchKeywords';
 
 export default function SearchBar() {
   const pathname = usePathname();
