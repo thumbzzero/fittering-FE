@@ -16,7 +16,7 @@ export default function MobileMallIntroduction({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-4 items-center">
-        <MallLogo src={src} />
+        <MallLogo src={src} name={name} />
         <MallName name={name} />
       </div>
       <MallDescription description={description} isMallPage={true} />
