@@ -1,4 +1,4 @@
-import { customFetch } from '@/utils/customFetch';
+import { serverFetch } from '@/utils/customFetch';
 
 export type Keywords = {
   products: {
@@ -14,7 +14,7 @@ export type Keywords = {
 };
 
 export async function getSearchKeywords(keyword: string): Promise<Keywords> {
-  const response = await customFetch(`/search/${keyword}`);
+  const response = await serverFetch(`/search/${keyword}`);
   if (!response.ok) {
     return { products: [], malls: [] };
   }
