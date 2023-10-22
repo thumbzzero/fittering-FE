@@ -31,14 +31,14 @@ export default function SearchKeyword({
   return (
     <li
       onClick={handleKeywordClick}
-      className="flex gap-2 text-xs sm:text-sm pl-4 py-1 hover:bg-gray-50"
+      className="flex items-center gap-2 text-xs sm:text-sm pl-4 py-1 hover:bg-gray-50"
     >
       <Image
         className="object-contain"
         src={image}
         alt=""
-        width={10}
-        height={10}
+        width={30}
+        height={30}
       />
       <div>
         <span>{`${name.substring(0, keywordIndex)}`}</span>

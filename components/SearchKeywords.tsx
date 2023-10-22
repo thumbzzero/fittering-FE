@@ -28,7 +28,7 @@ export default function SearchKeywords({
 
   return (
     <div>
-      <span className="block text-xs pl-4 py-1">
+      <span className="block text-xs pl-4 py-2 text-custom-gray-800">
         {type === 'malls' ? '쇼핑몰' : '상품'}
       </span>
       <ul className="">
