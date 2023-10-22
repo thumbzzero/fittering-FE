@@ -45,7 +45,7 @@ export default function SearchBar() {
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/search?keyword=${keyword}`);
+    router.push(`/search?keyword=${searchInput}`);
   };
 
   return (
