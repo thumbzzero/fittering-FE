@@ -35,7 +35,7 @@ export default function SearchKeywords({
         {data.map((result) => (
           <SearchKeyword
             key={result.id}
-            href={`/${type}/${result.id}`}
+            href={`/${type}/${type === 'malls' ? result.name : result.id}`}
             name={result.name}
             image={result.image}
             keyword={keyword}
