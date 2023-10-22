@@ -45,7 +45,11 @@ export default function SearchBar() {
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/search?keyword=${searchInput}`);
+    if (searchInput) {
+      router.push(`/search?keyword=${searchInput}`);
+      setSearchInput('');
+      setKeyword('');
+    }
   };
 
   return (
@@ -71,10 +75,14 @@ export default function SearchBar() {
         <SearchKeywords
           keyword={keyword}
           keywords={{ type: 'malls', data: keywords.malls }}
+          setSearchInput={setSearchInput}
+          setKeyword={setKeyword}
         />
         <SearchKeywords
           keyword={keyword}
           keywords={{ type: 'products', data: keywords.products }}
+          setSearchInput={setSearchInput}
+          setKeyword={setKeyword}
         />
       </div>
     </div>

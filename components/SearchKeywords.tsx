@@ -14,11 +14,15 @@ type Props = {
         type: 'products';
         data: Products[];
       };
+  setSearchInput: React.Dispatch<React.SetStateAction<string>>;
+  setKeyword: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export default function SearchKeywords({
   keyword,
   keywords: { type, data },
+  setSearchInput,
+  setKeyword,
 }: Props) {
   if (data.length === 0) return null;
 
@@ -35,6 +39,8 @@ export default function SearchKeywords({
             name={result.name}
             image={result.image}
             keyword={keyword}
+            setSearchInput={setSearchInput}
+            setKeyword={setKeyword}
           />
         ))}
       </ul>
