@@ -36,8 +36,8 @@ function LoginPage(props: Props) {
           <SocialLogin />
           <Link
             className="text-custom-gray-500 text-sm"
-            href=""
-            aria-label="비밀번호 찾기로 이동"
+            href="/find/password"
+            aria-label="비밀번호 재발급으로 이동"
           >
             비밀번호를 잊으셨나요?
           </Link>
