@@ -1,5 +1,6 @@
 'use client';
 
+import { findPassword, isEmailValid } from '@/service/auth';
 import { useState } from 'react';
 
 export default function FindPasswordForm() {
@@ -9,10 +10,20 @@ export default function FindPasswordForm() {
     setEmail(e.target.value);
   };
 
-  const handleEmailCheck = async () => {};
-
   const handleFindPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (await isEmailValid(email)) {
+      const response = await findPassword(email);
+      if (response.status === 200) {
+        window.alert('이메일로 임시 비밀번호를 발송하였습니다.');
+      } else if (response.status === 400) {
+        window.alert('비밀번호 찾기는 1시간에 한 번 가능합니다.');
+      } else {
+        window.alert('비밀번호 재발급에 실패하였습니다.');
+      }
+    } else {
+      window.alert('일치하는 메일이 없습니다.');
+    }
   };
 
   return (
