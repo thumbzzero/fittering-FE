@@ -1,4 +1,5 @@
 import { BASE_URL } from '@/constants/apis';
+import { serverFetch } from '@/utils/customFetch';
 
 type User = {
   username: string;
@@ -56,5 +57,22 @@ export async function login({
 
   if (response.ok) localStorage.setItem('TOKEN', token);
 
+  return response;
+}
+
+export async function isEmailValid(email: string) {
+  const response = await serverFetch(`/email/check?email=${email}`, {
+    method: 'post',
+  });
+  if (response.ok) {
+    return true;
+  }
+  return false;
+}
+
+export async function findPassword(email: string): Promise<Response> {
+  const response = await serverFetch(`/password/send?email=${email}`, {
+    method: 'post',
+  });
   return response;
 }
