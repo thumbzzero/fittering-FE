@@ -5,19 +5,30 @@ import { LoginForm } from '@/components/Form/LoginForm';
 import { SocialLogin } from '@/components/Form/SocialLogin';
 import phone from '/public/iPhone 14 Pro - Space Black - Portrait.png';
 import logo from '/public/Fittering_logo.png';
+import example from '/public/example.png';
 import SocialLoginRedirect from '@/components/Redirect/SocialLoginRedirect';
 
 type Props = {};
 
 function LoginPage(props: Props) {
   return (
-    <div className="flex flex-grow gap-12 text-center justify-center items-center min-h-[calc(100vh-1rem)] ml-auto mr-auto">
+    <div className="flex flex-grow gap-12 text-center justify-center items-center min-h-[calc(100vh-1rem)]">
       <div
-        className="max-w-[330px] [@media(max-width:900px)]:hidden flex-1"
+        className="flex-1 relative max-w-[330px] [@media(max-width:900px)]:hidden "
         aria-hidden={true}
       >
-        <Image className="" src={phone} alt="" />
+        <Image
+          className="absolute top-[50%] translate-y-[-50%] z-10"
+          src={phone}
+          alt=""
+        />
+        <Image
+          className="absolute top-[50%] translate-y-[-50%] z-0 scale-[96%] px-[0.83rem]"
+          src={example}
+          alt=""
+        />
       </div>
+
       <div className="flex-1 max-w-[400px]">
         <div className="border mb-4 p-10 [@media(max-width:400px)]:border-none">
           <h1 className="text-3xl font-bold mt-6">
