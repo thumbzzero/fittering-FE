@@ -1,18 +1,18 @@
 import { AUTH_URL, BASE_URL } from '@/constants/apis';
 
-const accessToken =
-  typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
-
-const defaultHeaders = {
-  'Content-Type': 'application/json',
-  Authorization: `${accessToken}`,
-};
-
 export async function customFetch(
   url: string,
   options?: RequestInit,
   isFileUpload?: boolean
 ): Promise<Response> {
+  const accessToken =
+    typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
+
+  const defaultHeaders = {
+    'Content-Type': 'application/json',
+    Authorization: `${accessToken}`,
+  };
+
   const headers = isFileUpload
     ? { Authorization: `${accessToken}`, ...options?.headers }
     : { ...defaultHeaders, ...options?.headers };
