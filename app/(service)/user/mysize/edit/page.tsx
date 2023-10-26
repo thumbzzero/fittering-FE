@@ -12,7 +12,7 @@ async function MySizeEditPage(props: Props) {
     <>
       <LineSection
         sectionName="내 맞춤 정보 설정"
-        displayStyle="hidden md:block"
+        displayStyle="hidden md:block md:mb-8"
       />
       <MobileSection sectionName="내 맞춤 정보 설정" />
       <div className="flex flex-col gap-8 md:gap-12 w-full md:flex-row md:portrait:flex-col">
