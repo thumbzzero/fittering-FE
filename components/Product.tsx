@@ -39,7 +39,7 @@ export default function Product({
           {mallName}
         </Link>
         <Link
-          className="block text-xs"
+          className="block text-xs truncate"
           href={`products/${productId}`}
           aria-label={`${productName} 상세 보기로 이동`}
         >
