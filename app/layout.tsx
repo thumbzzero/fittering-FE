@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: '핏터링 - Fittering',
   description:
-    '핏터링(Fittering, Fit + Filtering)을 통해 체형 분석을 쉽게 하고, 나의 체형에 fit한 옷을 구매해보세요!',
+    '핏터링(Fittering)을 통해 체형 분석을 쉽게 하고, 나의 체형에 fit한 옷을 구매해보세요!',
   keywords: [
     '핏터링',
     'fittering',
@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     '추천',
     '상품',
   ],
+  openGraph: {
+    title: '핏터링 - Fittering',
+    description: '핏터링(Fittering)을 통해 체형 분석을 쉽게 하고, 나의 체형에 fit한 옷을 구매해보세요!',
+    url: 'https://fit-tering.com',
+    siteName: '핏터링 - Fittering',
+    images: [
+      {
+        url: 'https://images.fit-tering.com/images/fit-tering_logo.png',
+        width: 800,
+        height: 400,
+      }
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  }
 };
 
 export default function RootLayout({

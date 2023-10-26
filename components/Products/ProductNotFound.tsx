@@ -7,7 +7,7 @@ type Props = {
 export default function ProductNotFound({ sectionName }: Props) {
   return (
     <>
-      <div className="z-[-1] bg-custom-gray-50 h-60 w-[100vw] absolute left-0 mt-8"></div>
+      <div className="z-[-1] bg-custom-gray-50 h-60 w-[100vw] absolute left-0 md:mt-8"></div>
       <div className="mt-8 h-60">
         <div className="text-sm sm:text-lg font-semibold border-b border-custom-gray-400 pt-8 pb-2">
           {sectionName}
