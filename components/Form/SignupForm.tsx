@@ -116,6 +116,7 @@ export const SignupForm = () => {
         maxLength={64}
         onChange={onEmailChange}
         required
+        aria-required={true}
       />
       <input
         className={
@@ -128,10 +129,19 @@ export const SignupForm = () => {
         maxLength={20}
         onChange={onUsernameChange}
         required
+        aria-required={true}
       />
       <div className="w-full my-2">
-        <ul className="w-full box-border list-none block">
-          <li className="w-1/2 rounded-l-xl inline-block list-none">
+        <ul
+          className="w-full box-border list-none block"
+          role="radiogroup"
+          aria-required={true}
+        >
+          <li
+            role="radio"
+            aria-checked={gender === 'M'}
+            className="w-1/2 rounded-l-xl inline-block list-none"
+          >
             <input
               className="absolute w-full list-none appearance-none"
               type="radio"
@@ -139,7 +149,6 @@ export const SignupForm = () => {
               id="M"
               value="M"
               onChange={onGenderChange}
-              required
             />
             <label
               className={
@@ -155,7 +164,11 @@ export const SignupForm = () => {
               남성
             </label>
           </li>
-          <li className="w-1/2 inline-block list-none">
+          <li
+            role="radio"
+            aria-checked={gender === 'F'}
+            className="w-1/2 inline-block list-none"
+          >
             <input
               className="absolute list-none appearance-none"
               type="radio"
@@ -192,6 +205,7 @@ export const SignupForm = () => {
         maxLength={8}
         onChange={onBirthDateChange}
         required
+        aria-required={true}
       />
       <input
         className={
@@ -207,6 +221,7 @@ export const SignupForm = () => {
         maxLength={15}
         onChange={onPasswordChange}
         required
+        aria-required={true}
       />
       <input
         className={
@@ -222,6 +237,7 @@ export const SignupForm = () => {
         maxLength={15}
         onChange={onPasswordConfirmChange}
         required
+        aria-required={true}
       />
       <button
         className="bg-main-color w-full text-white p-2 rounded-lg font-bold my-2 disabled:opacity-75"

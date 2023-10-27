@@ -49,6 +49,7 @@ export const LoginForm = () => {
         placeholder="이메일"
         onChange={onEmailChange}
         required
+        aria-required={true}
       />
       <input
         className={
@@ -59,6 +60,7 @@ export const LoginForm = () => {
         placeholder="비밀번호"
         onChange={onPasswordChange}
         required
+        aria-required={true}
       />
       <button
         className="bg-main-color w-full text-white p-2 rounded-lg font-bold my-4 disabled:opacity-70"
