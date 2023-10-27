@@ -32,11 +32,11 @@ export const metadata: Metadata = {
         url: 'https://images.fit-tering.com/images/fit-tering_logo.png',
         width: 800,
         height: 400,
-      }
+      },
     ],
     locale: 'ko_KR',
     type: 'website',
-  }
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +46,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="LvcYmxyEb8LLl3hbe3UtQi-fGZI_ADdzzwg3wjvTm_4"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

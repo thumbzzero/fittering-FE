@@ -35,6 +35,7 @@ export default function FindPasswordForm() {
         maxLength={64}
         onChange={onEmailChange}
         required
+        aria-required={true}
       />
       <button
         className="bg-main-color w-full text-white p-2 rounded-lg font-bold text-sm sm:text-bases mt-4 disabled:opacity-75"
