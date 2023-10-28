@@ -14,7 +14,7 @@ export default function SocialLoginRedirect() {
     typeof window !== 'undefined' ? localStorage.getItem('TOKEN') : null;
   useEffect(() => {
     if (typeof window !== 'undefined' && accessToken !== null) {
-      redirect('/');
+      redirect('/home');
     }
   }, [accessToken]);
   return null;
