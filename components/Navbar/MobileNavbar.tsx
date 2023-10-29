@@ -23,7 +23,7 @@ export default function MobileNavbar() {
 
   return (
     <nav className="fixed left-0 bottom-0 flex w-full bg-nav-black py-4 md:hidden">
-      <Link className={menuStyle} href="https://fit-tering.com" aria-label="홈 화면으로 이동">
+      <Link className={menuStyle} href="https://fit-tering.com/home" aria-label="홈 화면으로 이동">
         <Image
           className={iconStyle}
           src={home}
