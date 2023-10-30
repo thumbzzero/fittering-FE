@@ -6,12 +6,14 @@ import { mySizeActions } from '@/store/mySizeSlice';
 import { useState } from 'react';
 import EditFormInput from './EditFormInput';
 import { useRouter } from 'next/navigation';
+import { MyPage } from '@/types/user';
 
 type Props = {};
 
 export default function EditForm(props: Props) {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const myPage: MyPage = useAppSelector((state) => state.myPage);
   const mySize: MySize = useAppSelector((state) => state.mySize);
 
   const [height, setHeight] = useState(mySize.height ?? null);
@@ -56,7 +58,7 @@ export default function EditForm(props: Props) {
 
   return (
     <div className="flex-1 w-full h-full">
-      <div className="font-semibold pb-6">열졍콩님의 체형</div>
+      <div className="font-semibold pb-6">{`${myPage.username}`}님의 체형</div>
 
       <form className="flex flex-col md:flex-row md:gap-12">
         <div className="flex-1">

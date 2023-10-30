@@ -3,6 +3,7 @@
 import { MySize } from '@/service/mysize';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { fetchMySize } from '@/store/mySizeAction';
+import { MyPage } from '@/types/user';
 import { useEffect } from 'react';
 
 const tableStyle =
@@ -12,6 +13,7 @@ const sizeStyle = 'text-main-color font-semibold text-lg pr-2';
 
 export default function MySizeInfo() {
   const dispatch = useAppDispatch();
+  const myPage: MyPage = useAppSelector((state) => state.myPage);
   const mySize: MySize = useAppSelector((state) => state.mySize);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function MySizeInfo() {
 
   return (
     <div className="flex-1 w-full h-full">
-      <div className="font-semibold pb-6">열졍콩님의 체형</div>
+      <div className="font-semibold pb-6">{`${myPage.username}`}님의 체형</div>
       <div className="flex flex-col md:flex-row md:gap-12">
         <table className={tableStyle}>
           <tbody>
