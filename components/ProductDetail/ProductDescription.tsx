@@ -45,7 +45,7 @@ export default function ProductDescription({
   return (
     <div>
       <div className="flex gap-1 justify-end items-center sm:block sm:relative">
-        <LikesButton isFavorite={isFavorite} />
+        <LikesButton initialFavorite={isFavorite} />
         <OriginLink origin={origin} />
       </div>
       <table>

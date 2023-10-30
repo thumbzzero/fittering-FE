@@ -5,19 +5,27 @@ import Image from 'next/image';
 import grayHeart from 'public/icon/heart_gray.svg';
 import greenHeart from 'public/icon/heart_green.svg';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 type Props = {
-  isFavorite: boolean;
+  initialFavorite: boolean;
 };
 
-export default function LikesButton({ isFavorite }: Props) {
+export default function LikesButton({ initialFavorite }: Props) {
   const productId = parseInt(usePathname().split('/')[2]);
+  const [isFavorite, setIsFavorite] = useState<boolean>(initialFavorite);
+
+  useEffect(() => {
+    setIsFavorite(initialFavorite);
+  }, [initialFavorite]);
 
   const handleFavorites = async () => {
     if (isFavorite) {
-      await deleteFavorites(productId);
+      const response = await deleteFavorites(productId);
+      if (response.ok) setIsFavorite(false);
     } else {
-      await addFavorites(productId);
+      const response = await addFavorites(productId);
+      if (response.ok) setIsFavorite(true);
     }
   };
 
