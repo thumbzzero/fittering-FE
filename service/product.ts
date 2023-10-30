@@ -58,9 +58,10 @@ export async function getProductPreviewPaging(
 }
 
 export async function getProductPreviewWithoutToken(
-  url: string
+  url: string,
+  options?: RequestInit
 ): Promise<ProductPreview[]> {
-  const response = await serverFetch(url);
+  const response = await serverFetch(url, options);
   if (!response.ok) {
     return [];
   }
@@ -68,9 +69,10 @@ export async function getProductPreviewWithoutToken(
 }
 
 export async function getProductPreviewPagingWithoutToken(
-  url: string
+  url: string,
+  options?: RequestInit
 ): Promise<ProductPreview[]> {
-  const response = await serverFetch(url);
+  const response = await serverFetch(url, options);
   if (!response.ok) {
     return [];
   }
