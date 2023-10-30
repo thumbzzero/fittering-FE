@@ -30,6 +30,20 @@ export default function FavoriteProducts({ isPreview }: Props) {
     fetchProducts();
     setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640);
   }, [isPreview]);
+
+  if (products.length === 0) {
+    return (
+      <>
+        {isPreview ? (
+          <LineSection sectionName="좋아요한 상품" displayStyle="" />
+        ) : null}
+        <div className="mt-8 text-center text-custom-gray-800">
+          좋아요한 상품이 없습니다.
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       {isPreview ? (
