@@ -16,12 +16,16 @@ const buttonStyle =
 export default function GlobalMenu() {
   const [isMobile, setIsMobile] = useState(false);
   const [isUpActive, setIsUpActive] = useState(false);
-  const [isDownActive, setIsDownActive] = useState(
-    document.documentElement.scrollHeight > window.innerHeight
-  );
+  const [isDownActive, setIsDownActive] = useState(false);
 
   useEffect(() => {
     setIsMobile(detectMobileDevice(window.navigator.userAgent));
+    setTimeout(() => {
+      if (window.scrollY + window.innerHeight <
+        document.documentElement.scrollHeight) {
+        setIsDownActive(true);
+      }
+    }, 100);
   }, []);
 
   const MoveToTop = () => {
