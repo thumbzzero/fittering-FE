@@ -1,5 +1,6 @@
 'use client';
 
+import GlobalMenu from '@/components/GlobalMenu';
 import MobileSection from '@/components/MobileSection';
 import RecentProducts from '@/components/MyPage/RecentProducts';
 import DetailInfo from '@/components/ProductDetail/DetailInfo';
@@ -36,6 +37,7 @@ function ProductPage({ params: { productId } }: Props) {
       <SizeInfo category={product.category} sizes={product.sizes} />
       <DetailInfo descriptions={product.descriptions} />
       <RecentProducts isPreview={true} />
+      <GlobalMenu />
     </div>
   );
 }
