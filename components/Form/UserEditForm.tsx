@@ -53,6 +53,10 @@ export const UserEditForm = () => {
 
   const handleIsEditMode = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (isNaN(year) || isNaN(month) || isNaN(day)) {
+      window.alert('생년월일을 올바르게 입력해 주세요.');
+      return;
+    }
     const updatedMyPage: MyPage = {
       email: myPage.email,
       username,
@@ -156,7 +160,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="year"
-                value={year}
+                value={isNaN(year) ? '' : year.toString()}
                 placeholder={isNaN(year) ? '' : year.toString()}
                 onChange={handleYearChange}
                 minLength={4}
@@ -173,7 +177,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="month"
-                value={month}
+                value={isNaN(month) ? '' : month.toString()}
                 placeholder={isNaN(month) ? '' : month.toString()}
                 onChange={handleMonthChange}
                 minLength={1}
@@ -190,7 +194,7 @@ export const UserEditForm = () => {
                 className={birthDateInputStyle}
                 type="text"
                 id="day"
-                value={day}
+                value={isNaN(day) ? '' : day.toString()}
                 placeholder={isNaN(day) ? '' : day.toString()}
                 onChange={handleDayChange}
                 minLength={1}
