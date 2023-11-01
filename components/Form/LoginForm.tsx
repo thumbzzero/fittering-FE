@@ -31,7 +31,7 @@ export const LoginForm = () => {
     e.preventDefault();
     const response = await login({ email, password });
     if (response.ok) {
-      router.replace('/');
+      router.replace('/home');
     } else {
       window.alert('이메일 또는 비밀번호를 확인해주세요.');
     }

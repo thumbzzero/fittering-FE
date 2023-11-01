@@ -67,6 +67,14 @@ export default function CategoryProducts({
     filterId
   );
 
+  if (products.length === 0) {
+    return (
+      <div className="mt-8 text-center text-custom-gray-800">
+        아직 등록된 상품이 없습니다.
+      </div>
+    );
+  }
+
   return (
     <>
       <FilterIdDropdown setFilterId={setFilterId} />

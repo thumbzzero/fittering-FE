@@ -22,7 +22,10 @@ export async function customFetch(
   const response = await fetch(mergedURL, mergedOptions);
 
   if (response.status === 401) {
-    localStorage.removeItem('TOKEN');
+    if (localStorage.getItem('TOKEN')) {
+      window.alert('다시 로그인해 주세요.');
+      localStorage.removeItem('TOKEN');
+    }
     window.location.replace('/login');
   }
 

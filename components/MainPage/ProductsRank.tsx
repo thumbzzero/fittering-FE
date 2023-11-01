@@ -2,10 +2,10 @@ import Section from '@/components/Section';
 import { getProductPreviewWithoutToken } from '@/service/product';
 import RankFilter from './RankFilter';
 
-export const revalidate = 3600 * 24;
-
 async function fetchRank(gender: 'A' | 'M' | 'F') {
-  return await getProductPreviewWithoutToken(`/products/rank/${gender}`);
+  return await getProductPreviewWithoutToken(`/products/rank/${gender}`, {
+    next: { revalidate: 3600 * 24 },
+  });
 }
 
 export default async function ProductsRank() {

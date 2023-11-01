@@ -1,6 +1,8 @@
 'use client';
 
+import GlobalMenu from '@/components/GlobalMenu';
 import MobileSection from '@/components/MobileSection';
+import RecentProducts from '@/components/MyPage/RecentProducts';
 import DetailInfo from '@/components/ProductDetail/DetailInfo';
 import ProductSummary from '@/components/ProductDetail/ProductSummary';
 import SizeInfo from '@/components/ProductDetail/SizeInfo';
@@ -26,7 +28,7 @@ function ProductPage({ params: { productId } }: Props) {
   }, [productId]);
 
   return (
-    <div>
+    <div className='mb-8 md:mb-20'>
       <div className="hidden md:block">
         <Section sectionName={product.productName} />
       </div>
@@ -34,6 +36,8 @@ function ProductPage({ params: { productId } }: Props) {
       <ProductSummary product={product} />
       <SizeInfo category={product.category} sizes={product.sizes} />
       <DetailInfo descriptions={product.descriptions} />
+      <RecentProducts isPreview={true} />
+      <GlobalMenu />
     </div>
   );
 }

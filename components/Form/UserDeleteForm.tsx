@@ -46,7 +46,7 @@ export const UserDeleteForm = () => {
     if (response.ok) {
       window.alert('회원탈퇴가 완료되었습니다.');
       localStorage.removeItem('TOKEN');
-      router.replace('/login');
+      router.replace('/');
     } else {
       window.alert('이메일 또는 비밀번호를 확인해주세요.');
     }

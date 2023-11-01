@@ -4,6 +4,7 @@ import { Malls, Products } from '@/service/search';
 import SearchKeyword from './SearchKeyword';
 
 type Props = {
+  isKeywordsOpen: boolean;
   keyword: string;
   keywords:
     | {
@@ -19,11 +20,13 @@ type Props = {
 };
 
 export default function SearchKeywords({
+  isKeywordsOpen,
   keyword,
   keywords: { type, data },
   setSearchInput,
   setKeyword,
 }: Props) {
+  if (!isKeywordsOpen) return null;
   if (data.length === 0) return null;
 
   return (
