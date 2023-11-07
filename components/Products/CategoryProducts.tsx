@@ -1,71 +1,66 @@
 'use client';
 
 import { categoryNameToIndex } from '@/utils/categoryNameToIndex';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FilterIdDropdown from '../FilterIdDropdown';
 import ProductsGrid from './ProductsGrid';
-import { CategoryProductsData } from '@/types/categoryProducts';
 import { useSearchParams } from 'next/navigation';
+import { ProductPreview } from '@/service/product';
+import {
+  fetchCategoriesProducts,
+  fetchMallCategoriesProducts,
+} from '@/service/categoriesProducts';
 
 type Props = {
   categoryName?: string[];
-  mainCategoriesProducts: CategoryProductsData[];
-  subCategoriesProducts: CategoryProductsData[];
+  mallId?: Promise<number>;
 };
 
-function setProducts(
-  categoryName: string[],
-  mainCategoriesProducts: CategoryProductsData[],
-  subCategoriesProducts: CategoryProductsData[],
-  gender: string,
-  filterId: number
-) {
-  if (categoryName.length === 0)
-    return mainCategoriesProducts.filter(
-      (products) =>
-        products.categoryId === 0 &&
-        products.gender === gender &&
-        products.filterId === filterId
-    )[0]?.contents;
-
-  if (categoryName.length === 1)
-    return mainCategoriesProducts.filter(
-      (products) =>
-        products.categoryId === categoryNameToIndex(categoryName) &&
-        products.gender === gender &&
-        products.filterId === filterId
-    )[0]?.contents;
-
-  return subCategoriesProducts.filter(
-    (products) =>
-      products.categoryId === categoryNameToIndex(categoryName) &&
-      products.gender === gender &&
-      products.filterId === filterId
-  )[0]?.contents;
-}
-
-export default function CategoryProducts({
-  categoryName,
-  mainCategoriesProducts,
-  subCategoriesProducts,
-}: Props) {
+export default function CategoryProducts({ categoryName, mallId }: Props) {
   const searchParams = useSearchParams();
-  const mallMainCategory = searchParams.get('category');
-  const mallSubCategory = searchParams.get('subCategory');
-  let mallCategoryName: string[] = [];
-  if (mallMainCategory) mallCategoryName.push(mallMainCategory);
-  if (mallSubCategory) mallCategoryName.push(mallSubCategory);
 
-  const categoryNameParam = categoryName ?? mallCategoryName;
+  let mallCategoryName: string[] = [];
+  if (searchParams.get('category'))
+    mallCategoryName.push(searchParams.get('category')!);
+  if (searchParams.get('subCategory'))
+    mallCategoryName.push(searchParams.get('subCategory')!);
+
+  const [products, setProducts] = useState<ProductPreview[]>([]);
+
+  const categoryType =
+    (categoryName ?? mallCategoryName).length < 2 ? 'main' : 'sub';
+  const categoryId = categoryNameToIndex(categoryName ?? mallCategoryName);
   const gender = localStorage.getItem('GLOBAL_FILTER') ?? 'A';
   const [filterId, setFilterId] = useState(0);
-  const products = setProducts(
-    categoryNameParam,
-    mainCategoriesProducts,
-    subCategoriesProducts,
-    gender,
-    filterId
-  );
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    async function fetchProduct() {
+      if (mallId) {
+        setProducts(
+          await fetchMallCategoriesProducts(
+            await mallId,
+            categoryType,
+            categoryId,
+            gender,
+            filterId,
+            page
+          )
+        );
+      } else {
+        setProducts(
+          await fetchCategoriesProducts(
+            categoryType,
+            categoryId,
+            gender,
+            filterId,
+            page
+          )
+        );
+      }
+    }
+    fetchProduct();
+  }, [categoryType, categoryId, gender, mallId, filterId, page]);
 
   if (products.length === 0) {
     return (
