@@ -8,6 +8,7 @@ import ProductsGrid from '@/components/Products/ProductsGrid';
 import ProductNotFound from '@/components//Products/ProductNotFound';
 import { useAppSelector } from '@/store/hooks';
 import { MyPage } from '@/types/user';
+import AllLink from './AllLink';
 
 type Props = {
   recommendationType: 1 | 2;
@@ -22,7 +23,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
     recommendationType === 1
       ? `${myPage.username}님을 위한 추천 상품`
       : `${myPage.username}님과 비슷한 체형의 고객의 pick`;
-      
+
   useEffect(() => {
     const blankOrPick = recommendationType === 2 ? '/pick' : '';
     async function fetchProduct() {
@@ -32,7 +33,7 @@ export default function ProductRecommendation({ recommendationType }: Props) {
       setProducts(data);
     }
     fetchProduct();
-    setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640)
+    setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640);
   }, [recommendationType]);
 
   return (
@@ -41,7 +42,11 @@ export default function ProductRecommendation({ recommendationType }: Props) {
         <ProductNotFound sectionName={sectionName} />
       ) : (
         <>
-          <Section sectionName={sectionName} />
+          <Section sectionName={sectionName}>
+            <AllLink
+              href={`/user/recommendation?type=${recommendationType}`}
+            />
+          </Section>
           {isMobile ? (
             <ProductSlider products={products} />
           ) : (
