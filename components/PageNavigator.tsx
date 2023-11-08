@@ -55,6 +55,7 @@ export default function PageNavigator({
   return (
     <div className="flex items-center justify-center text-center my-12">
       <PagingArrowButton
+        type="이전"
         arrowSrc={leftArrow}
         isActive={start !== 1}
         onClick={() => {
@@ -70,6 +71,7 @@ export default function PageNavigator({
         />
       ))}
       <PagingArrowButton
+        type="다음"
         arrowSrc={rightArrow}
         isActive={end !== Math.ceil(productCount / 20)}
         onClick={() => {

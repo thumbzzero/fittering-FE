@@ -13,6 +13,9 @@ export default function PageButton({ page, isActive, onClick }: Props) {
           ? 'font-semibold bg-bean-color border-bean-color text-white'
           : ''
       }`}
+      type="button"
+      aria-pressed={isActive}
+      aria-label={`${page} 페이지로 이동`}
     >
       {page}
     </button>
