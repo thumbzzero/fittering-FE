@@ -100,3 +100,14 @@ export const bottom: Category = {
     },
   ],
 };
+
+export type CategoryCount = {
+  main: {
+    categoryId: number;
+    count: number;
+  }[];
+  sub: {
+    categoryId: number;
+    count: number;
+  }[];
+};

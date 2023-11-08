@@ -10,6 +10,7 @@ import {
   fetchCategoriesProducts,
   fetchMallCategoriesProducts,
 } from '@/service/categoriesProducts';
+import PageNavigator from '../PageNavigator';
 
 type Props = {
   categoryName?: string[];
@@ -32,7 +33,7 @@ export default function CategoryProducts({ categoryName, mallId }: Props) {
   const categoryId = categoryNameToIndex(categoryName ?? mallCategoryName);
   const gender = localStorage.getItem('GLOBAL_FILTER') ?? 'A';
   const [filterId, setFilterId] = useState(0);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -44,7 +45,7 @@ export default function CategoryProducts({ categoryName, mallId }: Props) {
             categoryId,
             gender,
             filterId,
-            page
+            currentPage
           )
         );
       } else {
@@ -54,13 +55,13 @@ export default function CategoryProducts({ categoryName, mallId }: Props) {
             categoryId,
             gender,
             filterId,
-            page
+            currentPage
           )
         );
       }
     }
     fetchProduct();
-  }, [categoryType, categoryId, gender, mallId, filterId, page]);
+  }, [categoryType, categoryId, gender, mallId, filterId, currentPage]);
 
   if (products.length === 0) {
     return (
@@ -74,6 +75,13 @@ export default function CategoryProducts({ categoryName, mallId }: Props) {
     <>
       <FilterIdDropdown setFilterId={setFilterId} />
       <ProductsGrid products={products} />
+      <PageNavigator
+        categoryType={categoryType}
+        categoryId={categoryId}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        mallId={mallId}
+      />
     </>
   );
 }
