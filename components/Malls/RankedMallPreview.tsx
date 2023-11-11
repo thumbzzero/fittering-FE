@@ -23,7 +23,7 @@ export default function RankedMallPreview() {
           <span className="block text-custom-gray-800 my-4 text-sm">
             방문한 쇼핑몰이 없습니다.
           </span>
-          <LinkButton href="/malls" guide="쇼핑몰 전체 보기" />
+          <LinkButton href="/malls/list" guide="쇼핑몰 전체 보기" />
         </>
       )}
     </div>
