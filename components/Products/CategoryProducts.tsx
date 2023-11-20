@@ -36,6 +36,10 @@ export default function CategoryProducts({ categoryName, mallId }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
+    setCurrentPage(1);
+  }, [categoryId]);
+
+  useEffect(() => {
     async function fetchProduct() {
       if (mallId) {
         setProducts(
