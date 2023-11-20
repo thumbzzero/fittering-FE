@@ -31,7 +31,7 @@ export default function SearchKeyword({
   return (
     <li
       onClick={handleKeywordClick}
-      className="flex items-center gap-2 text-xs sm:text-sm pl-4 py-1 hover:bg-gray-50"
+      className="flex items-center gap-2 text-xs sm:text-sm px-4 py-1 hover:bg-gray-50"
     >
       <Image
         className="object-contain"
@@ -40,13 +40,13 @@ export default function SearchKeyword({
         width={30}
         height={30}
       />
-      <div>
+      <div className='truncate'>
         <span>{`${name.substring(0, keywordIndex)}`}</span>
         <span className="font-semibold">{`${name.substring(
           keywordIndex,
           keywordIndex + keyword.length
         )}`}</span>
-        <span className="truncate">{`${name.substring(
+        <span>{`${name.substring(
           keywordIndex + keyword.length
         )}`}</span>
       </div>
