@@ -2,21 +2,14 @@
 
 import FavoriteProducts from '@/components/FavoriteProducts';
 import RecentProducts from '@/components/MyPage/RecentProducts';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { fetchMyPage } from '@/store/myPageAction';
+import { useAppSelector } from '@/store/hooks';
 import { MyPage } from '@/types/user';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
 import MyPageCommon from '../../../components/MyPage/MyPageCommon';
 
 type Props = {};
 function MyPage(props: Props) {
-  const dispatch = useAppDispatch();
   const myPage: MyPage = useAppSelector((state) => state.myPage);
-
-  useEffect(() => {
-    dispatch(fetchMyPage());
-  }, [dispatch]);
 
   return (
     <>

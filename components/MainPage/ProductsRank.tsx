@@ -4,7 +4,7 @@ import RankFilter from './RankFilter';
 
 async function fetchRank(gender: 'A' | 'M' | 'F') {
   return await getProductPreviewWithoutToken(`/products/rank/${gender}`, {
-    next: { revalidate: 3600 * 24 },
+    next: { revalidate: 86400 },  // 24시간
   });
 }
 

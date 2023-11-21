@@ -30,7 +30,7 @@ function RecommendationPage(props: Props) {
       setProducts(data);
     }
     fetchProducts();
-  }, [recommendationType, products]);
+  }, [recommendationType]);
 
   if (products.length === 0) {
     return (
