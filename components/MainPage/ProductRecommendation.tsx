@@ -6,9 +6,10 @@ import { useEffect, useState } from 'react';
 import ProductSlider from '@/components/Products/ProductSlider';
 import ProductsGrid from '@/components/Products/ProductsGrid';
 import ProductNotFound from '@/components//Products/ProductNotFound';
-import { useAppSelector } from '@/store/hooks';
+import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { MyPage } from '@/types/user';
 import AllLink from './AllLink';
+import { fetchMyPage } from '@/store/myPageAction';
 
 type Props = {
   recommendationType: 1 | 2;
@@ -17,7 +18,13 @@ type Props = {
 export default function ProductRecommendation({ recommendationType }: Props) {
   const [products, setProducts] = useState<ProductPreview[]>([]);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const dispatch = useAppDispatch();
   const myPage: MyPage = useAppSelector((state) => state.myPage);
+
+  useEffect(() => {
+    dispatch(fetchMyPage());
+  }, [dispatch]);
 
   const sectionName =
     recommendationType === 1
