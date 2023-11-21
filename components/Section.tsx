@@ -6,10 +6,10 @@ type Props = {
 export default function Section({ sectionName, children }: Props) {
   return (
     <>
-      <div className="relative text-sm sm:text-lg font-semibold mt-8 mb-2">
+      <h2 className="relative text-sm sm:text-lg font-semibold mt-8 mb-2">
         {sectionName}
         {children}
-      </div>
+      </h2>
     </>
   );
 }
