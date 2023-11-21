@@ -39,8 +39,12 @@ export default function SearchKeyword({
         alt=""
         width={30}
         height={30}
+        aria-hidden={true}
       />
-      <div className='truncate'>
+      <span className='block overflow-hidden absolute top-0 left-0 w-0 h-0 border-0'>
+        {name}
+      </span>
+      <div className='truncate' aria-hidden={true}>
         <span>{`${name.substring(0, keywordIndex)}`}</span>
         <span className="font-semibold">{`${name.substring(
           keywordIndex,
