@@ -9,8 +9,6 @@ type Props = {
   };
 };
 
-export const dynamic = 'force-dynamic';
-
 async function CategoryPage({ params: { categoryName } }: Props) {
   return (
     <div>

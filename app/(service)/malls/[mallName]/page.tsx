@@ -13,8 +13,6 @@ type Props = {
   };
 };
 
-export const dynamic = 'force-dynamic';
-
 async function MallPage({ params: { mallName } }: Props) {
   const mallId = mallNameToMallId(decodeURI(mallName));
 
