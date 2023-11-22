@@ -3,7 +3,13 @@ import Link from 'next/link';
 export default function MainIntroduction() {
   return (
     <div className="text-center py-10 md:py-20">
-      <h1 className="text-2xl xs:text-4xl md:text-5xl font-bold my-8">
+      <h2 className="block overflow-hidden absolute top-0 left-0 w-0 h-0 border-0">
+        나의 Fit 에 맞는 의류 Filtering 솔루션
+      </h2>
+      <h2
+        className="text-2xl xs:text-4xl md:text-5xl font-bold my-8"
+        aria-hidden={true}
+      >
         나의{' '}
         <span className="text-3xl xs:text-5xl md:text-6xl text-main-color">
           Fit
@@ -14,7 +20,7 @@ export default function MainIntroduction() {
           Filtering
         </span>{' '}
         솔루션
-      </h1>
+      </h2>
       <p className="text-sm sm:text-lg font-semibold text-custom-gray-700">
         핏터링(Fittering)을 통해 체형 분석을 쉽게 하고,
         <br className="md:hidden" /> 나의 체형에 fit한 옷을 구매해보세요!
