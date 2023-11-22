@@ -88,13 +88,3 @@ export async function getMallsList(): Promise<
   }
   return response.json();
 }
-
-export async function getMallsPreviewList(): Promise<MallPreview[]> {
-  const response = await serverFetch('/malls/preview/list', {
-    next: { revalidate: 3600 },
-  });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
-}
