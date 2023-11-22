@@ -39,7 +39,7 @@ export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
 }
 
 export async function getMalls(
-  filter: 'rank' | 'favorite_malls'
+  filter: 'rank' | 'favorite_malls' | 'preview/list'
 ): Promise<MallPreview[]> {
   const response = await customFetch(`/malls/${filter}`);
   if (!response.ok) {

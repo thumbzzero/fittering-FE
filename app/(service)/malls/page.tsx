@@ -10,7 +10,7 @@ function MallsPage(props: Props) {
     <div>
       <MallPreviewFilter isRanking={true} />
       <LinkToMallsList />
-      <MallsList isRanking={true} />
+      <MallsList previewType='rank' />
     </div>
   );
 }
