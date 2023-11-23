@@ -2,7 +2,7 @@
 
 import { Category, outer, top, bottom, dress } from '@/types/categories';
 import { usePathname, useSearchParams } from 'next/navigation';
-import MainCategoryLink from './MainCategoryLink';
+import MainCategoryLink from '@/components/Navbar/MainCategoryLink';
 
 type Props = {
   mallName?: string;

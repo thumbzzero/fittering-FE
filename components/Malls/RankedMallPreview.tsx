@@ -1,9 +1,9 @@
 'use client';
 
 import { getRankedMallPreview } from '@/service/malls';
-import RankedMallPreviewGrid from './RankedMallPreviewGrid';
+import RankedMallPreviewGrid from '@/components/Malls/RankedMallPreviewGrid';
 import { useEffect, useState } from 'react';
-import LinkButton from '../LinkButton';
+import LinkButton from '@/components/LinkButton';
 import { MallRankingPreview } from '@/types/malls';
 
 export default function RankedMallPreview() {

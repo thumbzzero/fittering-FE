@@ -3,8 +3,8 @@
 import { fetchWithoutToken } from '@/utils/customFetch';
 import { CategoryCount } from '@/types/categories';
 import { useState, useEffect } from 'react';
-import PageButton from './PageButton';
-import PagingArrowButton from './PagingArrowButton';
+import PageButton from '@/components/PageButton';
+import PagingArrowButton from '@/components/PagingArrowButton';
 import leftArrow from '/public/icon/left_black.svg';
 import rightArrow from '/public/icon/right_black.svg';
 

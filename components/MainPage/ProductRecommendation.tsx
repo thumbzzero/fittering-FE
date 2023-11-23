@@ -8,7 +8,7 @@ import ProductsGrid from '@/components/Products/ProductsGrid';
 import ProductNotFound from '@/components//Products/ProductNotFound';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { MyPage } from '@/types/user';
-import AllLink from './AllLink';
+import AllLink from '@/components/MainPage/AllLink';
 import { fetchMyPage } from '@/store/myPageAction';
 import { ProductPreview } from '@/types/product';
 

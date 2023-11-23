@@ -6,7 +6,7 @@ import {
   getProductPreview,
   getProductPreviewPaging,
 } from '@/service/product';
-import ProductsGrid from './Products/ProductsGrid';
+import ProductsGrid from '@/components/Products/ProductsGrid';
 import { ProductPreview } from '@/types/product';
 
 type Props = {

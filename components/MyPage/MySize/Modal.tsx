@@ -5,9 +5,9 @@ import Image from 'next/image';
 import pencil from '/public/icon/pencil_white.svg';
 import bulb from 'public/icon/light_bulb_white.svg';
 import x from 'public/icon/x_black.svg';
-import ModalBackground from './ModalBackground';
+import ModalBackground from '@/components/MyPage/MySize/ModalBackground';
 import { useState, useEffect } from 'react';
-import { detectMobileDevice } from '../../../utils/detectMobileDevice';
+import { detectMobileDevice } from '@/utils/detectMobileDevice';
 
 type Props = {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;

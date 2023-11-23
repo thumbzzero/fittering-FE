@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import logo from '/public/Fittering_logo.png';
-import { WebNavbar } from './Navbar/WebNavbar';
+import { WebNavbar } from '@/components/Navbar/WebNavbar';
 import Link from 'next/link';
-import SearchBar from './SearchBar';
-import LogoutButton from './LogoutButton';
+import SearchBar from '@/components/SearchBar';
+import LogoutButton from '@/components/LogoutButton';
 
 
 export default function Header() {

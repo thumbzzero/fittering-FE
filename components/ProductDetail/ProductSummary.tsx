@@ -2,9 +2,9 @@
 
 import { Product } from '@/types/product';
 import Image from 'next/image';
-import DividingLine from '../DividingLine';
-import ProductDescription from './ProductDescription';
-import ProductGraphs from './ProductGraphs';
+import DividingLine from '@/components/DividingLine';
+import ProductDescription from '@/components/ProductDetail/ProductDescription';
+import ProductGraphs from '@/components/ProductDetail/ProductGraphs';
 import loading from '/public/loading.gif';
 
 type Props = {

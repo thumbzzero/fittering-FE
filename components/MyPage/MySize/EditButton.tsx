@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Modal from './Modal';
+import Modal from '@/components/MyPage/MySize/Modal';
 
 export default function EditButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);

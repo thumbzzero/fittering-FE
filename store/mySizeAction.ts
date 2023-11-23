@@ -1,6 +1,6 @@
 import { getMySize } from '@/service/mysize';
 import { AnyAction, Dispatch } from '@reduxjs/toolkit';
-import { mySizeActions } from './mySizeSlice';
+import { mySizeActions } from '@/store/mySizeSlice';
 
 export const fetchMySize = () => {
   return async (dispatch: Dispatch<AnyAction>) => {

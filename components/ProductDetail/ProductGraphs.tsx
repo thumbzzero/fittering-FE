@@ -1,8 +1,8 @@
 import { getAgeRange } from '@/utils/getAgeRange';
-import PopularAgeRangeGraph from './PopularAgeRangeGraph';
-import PopularInformation from './PopularInformation';
-import PopularGenderGraph from './PopularGenderGraph';
-import GraphBlur from './GraphBlur';
+import PopularAgeRangeGraph from '@/components/ProductDetail/PopularAgeRangeGraph';
+import PopularInformation from '@/components/ProductDetail/PopularInformation';
+import PopularGenderGraph from '@/components/ProductDetail/PopularGenderGraph';
+import GraphBlur from '@/components/ProductDetail/GraphBlur';
 
 type Props = {
   popularGender: string;

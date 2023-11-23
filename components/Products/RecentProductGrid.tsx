@@ -1,7 +1,7 @@
 'use client';
 
 import { ProductPreview } from '@/types/product';
-import RecentProduct from '../RecentProduct';
+import RecentProduct from '@/components/RecentProduct';
 
 type Props = {
   products: ProductPreview[];

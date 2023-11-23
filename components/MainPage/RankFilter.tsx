@@ -1,7 +1,7 @@
 'use client';
 
 import { ProductPreview } from '@/types/product';
-import ProductsGrid from '../Products/ProductsGrid';
+import ProductsGrid from '@/components/Products/ProductsGrid';
 
 type Props = {
   allProducts: ProductPreview[];

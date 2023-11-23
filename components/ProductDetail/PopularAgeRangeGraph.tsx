@@ -1,7 +1,7 @@
 import { AGE_RANGE } from '@/constants/ageRange';
 import { BarElement, CategoryScale, Chart, LinearScale } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import GraphLabel from './GraphLabel';
+import GraphLabel from '@/components/ProductDetail/GraphLabel';
 
 type Props = {
   popularAgeRange: number;

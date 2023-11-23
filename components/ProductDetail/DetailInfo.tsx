@@ -1,6 +1,6 @@
 import LineSection from '@/components/LineSection';
-import DetailImage from './DetailImage';
-import DetailText from './DetailText';
+import DetailImage from '@/components/ProductDetail/DetailImage';
+import DetailText from '@/components/ProductDetail/DetailText';
 
 type Props = {
   descriptions: { url: string }[];

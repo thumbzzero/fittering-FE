@@ -1,7 +1,7 @@
 'use client';
 
 import { Malls, Products } from '@/types/search';
-import SearchKeyword from './SearchKeyword';
+import SearchKeyword from '@/components/SearchKeyword';
 
 type Props = {
   isKeywordsOpen: boolean;

@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import myPageReducer from './myPageSlice';
-import mySizeReducer from './mySizeSlice';
+import myPageReducer from '@/store/myPageSlice';
+import mySizeReducer from '@/store/mySizeSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
