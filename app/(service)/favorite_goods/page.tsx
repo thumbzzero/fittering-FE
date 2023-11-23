@@ -1,5 +1,3 @@
-'use client';
-
 import FavoriteProducts from '@/components/FavoriteProducts';
 import Section from '@/components/Section';
 import React from 'react';
