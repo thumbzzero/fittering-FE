@@ -1,15 +1,6 @@
 import { BASE_URL } from '@/constants/apis';
+import { User } from '@/types/user';
 import { serverFetch } from '@/utils/customFetch';
-
-type User = {
-  username: string;
-  password: string;
-  email: string;
-  gender: string;
-  year: number;
-  month: number;
-  day: number;
-};
 
 export async function signup({
   email,
