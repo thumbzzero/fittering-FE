@@ -1,5 +1,5 @@
 import { Mall, MallPreview, MallRankingPreview } from '@/types/malls';
-import { customFetch, serverFetch } from '@/utils/customFetch';
+import { customFetch, fetchWithoutToken } from '@/utils/customFetch';
 
 export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
   const response = await customFetch('/malls/rank/preview');
@@ -51,7 +51,7 @@ export async function getMallsList(): Promise<
     name: string;
   }[]
 > {
-  const response = await serverFetch('/malls/list', {
+  const response = await fetchWithoutToken('/malls/list', {
     next: { revalidate: 3600 },
   });
   if (!response.ok) {

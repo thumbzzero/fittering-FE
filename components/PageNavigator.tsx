@@ -1,6 +1,6 @@
 'use client';
 
-import { serverFetch } from '@/utils/customFetch';
+import { fetchWithoutToken } from '@/utils/customFetch';
 import { CategoryCount } from '@/types/categories';
 import { useState, useEffect } from 'react';
 import PageButton from './PageButton';
@@ -30,7 +30,7 @@ export default function PageNavigator({
   useEffect(() => {
     async function fetchCategoryCount() {
       const data = await (
-        await serverFetch(
+        await fetchWithoutToken(
           `${mallId ? `/malls/${mallId}` : ''}/categories/count`
         )
       ).json();

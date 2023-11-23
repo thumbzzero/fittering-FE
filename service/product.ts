@@ -1,5 +1,5 @@
 import { Product, ProductPreview, ProductPreviewResponse } from '@/types/product';
-import { customFetch, serverFetch } from '@/utils/customFetch';
+import { customFetch, fetchWithoutToken } from '@/utils/customFetch';
 
 export async function getProductPreview(
   url: string
@@ -26,7 +26,7 @@ export async function getProductPreviewWithoutToken(
   url: string,
   options?: RequestInit
 ): Promise<ProductPreview[]> {
-  const response = await serverFetch(url, options);
+  const response = await fetchWithoutToken(url, options);
   if (!response.ok) {
     return [];
   }
@@ -37,7 +37,7 @@ export async function getProductPreviewPagingWithoutToken(
   url: string,
   options?: RequestInit
 ): Promise<ProductPreview[]> {
-  const response = await serverFetch(url, options);
+  const response = await fetchWithoutToken(url, options);
   if (!response.ok) {
     return [];
   }
