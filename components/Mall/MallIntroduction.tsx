@@ -1,6 +1,5 @@
 'use client';
 
-import { Mall } from '@/service/malls';
 import { useEffect, useState } from 'react';
 import { getMall } from '@/service/malls';
 import MallLogo from './MallLogo';
@@ -9,6 +8,7 @@ import StarButton from '../MallCommon/StarButton';
 import MallDescription from '../MallCommon/MallDescription';
 import MallName from '../MallCommon/MallName';
 import MobileMallIntroduction from './MobileMallIntroduction';
+import { Mall } from '@/types/malls';
 
 type Props = {
   mallId: Promise<number>;

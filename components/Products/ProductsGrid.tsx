@@ -1,7 +1,6 @@
 'use client';
-
-import { ProductPreview } from '@/service/product';
 import Product from '@/components/Product';
+import { ProductPreview } from '@/types/product';
 import RankLabel from '../MainPage/RankLabel';
 
 type Props = {

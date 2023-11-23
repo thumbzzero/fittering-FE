@@ -7,7 +7,8 @@ import DetailInfo from '@/components/ProductDetail/DetailInfo';
 import ProductSummary from '@/components/ProductDetail/ProductSummary';
 import SizeInfo from '@/components/ProductDetail/SizeInfo';
 import Section from '@/components/Section';
-import { getProduct, Product } from '@/service/product';
+import { getProduct } from '@/service/product';
+import { Product } from '@/types/product';
 import React, { useEffect, useState } from 'react';
 
 type Props = {

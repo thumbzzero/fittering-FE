@@ -1,4 +1,4 @@
-import { MallRankingPreview } from '@/service/malls';
+import { MallRankingPreview } from '@/types/malls';
 import RankedMallPreviewCard from './RankedMallPreviewCard';
 
 type Props = { malls: MallRankingPreview[] };

@@ -5,8 +5,9 @@ import { useAppSelector } from '@/store/hooks';
 import { MyPage } from '@/types/user';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ProductPreview, getProductPreview } from '@/service/product';
+import { getProductPreview } from '@/service/product';
 import ProductsGrid from '@/components/Products/ProductsGrid';
+import { ProductPreview } from '@/types/product';
 
 type Props = {};
 

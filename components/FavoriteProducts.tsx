@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 import {
   getProductPreview,
   getProductPreviewPaging,
-  ProductPreview,
 } from '@/service/product';
 import ProductsGrid from './Products/ProductsGrid';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   isPreview: boolean;

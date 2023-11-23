@@ -1,6 +1,6 @@
 'use client';
 
-import { Malls, Products } from '@/service/search';
+import { Malls, Products } from '@/types/search';
 import SearchKeyword from './SearchKeyword';
 
 type Props = {

@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react';
 import FilterIdDropdown from '../FilterIdDropdown';
 import ProductsGrid from './ProductsGrid';
 import { useSearchParams } from 'next/navigation';
-import { ProductPreview } from '@/service/product';
 import {
   fetchCategoriesProducts,
   fetchMallCategoriesProducts,
 } from '@/service/categoriesProducts';
 import PageNavigator from '../PageNavigator';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   categoryName?: string[];

@@ -1,8 +1,8 @@
 'use client';
 
-import { MySize } from '@/service/mysize';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { fetchMySize } from '@/store/mySizeAction';
+import { MySize } from '@/types/mysize';
 import { MyPage } from '@/types/user';
 import { useEffect } from 'react';
 

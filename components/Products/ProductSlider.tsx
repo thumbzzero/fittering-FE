@@ -1,8 +1,8 @@
 'use client';
 
-import { ProductPreview } from '@/service/product';
 import Slider from 'react-slick';
 import Product from '@/components/Product';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   products: ProductPreview[];

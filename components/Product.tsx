@@ -1,6 +1,6 @@
 'use client';
 
-import { ProductPreview } from '@/service/product';
+import { ProductPreview } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
 

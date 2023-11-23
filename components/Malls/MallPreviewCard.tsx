@@ -1,11 +1,11 @@
 'use client';
 
-import { MallPreview } from '@/service/malls';
 import MallPreviewImage from './MallPreviewImage';
 import MallPreviewLogo from './MallPreviewLogo';
 import MallDescription from '../MallCommon/MallDescription';
 import MallName from '../MallCommon/MallName';
 import StarButton from '../MallCommon/StarButton';
+import { MallPreview } from '@/types/malls';
 
 type Props = {
   malls: MallPreview[];

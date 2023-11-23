@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import ProductsGrid from '@/components/Products/ProductsGrid';
 import FilterIdDropdown from '@/components/FilterIdDropdown';
-import { ProductPreview, getProductPreviewPaging } from '@/service/product';
+import { getProductPreviewPaging } from '@/service/product';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   keyword: string | undefined;

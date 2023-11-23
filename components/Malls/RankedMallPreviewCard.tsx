@@ -1,6 +1,6 @@
 'use client';
 
-import { MallRankingPreview } from '@/service/malls';
+import { MallRankingPreview } from '@/types/malls';
 import Image from 'next/image';
 import Link from 'next/link';
 

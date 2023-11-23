@@ -1,6 +1,6 @@
 'use client';
 
-import { ProductPreview } from '@/service/product';
+import { ProductPreview } from '@/types/product';
 import ProductsGrid from '../Products/ProductsGrid';
 
 type Props = {

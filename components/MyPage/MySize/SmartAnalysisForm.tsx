@@ -1,11 +1,12 @@
 'use client';
 
 import SmartAnalysisPhotoSubmitForm from '@/components/MyPage/MySize/SmartAnalysisPhotoSubmitForm';
-import { MySize, smartAnalysis } from '@/service/mysize';
+import { smartAnalysis } from '@/service/mysize';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { mySizeActions } from '@/store/mySizeSlice';
+import { MySize } from '@/types/mysize';
 
 export default function SmartAnalysisForm() {
   const [isPrepared, setIsPrepared] = useState(false);

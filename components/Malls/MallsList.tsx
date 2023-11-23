@@ -1,7 +1,8 @@
 'use client';
 
 import MallPreviewCard from '@/components/Malls/MallPreviewCard';
-import { getMalls, MallPreview } from '@/service/malls';
+import { getMalls } from '@/service/malls';
+import { MallPreview } from '@/types/malls';
 import { useState, useEffect } from 'react';
 
 type Props = {

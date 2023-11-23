@@ -1,6 +1,6 @@
 'use client';
 
-import { Product } from '@/service/product';
+import { Product } from '@/types/product';
 import Image from 'next/image';
 import DividingLine from '../DividingLine';
 import ProductDescription from './ProductDescription';
