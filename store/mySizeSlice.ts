@@ -1,4 +1,4 @@
-import { MySize } from '@/service/mysize';
+import { MySize } from '@/types/mysize';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const mySizeSlice = createSlice({
