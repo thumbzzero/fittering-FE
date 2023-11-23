@@ -1,5 +1,4 @@
 import LineSection from '@/components/LineSection';
-import Section from '@/components/Section';
 import React from 'react';
 import { UserEditForm } from '../../../../components/Form/UserEditForm';
 
