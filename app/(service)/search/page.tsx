@@ -1,5 +1,5 @@
 import GlobalFilter from '@/components/GlobalFilter';
-import GlobalMenu from '@/components/GlobalMenu';
+import QuickMenu from '@/components/QuickMenu';
 import SearchResult from '@/components/Products/SearchResult';
 
 type Props = {
@@ -15,7 +15,7 @@ function SearchPage({ searchParams: { keyword } }: Props) {
       </h1>
       <SearchResult keyword={keyword} />
       <GlobalFilter />
-      <GlobalMenu />
+      <QuickMenu />
     </div>
   );
 }

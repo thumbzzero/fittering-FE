@@ -1,5 +1,5 @@
 import GlobalFilter from '@/components/GlobalFilter';
-import GlobalMenu from '@/components/GlobalMenu';
+import QuickMenu from '@/components/QuickMenu';
 import MallRanking from '@/components/MainPage/MallRanking';
 import ProductRecommendation from '@/components/MainPage/ProductRecommendation';
 import ProductRecommendations from '@/components/MainPage/ProductRecommendations';
@@ -15,7 +15,7 @@ export default function Home() {
       </ProductRecommendations>
       <ProductsRank />
       <GlobalFilter />
-      <GlobalMenu />
+      <QuickMenu />
     </section>
   );
 }

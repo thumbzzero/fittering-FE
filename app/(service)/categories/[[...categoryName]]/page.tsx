@@ -1,5 +1,5 @@
 import GlobalFilter from '@/components/GlobalFilter';
-import GlobalMenu from '@/components/GlobalMenu';
+import QuickMenu from '@/components/QuickMenu';
 import React from 'react';
 import CategoryProducts from '@/components/Products/CategoryProducts';
 
@@ -16,7 +16,7 @@ async function CategoryPage({ params: { categoryName } }: Props) {
         categoryName={categoryName === undefined ? [] : categoryName}
       />
       <GlobalFilter />
-      <GlobalMenu />
+      <QuickMenu />
     </div>
   );
 }
