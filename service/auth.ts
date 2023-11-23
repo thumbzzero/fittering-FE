@@ -1,15 +1,6 @@
 import { BASE_URL } from '@/constants/apis';
-import { serverFetch } from '@/utils/customFetch';
-
-type User = {
-  username: string;
-  password: string;
-  email: string;
-  gender: string;
-  year: number;
-  month: number;
-  day: number;
-};
+import { User } from '@/types/user';
+import { fetchWithoutToken } from '@/utils/customFetch';
 
 export async function signup({
   email,
@@ -61,7 +52,7 @@ export async function login({
 }
 
 export async function isEmailValid(email: string) {
-  const response = await serverFetch(`/email/check?email=${email}`, {
+  const response = await fetchWithoutToken(`/email/check?email=${email}`, {
     method: 'post',
   });
   if (response.ok) {
@@ -71,7 +62,7 @@ export async function isEmailValid(email: string) {
 }
 
 export async function findPassword(email: string): Promise<Response> {
-  const response = await serverFetch(`/password/send?email=${email}`, {
+  const response = await fetchWithoutToken(`/password/send?email=${email}`, {
     method: 'post',
   });
   return response;

@@ -1,15 +1,16 @@
 'use client';
 
 import Section from '@/components/Section';
-import { getProductPreview, ProductPreview } from '@/service/product';
+import { getProductPreview } from '@/service/product';
 import { useEffect, useState } from 'react';
 import ProductSlider from '@/components/Products/ProductSlider';
 import ProductsGrid from '@/components/Products/ProductsGrid';
 import ProductNotFound from '@/components//Products/ProductNotFound';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { MyPage } from '@/types/user';
-import AllLink from './AllLink';
+import AllLink from '@/components/MainPage/AllLink';
 import { fetchMyPage } from '@/store/myPageAction';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   recommendationType: 1 | 2;

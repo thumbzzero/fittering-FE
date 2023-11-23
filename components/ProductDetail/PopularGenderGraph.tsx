@@ -1,6 +1,6 @@
 import { ArcElement, Chart, ChartOptions, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import GraphLabel from './GraphLabel';
+import GraphLabel from '@/components/ProductDetail/GraphLabel';
 
 type Props = {
   popularGenderPercents: number[];

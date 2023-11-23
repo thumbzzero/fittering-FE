@@ -1,12 +1,13 @@
 'use client';
 
-import { editMySize, MySize } from '@/service/mysize';
+import { editMySize } from '@/service/mysize';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { mySizeActions } from '@/store/mySizeSlice';
 import { useState } from 'react';
-import EditFormInput from './EditFormInput';
+import EditFormInput from '@/components/MyPage/MySize/EditFormInput';
 import { useRouter } from 'next/navigation';
 import { MyPage } from '@/types/user';
+import { MySize } from '@/types/mysize';
 
 type Props = {};
 

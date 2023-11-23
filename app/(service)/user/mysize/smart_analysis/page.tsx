@@ -2,8 +2,8 @@ import MobileSection from '@/components/MobileSection';
 import Guideline from '@/components/MyPage/MySize/Guideline';
 import SmartAnalysisForm from '@/components/MyPage/MySize/SmartAnalysisForm';
 import React from 'react';
-import LineSection from '../../../../../components/LineSection';
-import Section from '../../../../../components/Section';
+import LineSection from '@/components/LineSection';
+import Section from '@/components/Section';
 
 type Props = {};
 

@@ -1,7 +1,6 @@
 import LineSection from '@/components/LineSection';
-import Section from '@/components/Section';
 import React from 'react';
-import { PasswordEditForm } from '../../../../../components/Form/PasswordEditForm';
+import { PasswordEditForm } from '@/components/Form/PasswordEditForm';
 
 type Props = {};
 

@@ -1,24 +1,8 @@
-import { serverFetch } from '@/utils/customFetch';
-
-export type Products = {
-  id: number;
-  name: string;
-  image: string;
-};
-
-export type Malls = {
-  id: number;
-  name: string;
-  image: string;
-};
-
-export type Keywords = {
-  products: Products[];
-  malls: Malls[];
-};
+import { Keywords } from '@/types/search';
+import { fetchWithoutToken } from '@/utils/customFetch';
 
 export async function getSearchKeywords(keyword: string): Promise<Keywords> {
-  const response = await serverFetch(`/search/${keyword}`);
+  const response = await fetchWithoutToken(`/search/${keyword}`);
   if (!response.ok) {
     return { products: [], malls: [] };
   }

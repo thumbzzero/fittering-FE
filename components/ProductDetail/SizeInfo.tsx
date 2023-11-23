@@ -1,7 +1,7 @@
 import LineSection from '@/components/LineSection';
 import { BottomSize, DressSize, TopSize } from '@/types/sizes';
 import { getSizeData } from '@/utils/getSizeData';
-import SizeTable from './SizeTable';
+import SizeTable from '@/components/ProductDetail/SizeTable';
 
 type Props = {
   category: string;

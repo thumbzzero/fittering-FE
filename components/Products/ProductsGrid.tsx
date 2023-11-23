@@ -1,8 +1,7 @@
 'use client';
-
-import { ProductPreview } from '@/service/product';
 import Product from '@/components/Product';
-import RankLabel from '../MainPage/RankLabel';
+import { ProductPreview } from '@/types/product';
+import RankLabel from '@/components/MainPage/RankLabel';
 
 type Props = {
   products: ProductPreview[];

@@ -1,7 +1,4 @@
-type Menu = {
-  name: string;
-  path: string;
-};
+import { Menu } from "@/types/menu";
 
 export const categoryMenu: Menu[] = [
   {

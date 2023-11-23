@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalFilter from '@/components/GlobalFilter';
-import GlobalMenu from '@/components/GlobalMenu';
+import QuickMenu from '@/components/QuickMenu';
 import { mallNameToMallId } from '@/utils/mallNameToMallId';
 import MallIntroduction from '@/components/Mall/MallIntroduction';
 import MainCategoryNavbar from '@/components/Navbar/MainCategoryNavbar';
@@ -23,7 +23,7 @@ async function MallPage({ params: { mallName } }: Props) {
       <SubCategoryNavbar mallName={decodeURI(mallName)} />
       <CategoryProducts mallId={mallId} />
       <GlobalFilter />
-      <GlobalMenu />
+      <QuickMenu />
     </div>
   );
 }

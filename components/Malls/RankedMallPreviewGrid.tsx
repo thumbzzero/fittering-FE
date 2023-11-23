@@ -1,5 +1,5 @@
-import { MallRankingPreview } from '@/service/malls';
-import RankedMallPreviewCard from './RankedMallPreviewCard';
+import { MallRankingPreview } from '@/types/malls';
+import RankedMallPreviewCard from '@/components/Malls/RankedMallPreviewCard';
 
 type Props = { malls: MallRankingPreview[] };
 

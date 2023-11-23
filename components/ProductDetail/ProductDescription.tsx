@@ -1,9 +1,9 @@
 'use client';
 
-import { getGenderData } from '../../utils/getGenderData';
+import { getGenderData } from '@/utils/getGenderData';
 import { getAgeRange } from '@/utils/getAgeRange';
-import LikesButton from './LikesButton';
-import OriginLink from '../OriginLink';
+import LikesButton from '@/components/ProductDetail/LikesButton';
+import OriginLink from '@/components/OriginLink';
 
 type Props = {
   description: {

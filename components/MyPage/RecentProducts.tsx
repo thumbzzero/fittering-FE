@@ -3,13 +3,13 @@
 import LineSection from '@/components/LineSection';
 import {
   getProductPreview,
-  ProductPreview,
   getProductPreviewPaging,
 } from '@/service/product';
 import { useState, useEffect } from 'react';
-import ProductSlider from '../Products/ProductSlider';
-import RecentProductGrid from '../Products/RecentProductGrid';
+import ProductSlider from '@/components/Products/ProductSlider';
+import RecentProductGrid from '@/components/Products/RecentProductGrid';
 import ProductsGrid from '@/components/Products/ProductsGrid';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   isPreview: boolean;

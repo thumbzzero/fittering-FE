@@ -1,4 +1,4 @@
-import { getGenderData } from '../../utils/getGenderData';
+import { getGenderData } from '@/utils/getGenderData';
 
 type Props = {
   popularGender: string;

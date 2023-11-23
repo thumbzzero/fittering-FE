@@ -1,8 +1,8 @@
 'use client';
 
-import UserEditLinks from './UserEditLinks';
-import MobileLogout from './MobileLogout';
-import BackButton from '../BackButton';
+import UserEditLinks from '@/components/MyPage/UserEditLinks';
+import MobileLogout from '@/components/MyPage/MobileLogout';
+import BackButton from '@/components/BackButton';
 
 type Props = {
   username: string;

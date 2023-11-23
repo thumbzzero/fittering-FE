@@ -8,7 +8,7 @@ export default function ServiceLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex flex-col w-full px-4 lg:px-0 max-w-screen-lg mx-auto mb-[6rem] md:mb-0">
+    <main className="flex flex-col w-full px-4 lg:px-0 max-w-screen-lg mx-auto mb-[6rem] md:mb-12">
       <LandingPageRedirect />
       <Header />
       <section className="grow">{children}</section>

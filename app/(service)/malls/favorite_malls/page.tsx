@@ -10,7 +10,7 @@ function FavoriteMallPage(props: Props) {
     <div>
       <MallPreviewFilter isRanking={false} />
       <LinkToMallsList />
-      <MallsList isRanking={false} />
+      <MallsList previewType='favorite_malls' />
     </div>
   );
 }

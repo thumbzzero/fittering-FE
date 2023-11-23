@@ -2,8 +2,8 @@ import MobileSection from '@/components/MobileSection';
 import EditButton from '@/components/MyPage/MySize/EditButton';
 import MySizeInfo from '@/components/MyPage/MySize/MySizeInfo';
 import React from 'react';
-import LineSection from '../../../../components/LineSection';
-import GuidelinePic from '../../../../components/MyPage/MySize/GuidelinePic';
+import LineSection from '@/components/LineSection';
+import GuidelinePic from '@/components/MyPage/MySize/GuidelinePic';
 
 type Props = {};
 

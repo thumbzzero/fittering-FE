@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import MallPreviewFilterLink from './MallPreviewFilterLink';
+import MallPreviewFilterLink from '@/components/Malls/MallPreviewFilterLink';
 
 type Props = {
   isRanking: boolean;

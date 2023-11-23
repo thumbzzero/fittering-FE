@@ -32,7 +32,7 @@ export async function customFetch(
   return response;
 }
 
-export async function serverFetch(
+export async function fetchWithoutToken(
   url: string,
   options?: RequestInit
 ): Promise<Response> {

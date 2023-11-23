@@ -1,6 +1,6 @@
-import MallDescription from '../MallCommon/MallDescription';
-import MallName from '../MallCommon/MallName';
-import MallLogo from './MallLogo';
+import MallDescription from '@/components/MallCommon/MallDescription';
+import MallName from '@/components/MallCommon/MallName';
+import MallLogo from '@/components/Mall/MallLogo';
 
 type Props = {
   src: string;

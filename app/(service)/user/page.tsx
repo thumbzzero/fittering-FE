@@ -5,7 +5,7 @@ import RecentProducts from '@/components/MyPage/RecentProducts';
 import { useAppSelector } from '@/store/hooks';
 import { MyPage } from '@/types/user';
 import Link from 'next/link';
-import MyPageCommon from '../../../components/MyPage/MyPageCommon';
+import MyPageCommon from '@/components/MyPage/MyPageCommon';
 
 type Props = {};
 function MyPage(props: Props) {

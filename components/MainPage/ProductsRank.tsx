@@ -1,6 +1,6 @@
 import Section from '@/components/Section';
 import { getProductPreviewWithoutToken } from '@/service/product';
-import RankFilter from './RankFilter';
+import RankFilter from '@/components/MainPage/RankFilter';
 
 async function fetchRank(gender: 'A' | 'M' | 'F') {
   return await getProductPreviewWithoutToken(`/products/rank/${gender}`, {

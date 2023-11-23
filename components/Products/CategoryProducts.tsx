@@ -2,15 +2,15 @@
 
 import { categoryNameToIndex } from '@/utils/categoryNameToIndex';
 import { useState, useEffect } from 'react';
-import FilterIdDropdown from '../FilterIdDropdown';
-import ProductsGrid from './ProductsGrid';
+import FilterIdDropdown from '@/components/FilterIdDropdown';
+import ProductsGrid from '@/components/Products/ProductsGrid';
 import { useSearchParams } from 'next/navigation';
-import { ProductPreview } from '@/service/product';
 import {
   fetchCategoriesProducts,
   fetchMallCategoriesProducts,
 } from '@/service/categoriesProducts';
-import PageNavigator from '../PageNavigator';
+import PageNavigator from '@/components/PageNavigator';
+import { ProductPreview } from '@/types/product';
 
 type Props = {
   categoryName?: string[];

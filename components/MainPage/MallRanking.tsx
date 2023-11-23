@@ -1,6 +1,6 @@
 import Section from '@/components/Section';
 import RankedMallPreview from '@/components/Malls/RankedMallPreview';
-import AllLink from './AllLink';
+import AllLink from '@/components/MainPage/AllLink';
 
 export default function MallRanking() {
   return (

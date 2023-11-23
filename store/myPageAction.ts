@@ -1,6 +1,6 @@
 import { getMyPage } from '@/service/user';
 import { AnyAction, Dispatch } from '@reduxjs/toolkit';
-import { myPageActions } from './myPageSlice';
+import { myPageActions } from '@/store/myPageSlice';
 
 export const fetchMyPage = () => {
   return async (dispatch: Dispatch<AnyAction>) => {

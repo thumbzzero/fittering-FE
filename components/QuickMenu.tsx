@@ -7,13 +7,13 @@ import up from 'public/icon/up.svg';
 import down from 'public/icon/down.svg';
 import disabledUp from 'public/icon/disabled_up.svg';
 import disabledDown from 'public/icon/disabled_down.svg';
-import { detectMobileDevice } from '../utils/detectMobileDevice';
+import { detectMobileDevice } from '@/utils/detectMobileDevice';
 import { useState, useEffect } from 'react';
 
 const buttonStyle =
   'w-8 h-8 text-xs md:w-12 md:h-12 md:text-sm font-semibold bg-white';
 
-export default function GlobalMenu() {
+export default function QuickMenu() {
   const [isMobile, setIsMobile] = useState(false);
   const [isUpActive, setIsUpActive] = useState(false);
   const [isDownActive, setIsDownActive] = useState(false);

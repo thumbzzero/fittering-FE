@@ -1,34 +1,5 @@
-import { customFetch, serverFetch } from '@/utils/customFetch';
-
-export type MallRankingPreview = {
-  id: number;
-  name: string;
-  image: string;
-  isFavorite: boolean;
-};
-
-export type MallPreview = {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  view: number;
-  isFavorite: boolean;
-  products: {
-    productId: number;
-    productImage: string;
-    productName: string;
-  }[];
-};
-
-export type Mall = {
-  id: number;
-  name: string;
-  url: string;
-  image: string;
-  description: string;
-  isFavorite: boolean;
-};
+import { Mall, MallPreview, MallRankingPreview } from '@/types/malls';
+import { customFetch, fetchWithoutToken } from '@/utils/customFetch';
 
 export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
   const response = await customFetch('/malls/rank/preview');
@@ -39,7 +10,7 @@ export async function getRankedMallPreview(): Promise<MallRankingPreview[]> {
 }
 
 export async function getMalls(
-  filter: 'rank' | 'favorite_malls'
+  filter: 'rank' | 'favorite_malls' | 'preview/list'
 ): Promise<MallPreview[]> {
   const response = await customFetch(`/malls/${filter}`);
   if (!response.ok) {
@@ -80,17 +51,7 @@ export async function getMallsList(): Promise<
     name: string;
   }[]
 > {
-  const response = await serverFetch('/malls/list', {
-    next: { revalidate: 3600 },
-  });
-  if (!response.ok) {
-    return [];
-  }
-  return response.json();
-}
-
-export async function getMallsPreviewList(): Promise<MallPreview[]> {
-  const response = await serverFetch('/malls/preview/list', {
+  const response = await fetchWithoutToken('/malls/list', {
     next: { revalidate: 3600 },
   });
   if (!response.ok) {
