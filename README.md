@@ -8,8 +8,11 @@
 [fittering-FE](https://github.com/YeolJyeongKong/fittering-FE)는 핏터링 서비스의 **프론트엔드 코드를 관리**하는 레포지토리입니다.  
 <br>
 
-## 📆 개발 기간
-2023.07 ~ _진행 중_  
+## 📆 기간
+### 기획
+2023.05 ~ 2023.06
+### 개발
+2023.07 ~ 2023.11  
 <br>
 
 ## 🛠️ Stacks & Tools
