@@ -46,3 +46,6 @@ Git, Figma, Notion
   </tr>
 </table>  
 <br>
+
+## 📑 Blog
+개발 중 기록한 글은 [여기](https://velog.io/@thumbzzero/series/SWM-Fittering-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D)에서 확인할 수 있습니다.
