@@ -8,8 +8,11 @@
 [fittering-FE](https://github.com/YeolJyeongKong/fittering-FE)는 핏터링 서비스의 **프론트엔드 코드를 관리**하는 레포지토리입니다.  
 <br>
 
-## 📆 개발 기간
-2023.07 ~ _진행 중_  
+## 📆 기간
+### 기획
+2023.05 ~ 2023.06
+### 개발
+2023.07 ~ 2023.11  
 <br>
 
 ## 🛠️ Stacks & Tools
@@ -43,3 +46,23 @@ Git, Figma, Notion
   </tr>
 </table>  
 <br>
+
+## 🖥️ Preview
+### 메인 페이지
+<img width="600" src="https://github.com/YeolJyeongKong/fittering-FE/assets/94180099/00aef826-6c4e-4331-bec0-0848a5fac0e1"><br>
+
+### 내 맞춤 정보 설정
+<img width="600" src="https://github.com/YeolJyeongKong/fittering-FE/assets/94180099/56589053-9362-4754-ac35-2fac5eba9185"><br>
+
+### 스마트 분석
+<img width="600" src="https://github.com/YeolJyeongKong/fittering-FE/assets/94180099/89a7c86f-8421-47bd-8dcb-e59105f128c0"><br>
+
+### 카테고리별 상품 조회
+<img width="600" src="https://github.com/YeolJyeongKong/fittering-FE/assets/94180099/768d3bdb-4e75-43c3-933b-727ab536bcc4"><br>
+
+### 상품 상세 조회 페이지
+<img width="600" src="https://github.com/YeolJyeongKong/fittering-FE/assets/94180099/0b6b768a-70d7-4c8b-be2e-6a8b2ddc51b1"><br>
+
+
+## 📑 Blog
+개발 중 기록한 글은 [여기](https://velog.io/@thumbzzero/series/SWM-Fittering-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D)에서 확인할 수 있습니다.
